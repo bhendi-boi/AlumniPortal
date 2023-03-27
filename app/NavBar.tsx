@@ -4,21 +4,22 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useSelectedLayoutSegment } from 'next/navigation';
 import NavLink from './NavLink';
-// assets
-import IIITDMLOGO from 'public/iiitdm.png';
-import ALUMNILOGO from 'public/aa_logo.png';
 
 const NavBar = () => {
   const path = useSelectedLayoutSegment();
   return (
     <header className="sticky top-0 flex h-16 border-b border-neutral-400 px-10">
       <div className="flex flex-1 items-center gap-4">
-        {/* // ? switch img for Next Image */}
         <Link href="https://iiitdm.ac.in" rel="norefer" target="_blank">
-          <img src={IIITDMLOGO} alt="IIITDM Logo" width={40} height={40} />
+          <Image src={'/iiitdm.png'} alt="IIITDM Logo" width={40} height={40} />
         </Link>
         <Link href="/">
-          <img src={ALUMNILOGO} alt="IIITDM Logo" width={40} height={40} />
+          <Image
+            src={'/aa_logo.png'}
+            alt="IIITDM Logo"
+            width={40}
+            height={40}
+          />
         </Link>
       </div>
       <nav className="flex items-center gap-8">
