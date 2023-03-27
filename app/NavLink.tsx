@@ -12,7 +12,7 @@ const link = cva('link', {
         'bg-nav-blue text-white font-medium text-xl px-6 py-1.5 rounded-lg',
       ],
       active: [
-        'text-nav-blue hover:underline underline-offset-2 font-medium text-xl',
+        'text-nav-blue underline underline-offset-2 font-medium text-xl',
       ],
     },
   },
