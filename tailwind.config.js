@@ -6,6 +6,7 @@ module.exports = {
       colors: {
         background: '#E5E5E5',
         'nav-blue': '#123262',
+        'secondary-text': '#727272',
       },
       fontFamily: {
         inter: ['var(--Inter)'],
