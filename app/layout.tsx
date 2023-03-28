@@ -20,7 +20,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Alumni Portal | IIITDM</title>
       </head>
-      <body className={`bg-background ${inter.variable} font-inter`}>
+      <body className={`bg-white ${inter.variable} font-inter`}>
         <NavBar />
         {children}
       </body>
