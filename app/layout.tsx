@@ -2,6 +2,7 @@ import React from 'react';
 import { Inter } from 'next/font/google';
 import NavBar from './NavBar';
 import '../styles/globals.css';
+import Footer from './Footer';
 
 const inter = Inter({
   weight: '400',
@@ -23,6 +24,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       <body className={`bg-white ${inter.variable} font-inter`}>
         <NavBar />
         {children}
+        <Footer />
       </body>
     </html>
   );
