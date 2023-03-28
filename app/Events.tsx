@@ -1,20 +1,19 @@
-import { relative } from 'path';
 import React from 'react';
 
 const data = [
   {
     title: 'Online Alumni Talk on Accelerated Neural Networks with Eashan Dash',
-    time: ['Mar', '24'],
+    time: ['Mar','24'],
     relativeTime: 'today',
   },
   {
     title: 'LinkedIn Networking Session 2',
-    time: ['Mar', '28'],
+    time: ['Mar','28'],
     relativeTime: 'upcoming',
   },
   {
     title: 'LinkedIn Networking Session 3',
-    time: ['Apr', '02'],
+    time: ['Apr','02'],
     relativeTime: 'upcoming',
   },
 ];
@@ -23,11 +22,11 @@ const Events = () => {
   return (
     <section
       aria-labelledby="events"
-      className="col-span-3 rounded-md border border-zinc-400"
+      className="border rounded-md border-zinc-400 max-h-fit"
     >
       <h2
         id="events"
-        className="border-b border-zinc-400 px-5 py-2 text-xl font-medium uppercase text-nav-blue"
+        className="px-5 py-2 text-xl font-medium uppercase border-b border-zinc-400 text-nav-blue"
       >
         Events
       </h2>

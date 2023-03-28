@@ -4,8 +4,8 @@ import Events from './Events';
 
 const page = () => {
   return (
-    <main className="my-20 px-10">
-      <section className="grid grid-cols-8 gap-8">
+    <main className="px-5 my-20 md:px-10">
+      <section className="flex flex-col gap-4 md:flex-row md:gap-8">
         <NewsRoom />
         <Events />
       </section>

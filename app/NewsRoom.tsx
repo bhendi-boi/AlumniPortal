@@ -32,20 +32,20 @@ const NewsRoom = () => {
   return (
     <section
       aria-labelledby="newsroom"
-      className="col-span-5 rounded-md border border-zinc-400"
+      className="border rounded-md border-zinc-400 md:max-w-3xl"
     >
       <h2
         id="newsroom"
-        className="border-b border-zinc-400 px-5 py-2 text-xl font-medium uppercase text-nav-blue"
+        className="px-5 py-2 text-xl font-medium uppercase border-b border-zinc-400 text-nav-blue"
       >
         NewsRoom
       </h2>
       <div className="divide-y divide-zinc-400">
         {data.map((newsArticle) => {
           return (
-            <div key={newsArticle.title} className="flex px-5 py-3">
+            <div key={newsArticle.title} className="flex flex-col px-5 py-3 md:flex-row">
               <h3 className="flex-1 text-black">{newsArticle.title}</h3>
-              <p className="text-secondary-text">{newsArticle.time}</p>
+              <p className="text-sm text-secondary-text">{newsArticle.time}</p>
             </div>
           );
         })}
