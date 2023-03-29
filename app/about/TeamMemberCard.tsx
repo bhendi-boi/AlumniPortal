@@ -26,8 +26,8 @@ const TeamMemberCard = ({
       {...restProps}
       className={
         position === 'Secretary'
-          ? 'flex w-44 flex-col items-center rounded-lg bg-white py-4 drop-shadow-xl'
-          : 'flex w-44 flex-col items-center rounded-lg bg-background py-4 '
+          ? 'flex w-full items-center gap-4 rounded-lg bg-white py-4 px-4 drop-shadow-xl md:w-44 md:flex-col md:p-0'
+          : 'flex w-full items-center gap-4 rounded-lg bg-background py-4 px-4  md:w-44 md:flex-col md:p-0'
       }
     >
       <Image
@@ -37,11 +37,15 @@ const TeamMemberCard = ({
         width={120}
         className="rounded-full"
       />
-      <p className="font-medium">{position}</p>
-      <p className="text-sm font-medium text-contact-blue">{name}</p>
-      <a href={`mailto:${email}`} target="_blank" rel="norefer">
-        <CiMail size={20} />
-      </a>
+      <div>
+        <p className="font-medium">{position}</p>
+        <p className="mt-1 mb-2 text-sm font-semibold text-contact-blue md:font-medium">
+          {name}
+        </p>
+        <a href={`mailto:${email}`} target="_blank" rel="norefer">
+          <CiMail size={20} />
+        </a>
+      </div>
     </article>
   );
 };
