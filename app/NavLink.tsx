@@ -1,8 +1,8 @@
 import React from 'react';
-import Link,{ LinkProps } from 'next/link';
-import { cva,type VariantProps } from 'class-variance-authority';
+import Link, { LinkProps } from 'next/link';
+import { cva, type VariantProps } from 'class-variance-authority';
 
-const link = cva('link',{
+const link = cva('link', {
   variants: {
     variant: {
       primary: [
@@ -14,6 +14,9 @@ const link = cva('link',{
       active: [
         'text-nav-blue underline underline-offset-2 font-medium text-xl w-full block',
       ],
+      cardActive: [
+        'text-nav-blue underline underline-offset-4 font-medium text-xs w-full block',
+      ],
     },
   },
   defaultVariants: {
@@ -21,11 +24,11 @@ const link = cva('link',{
   },
 });
 
-interface NavLinkProps extends LinkProps,VariantProps<typeof link> {
+interface NavLinkProps extends LinkProps, VariantProps<typeof link> {
   children: React.ReactNode;
 }
 
-const NavLink = ({ children,variant,...restProps }: NavLinkProps) => {
+const NavLink = ({ children, variant, ...restProps }: NavLinkProps) => {
   return (
     <Link {...restProps} className={link({ variant })}>
       {children}
