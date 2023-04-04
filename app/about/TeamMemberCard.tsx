@@ -47,6 +47,7 @@ const TeamMemberCard = ({
           target="_blank"
           rel="norefer"
           className="md:self-center"
+          title={`email of ${name}`}
         >
           <CiMail size={20} />
         </a>
