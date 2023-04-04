@@ -1,6 +1,14 @@
 'use client';
-import Header from 'app/Header';
 import React, { FormEvent, useState } from 'react';
+import type { Metadata } from 'next';
+import Header from 'app/Header';
+
+export const metadata: Metadata = {
+  title: {
+    absolute: 'Send Query',
+  },
+  description: 'Questions? Send your queries here.',
+};
 const page = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');

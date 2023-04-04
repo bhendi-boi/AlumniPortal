@@ -1,8 +1,14 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import Contact from './Contact';
 import HistoryAndVision from './HistoryAndVision';
 import Message from './Message';
 import Team from './Team';
+
+export const metadata: Metadata = {
+  title: 'About | AlumniPortal',
+  description: 'About Alumni Affairs, IIITDM.',
+};
 
 const page = () => {
   return (
