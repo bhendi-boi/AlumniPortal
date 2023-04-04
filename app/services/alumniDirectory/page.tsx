@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
-
 import Header from 'app/Header';
 import Directory from './Directory';
 
 export const metadata: Metadata = {
-  title: 'Alumni Achievements',
-  description: 'Welcome to Next.js',
+  title: {
+    absolute: 'Alumni Directory | IIITDM',
+  },
+  description: 'Directory of our alumni.',
 };
 
 const page = () => {

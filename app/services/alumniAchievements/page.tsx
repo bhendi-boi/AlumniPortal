@@ -1,6 +1,14 @@
-import Header from 'app/Header';
 import React from 'react';
+import type { Metadata } from 'next';
+import Header from 'app/Header';
 import Card from './Card';
+
+export const metadata: Metadata = {
+  title: {
+    absolute: 'Alumni Achievements | IIITDM',
+  },
+  description: 'Here are some of the milestones achieved by our alumni.',
+};
 
 const data = [
   {
