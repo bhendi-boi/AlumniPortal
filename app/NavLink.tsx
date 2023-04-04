@@ -15,7 +15,7 @@ const link = cva('link', {
         'text-nav-blue underline underline-offset-2 font-medium text-xl w-full block',
       ],
       cardActive: [
-        'text-nav-blue underline underline-offset-4 font-medium text-xs w-full block',
+        'text-nav-blue underline underline-offset-4 font-medium text-sm w-full block',
       ],
     },
   },
@@ -26,11 +26,12 @@ const link = cva('link', {
 
 interface NavLinkProps extends LinkProps, VariantProps<typeof link> {
   children: React.ReactNode;
+  title: string;
 }
 
-const NavLink = ({ children, variant, ...restProps }: NavLinkProps) => {
+const NavLink = ({ children, variant, title, ...restProps }: NavLinkProps) => {
   return (
-    <Link {...restProps} className={link({ variant })}>
+    <Link {...restProps} title={title} className={link({ variant })}>
       {children}
     </Link>
   );

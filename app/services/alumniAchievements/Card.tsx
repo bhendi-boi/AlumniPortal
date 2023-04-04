@@ -21,10 +21,11 @@ const Card = ({ title, description, src }: CardProps) => {
       />
       <div className="">
         <h2 className="text-2xl font-bold">{title}</h2>
-        <p className="my-2 text-xs">{description}</p>
+        <p className="my-2 text-sm">{description}</p>
         <NavLink
           href={`/services/alumniAchievements/${title}`}
           variant="cardActive"
+          title={`link to ${title}`}
         >
           Read More
         </NavLink>
