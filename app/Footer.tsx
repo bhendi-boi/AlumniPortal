@@ -15,6 +15,7 @@ const Footer = () => {
             href={`mailto:@alumni.affairs@iiitdm.ac.in`}
             target="_blank"
             rel="norefer"
+            title="Mail us ?"
           >
             <CiMail size={30} />
           </Link>
@@ -24,6 +25,7 @@ const Footer = () => {
             href="https://www.linkedin.com/company/alumni-affairs-iiitdm/"
             target="_blank"
             rel="norefer"
+            title="IIITDM Alumni Affairs LinkedIn Page"
           >
             <AiFillLinkedin size={30} />
           </Link>
@@ -33,6 +35,7 @@ const Footer = () => {
             href="https://www.instagram.com/alumniaffairsiiitdm/"
             target="_blank"
             rel="norefer"
+            title="IIITDM Alumni Affairs Instagram Page"
           >
             <AiOutlineInstagram size={30} />
           </Link>
@@ -42,6 +45,7 @@ const Footer = () => {
             href="https://www.youtube.com/@alumniiiitdmkancheepuram7870"
             target="_blank"
             rel="norefer"
+            title="IIITDM Alumni Affairs Youtube Channel"
           >
             <AiFillYoutube size={30} />
           </Link>
