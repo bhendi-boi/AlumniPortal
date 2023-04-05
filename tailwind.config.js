@@ -17,6 +17,9 @@ module.exports = {
       padding: {
         1.5: '0.375rem',
       },
+      fontSize: {
+        xxs: ['0.5rem', '0.75rem'],
+      },
     },
   },
 };
