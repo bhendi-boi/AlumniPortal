@@ -88,7 +88,6 @@ const Directory = () => {
       <h2 id="dir" className="sr-only">
         {year}'s directory
       </h2>
-      {/* //! make + and - buttons work */}
       <Controls year={year} setYear={setYear} />
       <ul className="mx-5 my-8 grid grid-cols-2 gap-4 sm:grid-cols-3 md:mx-10 lg:grid-cols-5">
         {data.map((alumni, index) => (

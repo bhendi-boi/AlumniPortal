@@ -2,6 +2,9 @@
 import React from 'react';
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
 
+const FIRSTPASSOUTYEAR = 2011;
+const LATESTPASSOUTYEAR = 2018;
+
 const Controls = ({
   year,
   setYear,
@@ -13,11 +16,21 @@ const Controls = ({
 
   const handleClick = (type: 'plus' | 'minus') => {
     if (type === 'plus') {
-      console.log('plus');
-      setYear((prev) => prev++);
+      setYear((prev) => {
+        let res = (prev += 1);
+        if (res > LATESTPASSOUTYEAR) {
+          res = FIRSTPASSOUTYEAR;
+        }
+        return res;
+      });
     } else {
-      console.log('minus');
-      setYear((prev) => prev--);
+      setYear((prev) => {
+        let res = (prev -= 1);
+        if (res < FIRSTPASSOUTYEAR) {
+          res = LATESTPASSOUTYEAR;
+        }
+        return res;
+      });
     }
   };
   return (
@@ -25,13 +38,13 @@ const Controls = ({
       <h2 className="flex-1 text-lg font-extrabold ">{year}</h2>
       <button
         onClick={() => handleClick('minus')}
-        className="rounded-full p-2 hover:bg-zinc-100"
+        className="rounded-full p-2 hover:bg-zinc-100 focus:bg-zinc-100"
       >
         <AiOutlineLeft size={30} />
       </button>
       <button
         onClick={() => handleClick('plus')}
-        className="rounded-full p-2 hover:bg-zinc-100"
+        className="rounded-full p-2 hover:bg-zinc-100 focus:bg-zinc-100"
       >
         <AiOutlineRight size={30} />
       </button>
