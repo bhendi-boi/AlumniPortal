@@ -3,8 +3,9 @@ import Accordian from './Accordian';
 
 const data = [
   {
-    question: 'dskjvlsnv ?',
-    answer: 'vkjslvjsvioriso;vi;sj',
+    question: 'Question 1',
+    answer:
+      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus architecto minus eius assumenda asperiores. Sequi, exercitationem. Praesentium ipsam aspernatur tempore.',
   },
   {
     question: 'dskjvlsnv ?',
