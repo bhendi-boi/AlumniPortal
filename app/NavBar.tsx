@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useSelectedLayoutSegment } from 'next/navigation';
+import { Menu } from '@headlessui/react';
 import NavLink from './NavLink';
 
 import { RxHamburgerMenu } from 'react-icons/rx';
@@ -55,13 +56,7 @@ const NavBar = () => {
         >
           Gallery
         </NavLink>
-        <NavLink
-          href="/services"
-          variant={path === 'services' ? 'active' : 'primary'}
-          title="Services"
-        >
-          Services
-        </NavLink>
+        <Services />
         <NavLink
           href="/fund"
           variant={path === 'fund' ? 'active' : 'primary'}
@@ -84,6 +79,12 @@ const NavBar = () => {
       </button>
       {isOpen && (
         <>
+          {/* // TODO! make the background of navbar white when it is open */}
+          {/* overlay */}
+          <div
+            onClick={() => setIsOpen(false)}
+            className="fixed inset-0 -z-10 bg-black/70"
+          />
           <ul className="absolute left-0 top-16 flex w-full flex-col gap-3 bg-white py-4 [&_li]:px-10">
             <li>
               <NavLink
@@ -149,8 +150,6 @@ const NavBar = () => {
               </NavLink>
             </li>
           </ul>
-          {/* overlay */}
-          {/* <div className='fixed inset-0 bg-black/70' /> */}
         </>
       )}
     </header>
@@ -158,3 +157,68 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
+function Services() {
+  return (
+    <Menu as="div" className="relative">
+      {({ open }) => (
+        <>
+          <Menu.Button className="block w-full text-xl font-medium text-black underline-offset-2 hover:underline">
+            Services
+          </Menu.Button>
+          {open && (
+            <Menu.Items
+              as="ul"
+              className="absolute right-0 top-8 flex min-w-[12rem] flex-col gap-2 divide-y divide-background rounded-lg border border-background bg-white px-4 py-2 text-sm"
+            >
+              <Menu.Item>
+                {({ active }) => (
+                  <Link
+                    className={active ? 'text-black' : 'text-secondary-text'}
+                    title="Send Query"
+                    href="/services/sendQuery"
+                  >
+                    Send Query
+                  </Link>
+                )}
+              </Menu.Item>
+              <Menu.Item>
+                {({ active }) => (
+                  <Link
+                    className={active ? 'text-black' : 'text-secondary-text'}
+                    title="Alumni Directory"
+                    href="/services/alumniDirectory"
+                  >
+                    Alumni Directory
+                  </Link>
+                )}
+              </Menu.Item>
+              <Menu.Item>
+                {({ active }) => (
+                  <Link
+                    className={active ? 'text-black' : 'text-secondary-text'}
+                    title="Alumni Achievements"
+                    href="/services/alumniAchievements"
+                  >
+                    Alumni Achievements
+                  </Link>
+                )}
+              </Menu.Item>
+              <Menu.Item>
+                {({ active }) => (
+                  <Link
+                    className={active ? 'text-black' : 'text-secondary-text'}
+                    title="Volunteer"
+                    href="/services/volunteer"
+                  >
+                    Volunteer
+                  </Link>
+                )}
+              </Menu.Item>
+            </Menu.Items>
+          )}
+        </>
+      )}
+    </Menu>
+  );
+}
