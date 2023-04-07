@@ -26,12 +26,12 @@ const Accordian = ({
             />
           </Disclosure.Button>
           <Transition
-            enter="transition duration-300 ease-out"
-            enterFrom="transform -translate-y-4 opacity-0"
+            enter="transition duration-300"
+            enterFrom="transform -translate-y-2 opacity-0"
             enterTo="transform opacity-100"
-            leave="transition duration-200 ease-out"
+            leave="transition duration-200"
             leaveFrom="transform opacity-100"
-            leaveTo="transform -translate-y-4 opacity-0"
+            leaveTo="transform -translate-y-2 opacity-0"
           >
             <Disclosure.Panel className="py-2 text-sm">
               {answer}
