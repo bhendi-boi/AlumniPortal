@@ -26,6 +26,7 @@ const Contact = () => {
             Email
           </label>
           <input
+            title="Your email"
             type="email"
             id="email"
             placeholder="johndoe@gmail.com"
@@ -35,12 +36,12 @@ const Contact = () => {
             onChange={(e) => setEmail(e.currentTarget.value)}
           />
         </div>
-        {/* // ! clicking on label should foucs on textarea */}
         <fieldset className="mb-4 flex flex-col gap-1">
           <label htmlFor="message" className="text-contact-gray">
             Message
           </label>
           <textarea
+            id="message"
             title="Your message goes here"
             placeholder="Your message goes here"
             value={message}

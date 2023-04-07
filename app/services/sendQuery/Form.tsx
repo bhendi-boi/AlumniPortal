@@ -13,26 +13,28 @@ const Form = () => {
 
   return (
     <form onSubmit={handleSubmit} className="max-w-xl md:ml-20">
-      <div className="flex flex-col gap-1 mb-4">
+      <div className="mb-4 flex flex-col gap-1">
         <label htmlFor="email" className="text-contact-gray">
           Email
         </label>
         <input
+          title="Your email"
           type="email"
           id="email"
           placeholder="johndoe@gmail.com"
           value={email}
           required
-          className="p-4 rounded-md bg-background"
+          className="rounded-md bg-background p-4"
           onChange={(e) => setEmail(e.currentTarget.value)}
         />
       </div>
       {/* // ! clicking on label should foucs on textarea */}
-      <fieldset className="flex flex-col gap-1 mb-4">
+      <fieldset className="mb-4 flex flex-col gap-1">
         <label htmlFor="message" className="text-contact-gray">
           Message
         </label>
         <textarea
+          id="message"
           title="Your message goes here"
           placeholder="Your message goes here"
           value={message}
@@ -41,20 +43,20 @@ const Form = () => {
           onChange={(e) => setMessage(e.currentTarget.value)}
         />
       </fieldset>
-      <p className="text-sm text-center">
+      <p className="text-center text-sm">
         You can also mail us at{' '}
         <a
           href="mailto:alumni.affairs@iiitdm.ac.in"
           target="_blank"
           rel="norefer"
-          className="underline text-contact-blue underline-offset-2"
+          className="text-contact-blue underline underline-offset-2"
         >
           alumni.affairs@iiitdm.ac.in
         </a>
       </p>
       <button
         type="submit"
-        className="w-full py-4 mt-8 font-medium text-white rounded-md bg-contact-blue"
+        className="mt-8 w-full rounded-md bg-contact-blue py-4 font-medium text-white"
       >
         Submit
       </button>
