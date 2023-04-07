@@ -11,14 +11,14 @@ const Tabs = () => {
   return (
     <Tab.Group
       as="div"
-      className="mx-5 max-w-5xl rounded-lg border border-zinc-400 md:mx-auto"
+      className="mx-5 max-w-5xl rounded-lg border border-background md:mx-auto"
     >
-      <Tab.List className="border-b border-zinc-400">
+      <Tab.List className="border-b border-background">
         <Tab as={React.Fragment}>
           {({ selected }) => (
             <button
               className={clsx(
-                'border-r border-b border-zinc-400 px-8 py-4 text-secondary-text',
+                'border-b border-r border-background px-8 py-4 text-secondary-text',
               )}
             >
               All
@@ -29,7 +29,7 @@ const Tabs = () => {
           {({ selected }) => (
             <button
               className={clsx(
-                'border-r border-b border-zinc-400 px-8 py-4 text-secondary-text',
+                'border-b border-r border-background px-8 py-4 text-secondary-text',
               )}
             >
               Talks
@@ -40,7 +40,7 @@ const Tabs = () => {
           {({ selected }) => (
             <button
               className={clsx(
-                'border-r border-b border-zinc-400 px-8 py-4 text-secondary-text',
+                'border-b border-r border-background px-8 py-4 text-secondary-text',
               )}
             >
               Reunions
@@ -51,7 +51,7 @@ const Tabs = () => {
           {({ selected }) => (
             <button
               className={clsx(
-                'border-r border-b border-zinc-400 px-8 py-4 text-secondary-text',
+                'border-b border-r border-background px-8 py-4 text-secondary-text',
               )}
             >
               Conferences
@@ -62,7 +62,7 @@ const Tabs = () => {
           {({ selected }) => (
             <button
               className={clsx(
-                'border-r border-b border-zinc-400 px-8 py-4 text-secondary-text',
+                'border-b border-r border-background px-8 py-4 text-secondary-text',
               )}
             >
               Others

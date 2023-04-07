@@ -13,7 +13,7 @@ const NavBar = () => {
   const path = useSelectedLayoutSegment();
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <header className="sticky top-0 z-10 flex h-16 border-b border-neutral-400 bg-white px-5 md:px-10">
+    <header className="sticky top-0 z-10 flex h-16 border-b border-background bg-white px-5 shadow md:px-10">
       <div className="flex flex-1 items-center gap-4">
         <Link href="https://iiitdm.ac.in" rel="norefer" target="_blank">
           <Image src={'/iiitdm.png'} alt="IIITDM Logo" width={40} height={40} />

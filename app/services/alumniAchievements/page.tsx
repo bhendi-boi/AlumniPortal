@@ -37,7 +37,7 @@ const page = () => {
   return (
     <main className="min-h-screen px-5 md:px-10">
       <Header title="Alumni Achievements" />
-      <ul className="mx-auto mb-12 min-h-screen max-w-5xl rounded-lg border border-zinc-400 px-4 md:mb-16 md:px-16">
+      <ul className="mx-auto mb-12 min-h-screen max-w-5xl rounded-lg border border-background px-4 md:mb-16 md:px-16">
         {data.map((article, index) => (
           <Card key={index} {...article} />
         ))}
