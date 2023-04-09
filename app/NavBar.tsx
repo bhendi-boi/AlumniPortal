@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useSelectedLayoutSegment } from 'next/navigation';
@@ -8,12 +8,34 @@ import NavLink from './NavLink';
 
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { AiOutlineClose } from 'react-icons/ai';
+import clsx from 'clsx';
 
 const NavBar = () => {
   const path = useSelectedLayoutSegment();
   const [isOpen, setIsOpen] = useState(false);
+  const [showShadow, setShowShadow] = useState(false);
+
+  useEffect(() => {
+    if (!window) return;
+    const handler = () => {
+      if (window.scrollY !== 0) {
+        setShowShadow(true);
+      } else {
+        setShowShadow(false);
+      }
+      console.log(window.scrollY);
+    };
+    window.addEventListener('scroll', handler, { passive: true });
+    return () => window.removeEventListener('scroll', handler);
+  }, []);
   return (
-    <header className="sticky top-0 z-10 flex h-16 border-b border-background bg-white px-5 shadow md:px-10">
+    <header
+      style={{ boxSizing: 'border-box' }}
+      className={clsx(
+        'sticky top-0 z-10 flex h-16 border-b border-background bg-white px-5 md:px-10',
+        showShadow && 'shadow',
+      )}
+    >
       <div className="flex flex-1 items-center gap-4">
         <Link href="https://iiitdm.ac.in" rel="norefer" target="_blank">
           <Image src={'/iiitdm.png'} alt="IIITDM Logo" width={40} height={40} />
