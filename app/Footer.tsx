@@ -25,7 +25,7 @@ const Footer = () => {
             href="https://www.linkedin.com/company/alumni-affairs-iiitdm/"
             target="_blank"
             rel="norefer"
-            title="IIITDM Alumni Affairs LinkedIn Page"
+            title="Our LinkedIn Page"
           >
             <AiFillLinkedin size={30} />
           </Link>
@@ -35,7 +35,7 @@ const Footer = () => {
             href="https://www.instagram.com/alumniaffairsiiitdm/"
             target="_blank"
             rel="norefer"
-            title="IIITDM Alumni Affairs Instagram Page"
+            title="Our Instagram Page"
           >
             <AiOutlineInstagram size={30} />
           </Link>
@@ -45,13 +45,15 @@ const Footer = () => {
             href="https://www.youtube.com/@alumniiiitdmkancheepuram7870"
             target="_blank"
             rel="norefer"
-            title="IIITDM Alumni Affairs Youtube Channel"
+            title="Our Youtube Channel"
           >
             <AiFillYoutube size={30} />
           </Link>
         </li>
       </ul>
-      <p className="text-center">© Alumni Affairs IIITDM Kancheepuram 2023</p>
+      <p className="text-center font-medium">
+        © {new Date().getFullYear()} Alumni Affairs, IIITDM Kancheepuram
+      </p>
     </footer>
   );
 };
