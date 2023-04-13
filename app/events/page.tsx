@@ -10,10 +10,10 @@ export const metadata: Metadata = {
 
 const page = () => {
   return (
-    <main className="min-h-screen">
+    <>
       <Header title="Events" />
       <Tabs />
-    </main>
+    </>
   );
 };
 

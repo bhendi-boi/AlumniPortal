@@ -19,11 +19,15 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {/* // TODO add meta description  */}
+        <meta name="desciption" content="" />
         <title>Alumni Portal | IIITDM</title>
       </head>
       <body className={`bg-white ${inter.variable} font-inter`}>
         <NavBar />
-        {children}
+        <main className="mx-auto min-h-screen max-w-7xl px-5 md:px-10">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const page = () => {
   return (
-    <main className="mx-auto my-20 max-w-7xl px-5 md:px-10">
+    <div className="my-20">
       <picture className="">
         <Image
           src="/HomePageHeroSection.png"
@@ -18,7 +18,7 @@ const page = () => {
         <NewsRoom />
         <Events />
       </section>
-    </main>
+    </div>
   );
 };
 

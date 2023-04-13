@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 const page = () => {
   return (
-    <main className="min-h-screen px-5 md:px-10">
+    <>
       <Header title="Alumni Services" />
       <h2 className="my-2 text-2xl font-medium">Useful Links 👇</h2>
       <ul className="flex max-w-5xl flex-col gap-4 md:mx-auto">
@@ -54,7 +54,7 @@ const page = () => {
           </NavLink>
         </li>
       </ul>
-    </main>
+    </>
   );
 };
 

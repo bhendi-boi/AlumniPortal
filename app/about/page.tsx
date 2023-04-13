@@ -12,15 +12,15 @@ export const metadata: Metadata = {
 
 const page = () => {
   return (
-    <main className="min-h-screen">
-      <header className="pt-16 pb-8">
+    <>
+      <header className="pb-8 pt-16">
         <h1 className="text-center text-4xl">About us</h1>
       </header>
       <HistoryAndVision />
       <Message />
       <Team />
       <Contact />
-    </main>
+    </>
   );
 };
 

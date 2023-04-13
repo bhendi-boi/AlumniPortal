@@ -9,10 +9,10 @@ export const metadata: Metadata = {
 };
 const page = () => {
   return (
-    <main className="min-h-screen px-5 md:px-10">
+    <>
       <Header title="Alumni Fund" />
       <FAQ />
-    </main>
+    </>
   );
 };
 
