@@ -1,8 +1,8 @@
 'use client';
-import React, { useState } from 'react';
-import { Disclosure, Transition } from '@headlessui/react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Disclosure } from '@headlessui/react';
 import { HiArrowDown } from 'react-icons/hi2';
-import clsx from 'clsx';
+
 const Accordian = ({
   question,
   answer,
@@ -14,29 +14,40 @@ const Accordian = ({
     <Disclosure as="li" className="border-b border-background">
       {({ open }) => (
         <>
-          <Disclosure.Button className="flex w-full items-center justify-between py-2 pr-4">
+          <Disclosure.Button className="flex w-full cursor-pointer items-center justify-between py-2 pr-4">
             <p className="text-xl font-medium">{question}</p>
-            <HiArrowDown
-              size={36}
-              className={clsx(
-                'rounded-full p-2 text-zinc-800 hover:bg-zinc-100',
-                open && 'rotate-180 transition duration-300',
-                !open && 'rotate-0 transition duration-300',
-              )}
-            />
+            <motion.span
+              whileHover={{ backgroundColor: 'rgb(161 161 170 / 0.3)' }}
+              initial={{ backgroundColor: 'transparent' }}
+              animate={{ rotate: open ? 180 : 0 }}
+              transition={{
+                duration: 0.15,
+                type: 'tween',
+              }}
+              className="rounded-full p-2 text-neutral-950"
+            >
+              <HiArrowDown size={24} />
+            </motion.span>
           </Disclosure.Button>
-          <Transition
-            enter="transition duration-300"
-            enterFrom="transform -translate-y-2 opacity-0"
-            enterTo="transform opacity-100"
-            leave="transition duration-200"
-            leaveFrom="transform opacity-100"
-            leaveTo="transform -translate-y-2 opacity-0"
-          >
-            <Disclosure.Panel className="py-2 text-sm">
+          <AnimatePresence>
+            <Disclosure.Panel
+              as={motion.div}
+              initial={{ y: -20, opacity: 0.2 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{
+                y: -20,
+                opacity: 0.2,
+                transition: { duration: 0.2, type: 'tween' },
+              }}
+              transition={{
+                duration: 0.15,
+                type: 'tween',
+              }}
+              className="py-2 text-sm"
+            >
               {answer}
             </Disclosure.Panel>
-          </Transition>
+          </AnimatePresence>
         </>
       )}
     </Disclosure>
