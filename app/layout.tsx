@@ -2,6 +2,7 @@ import { Inter } from 'next/font/google';
 import NavBar from './NavBar';
 import Footer from './Footer';
 import '../styles/globals.css';
+import { openGraph } from './shared-metadata';
 
 const inter = Inter({
   weight: '400',
@@ -15,6 +16,9 @@ export const metadata = {
   title: {
     template: '%s | Alumni Portal',
     absolute: 'Home | Alumni Portal',
+  },
+  openGraph: {
+    ...openGraph,
   },
 };
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
