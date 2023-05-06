@@ -6,7 +6,7 @@ import Message from './Message';
 import Team from './Team';
 
 export const metadata: Metadata = {
-  title: 'About | AlumniPortal',
+  title: 'About',
   description: 'About Alumni Affairs, IIITDM.',
 };
 

@@ -4,7 +4,7 @@ import Tabs from './Tabs';
 import Header from 'app/Header';
 
 export const metadata: Metadata = {
-  title: 'Events | AlumniPortal',
+  title: 'Events',
   description: 'Event associated with Alumni Affairs, IIITDM.',
 };
 

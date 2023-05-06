@@ -4,7 +4,7 @@ import Header from 'app/Header';
 import ImageCard from './ImageCard';
 
 export const metadata: Metadata = {
-  title: 'Gallery | AlumniPortal',
+  title: 'Gallery',
   description: 'A Gallery of Images which show our recent work.',
 };
 

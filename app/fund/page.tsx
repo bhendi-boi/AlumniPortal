@@ -4,7 +4,7 @@ import Header from 'app/Header';
 import FAQ from './FAQ';
 
 export const metadata: Metadata = {
-  title: 'Fund | AlumniPortal',
+  title: 'Fund',
   description: 'This page contains information related to alumni fund.',
 };
 const page = () => {

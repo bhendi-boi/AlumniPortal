@@ -1,7 +1,6 @@
-import React from 'react';
+import Image from 'next/image';
 import NewsRoom from './NewsRoom';
 import Events from './Events';
-import Image from 'next/image';
 
 const page = () => {
   return (

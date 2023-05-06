@@ -4,9 +4,7 @@ import Header from 'app/Header';
 import Form from './Form';
 
 export const metadata: Metadata = {
-  title: {
-    absolute: 'Send Query',
-  },
+  title: 'Send Query',
   description: 'Questions? Send your queries here.',
 };
 const page = () => {
