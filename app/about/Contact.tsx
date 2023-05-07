@@ -11,7 +11,7 @@ const Contact = () => {
     console.log(message, email);
   };
   return (
-    <section aria-labelledby="contact" className="mb-8 px-5 md:p-0">
+    <section aria-labelledby="contact" className="mb-8">
       <header className="mx-auto mb-12 max-w-xl">
         <h2
           id="contact"

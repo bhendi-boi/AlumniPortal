@@ -3,7 +3,7 @@ import { messageFromTheDirector, messageFromThePIC } from 'content/about';
 
 const Message = () => {
   return (
-    <div className="mx-auto my-8 max-w-3xl p-5 md:p-0">
+    <div className="mx-auto my-8 max-w-3xl">
       <section
         aria-labelledby="message-from-director"
         className="mb-4 rounded-lg bg-secondary-background p-4 md:ml-40"
