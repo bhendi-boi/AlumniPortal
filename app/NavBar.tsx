@@ -31,7 +31,10 @@ const NavBar = () => {
   }, []);
   useEffect(() => {
     if (!window) return;
-    document.body.classList.toggle('overflow-y-hidden');
+    const body = document.getElementById('body');
+    if (!body) return;
+    if (isOpen) body.classList.add('overflow-y-hidden');
+    else body.classList.remove('overflow-y-hidden');
   }, [isOpen]);
   return (
     <header
