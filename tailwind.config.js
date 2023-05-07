@@ -14,11 +14,14 @@ module.exports = {
       fontFamily: {
         inter: ['var(--Inter)'],
       },
+      fontSize: {
+        xxs: ['0.5rem', '0.75rem'],
+      },
       padding: {
         1.5: '0.375rem',
       },
-      fontSize: {
-        xxs: ['0.5rem', '0.75rem'],
+      height: {
+        0.5: '0.125rem',
       },
     },
   },
