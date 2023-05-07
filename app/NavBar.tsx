@@ -3,10 +3,11 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useSelectedLayoutSegment } from 'next/navigation';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Menu } from '@headlessui/react';
 import NavLink from './NavLink';
 
-import { RxHamburgerMenu } from 'react-icons/rx';
+import { HiMenuAlt4 } from 'react-icons/hi';
 import { AiOutlineClose } from 'react-icons/ai';
 import clsx from 'clsx';
 
@@ -28,12 +29,16 @@ const NavBar = () => {
     window.addEventListener('scroll', handler, { passive: true });
     return () => window.removeEventListener('scroll', handler);
   }, []);
+  useEffect(() => {
+    if (!window) return;
+    document.body.classList.toggle('overflow-y-hidden');
+  }, [isOpen]);
   return (
     <header
       style={{ boxSizing: 'border-box' }}
       className={clsx(
         'sticky top-0 z-10 flex h-16 border-b border-background bg-white px-5 md:px-10',
-        showShadow && 'shadow',
+        showShadow && 'shadow-lg',
       )}
     >
       <div className="flex flex-1 items-center gap-4">
@@ -91,89 +96,104 @@ const NavBar = () => {
         </NavLink>
       </nav>
       {/* mobile nav */}
-      <button
-        title="Open Menu"
-        onClick={() => setIsOpen((prev) => !prev)}
-        type="button"
-        className="z-10 block md:hidden"
-      >
-        {isOpen ? <AiOutlineClose size={30} /> : <RxHamburgerMenu size={30} />}
-      </button>
-      {isOpen && (
-        <>
-          {/* // TODO! make the background of navbar white when it is open */}
-          {/* overlay */}
-          <div
-            onClick={() => setIsOpen(false)}
-            className="fixed inset-0 -z-10 bg-black/70"
-          />
-          <ul className="absolute left-0 top-16 flex w-full flex-col gap-3 bg-white py-4 [&_li]:px-10">
-            <li>
-              <NavLink
-                href="/"
-                variant={path === null ? 'active' : 'primary'}
-                title="Home"
+      <Menu>
+        <Menu.Button
+          className="md:hidden"
+          onClick={() => setIsOpen((prev) => !prev)}
+        >
+          {({ open }) =>
+            open ? <AiOutlineClose size={30} /> : <HiMenuAlt4 size={30} />
+          }
+        </Menu.Button>
+        <AnimatePresence>
+          {isOpen && (
+            <Menu.Items
+              static
+              onClick={() => setIsOpen(false)}
+              className="absolute right-0 top-16 z-10 h-screen w-full  overflow-hidden bg-neutral-950/30"
+            >
+              <motion.ul
+                initial={{ x: '100%', opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: '100%', opacity: 1 }}
+                transition={{ type: 'tween', duration: 0.25 }}
+                className="absolute right-0 top-0 flex h-screen w-2/3 flex-col gap-4 bg-background p-6"
               >
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                href="/about"
-                variant={path === 'about' ? 'active' : 'primary'}
-                title="About"
-              >
-                About
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                href="/events"
-                variant={path === 'events' ? 'active' : 'primary'}
-                title="Events"
-              >
-                Events
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                href="/gallery"
-                variant={path === 'gallery' ? 'active' : 'primary'}
-                title="Gallery"
-              >
-                Gallery
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                href="/services"
-                variant={path === 'services' ? 'active' : 'primary'}
-                title="Services"
-              >
-                Services
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                href="/fund"
-                variant={path === 'fund' ? 'active' : 'primary'}
-                title="Fund"
-              >
-                Fund
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                href="/login"
-                variant="filled"
-                title="Login (Admin Only)"
-              >
-                Login
-              </NavLink>
-            </li>
-          </ul>
-        </>
-      )}
+                <Menu.Item as="li" className="">
+                  <NavLink
+                    onClick={() => setIsOpen(false)}
+                    href="/"
+                    variant={path === null ? 'active' : 'primary'}
+                    title="Home"
+                  >
+                    Home
+                  </NavLink>
+                </Menu.Item>
+                <Menu.Item as="li">
+                  <NavLink
+                    onClick={() => setIsOpen(false)}
+                    href="/about"
+                    variant={path === 'about' ? 'active' : 'primary'}
+                    title="About"
+                  >
+                    About
+                  </NavLink>
+                </Menu.Item>
+                <Menu.Item as="li">
+                  <NavLink
+                    onClick={() => setIsOpen(false)}
+                    href="/events"
+                    variant={path === 'events' ? 'active' : 'primary'}
+                    title="Events"
+                  >
+                    Events
+                  </NavLink>
+                </Menu.Item>
+                <Menu.Item as="li">
+                  <NavLink
+                    onClick={() => setIsOpen(false)}
+                    href="/gallery"
+                    variant={path === 'gallery' ? 'active' : 'primary'}
+                    title="Gallery"
+                  >
+                    Gallery
+                  </NavLink>
+                </Menu.Item>
+                <Menu.Item as="li">
+                  <NavLink
+                    onClick={() => setIsOpen(false)}
+                    href="/services"
+                    variant={path === 'services' ? 'active' : 'primary'}
+                    title="Services"
+                  >
+                    Services
+                  </NavLink>
+                </Menu.Item>
+                <Menu.Item as="li">
+                  <NavLink
+                    onClick={() => setIsOpen(false)}
+                    href="/fund"
+                    variant={path === 'fund' ? 'active' : 'primary'}
+                    title="Fund"
+                  >
+                    Fund
+                  </NavLink>
+                </Menu.Item>
+                <Menu.Item as="li">
+                  <NavLink
+                    onClick={() => setIsOpen(false)}
+                    href="/login"
+                    variant="filled"
+                    title="Login (Admin Only)"
+                  >
+                    Login
+                  </NavLink>
+                </Menu.Item>
+              </motion.ul>
+            </Menu.Items>
+          )}
+        </AnimatePresence>
+      </Menu>
     </header>
   );
 };
