@@ -8,7 +8,7 @@ import { Menu } from '@headlessui/react';
 import NavLink from './NavLink';
 
 import { HiMenuAlt4 } from 'react-icons/hi';
-import { AiOutlineClose } from 'react-icons/ai';
+import { GrFormClose } from 'react-icons/gr';
 import clsx from 'clsx';
 
 const NavBar = () => {
@@ -102,10 +102,11 @@ const NavBar = () => {
       <Menu>
         <Menu.Button
           className="md:hidden"
+          title="Menu button"
           onClick={() => setIsOpen((prev) => !prev)}
         >
           {({ open }) =>
-            open ? <AiOutlineClose size={30} /> : <HiMenuAlt4 size={30} />
+            open ? <GrFormClose size={30} /> : <HiMenuAlt4 size={30} />
           }
         </Menu.Button>
         <AnimatePresence>
@@ -113,7 +114,7 @@ const NavBar = () => {
             <Menu.Items
               static
               onClick={() => setIsOpen(false)}
-              className="absolute right-0 top-16 z-10 h-screen w-full  overflow-hidden bg-neutral-950/30"
+              className="absolute right-0 top-16 z-10 h-screen w-full overflow-hidden bg-neutral-950/30"
             >
               <motion.ul
                 initial={{ x: '100%', opacity: 0 }}
