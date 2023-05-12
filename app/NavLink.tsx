@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import Link, { LinkProps } from 'next/link';
 import { motion } from 'framer-motion';
@@ -35,7 +36,7 @@ const NavLink = ({ children, variant, title, ...restProps }: NavLinkProps) => {
           initial={{ scale: 0.9 }}
           animate={{ scale: 1 }}
           transition={{ type: 'spring', damping: 40, stiffness: 300 }}
-          className="absolute -bottom-[0.125rem] left-0 h-0.5 w-full bg-nav-blue"
+          className="absolute -bottom-[0.125rem] left-0 hidden h-0.5 w-full bg-nav-blue md:inline"
           layoutId="nav-link-underline"
         />
       )}
