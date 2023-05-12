@@ -17,6 +17,7 @@ export const metadata = {
     template: '%s | Alumni Portal',
     absolute: 'Home | Alumni Portal',
   },
+  description: 'Welcome to Alumni Portal, IIITDM where alumni can ....',
   openGraph: {
     ...openGraph,
   },

@@ -7,7 +7,8 @@ import Team from './Team';
 
 export const metadata: Metadata = {
   title: 'About',
-  description: 'About Alumni Affairs, IIITDM.',
+  description:
+    "This webpage contains a detailed overview of the Alumni Affairs, IIITDM's mission, goals, and values, as well as a brief history of its founding and evolution over time. Visitors to the webpage can learn about the current leadership team, including their roles and responsibilities, as well as the members who make up the organization.",
 };
 
 const page = () => {
