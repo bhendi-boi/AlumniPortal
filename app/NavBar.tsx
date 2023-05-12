@@ -86,7 +86,7 @@ const NavBar = () => {
         >
           Gallery
         </NavLink>
-        <Services />
+        <Services active={path === 'services'} />
         <NavLink
           href="/fund"
           variant={path === 'fund' ? 'active' : 'primary'}
@@ -204,13 +204,19 @@ const NavBar = () => {
 
 export default NavBar;
 
-function Services() {
+function Services({ active }: { active: boolean }) {
   return (
     <Menu as="div" className="relative">
       {({ open }) => (
         <>
-          <Menu.Button className="block w-full text-xl font-medium text-black underline-offset-2 hover:underline">
+          <Menu.Button className="block w-full text-xl font-medium text-black">
             Services
+            {active && (
+              <motion.span
+                className="absolute -bottom-[0.125rem] left-0 h-0.5 w-full bg-nav-blue"
+                layoutId="nav-link-underline"
+              />
+            )}
           </Menu.Button>
           {open && (
             <Menu.Items
