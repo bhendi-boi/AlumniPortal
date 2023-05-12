@@ -22,7 +22,10 @@ const Contact = () => {
       </header>
       <form onSubmit={handleSubmit} className="mx-auto max-w-xl">
         <div className="mb-4 flex flex-col gap-1">
-          <label htmlFor="email" className="text-contact-gray">
+          <label
+            htmlFor="email"
+            className="cursor-pointer font-medium text-contact-blue"
+          >
             Email
           </label>
           <input
@@ -37,7 +40,10 @@ const Contact = () => {
           />
         </div>
         <fieldset className="mb-4 flex flex-col gap-1">
-          <label htmlFor="message" className="text-contact-gray">
+          <label
+            htmlFor="message"
+            className="cursor-pointer font-medium text-contact-blue"
+          >
             Message
           </label>
           <textarea

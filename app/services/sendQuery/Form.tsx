@@ -14,7 +14,10 @@ const Form = () => {
   return (
     <form onSubmit={handleSubmit} className="max-w-xl md:ml-20">
       <div className="mb-4 flex flex-col gap-1">
-        <label htmlFor="email" className="text-contact-gray">
+        <label
+          htmlFor="email"
+          className="cursor-pointer font-medium text-contact-blue"
+        >
           Email
         </label>
         <input
@@ -30,7 +33,10 @@ const Form = () => {
       </div>
       {/* // ! clicking on label should foucs on textarea */}
       <fieldset className="mb-4 flex flex-col gap-1">
-        <label htmlFor="message" className="text-contact-gray">
+        <label
+          htmlFor="message"
+          className="cursor-pointer font-medium text-contact-blue"
+        >
           Message
         </label>
         <textarea
