@@ -94,9 +94,9 @@ const NavBar = () => {
         >
           Fund
         </NavLink>
-        <NavLink href="/login" variant="filled" title="Login (Admin Only)">
+        {/* <NavLink href="/login" variant="filled" title="Login (Admin Only)">
           Login
-        </NavLink>
+        </NavLink> */}
       </nav>
       {/* mobile nav */}
       <Menu>
@@ -183,7 +183,7 @@ const NavBar = () => {
                     Fund
                   </NavLink>
                 </Menu.Item>
-                <Menu.Item as="li">
+                {/* <Menu.Item as="li">
                   <NavLink
                     onClick={() => setIsOpen(false)}
                     href="/login"
@@ -192,7 +192,7 @@ const NavBar = () => {
                   >
                     Login
                   </NavLink>
-                </Menu.Item>
+                </Menu.Item> */}
               </motion.ul>
             </Menu.Items>
           )}
