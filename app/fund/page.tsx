@@ -11,7 +11,10 @@ const page = () => {
   return (
     <>
       <Header title="Alumni Fund" />
-      <FAQ />
+      <div className="flex items-center justify-center">
+        <h2 className="text-4xl">Coming soon ...</h2>
+      </div>
+      {/* <FAQ /> */}
     </>
   );
 };
