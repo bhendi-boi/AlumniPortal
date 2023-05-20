@@ -1,46 +1,44 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Tab } from '@headlessui/react';
 import { clsx } from 'clsx';
 
 const Tabs = () => {
-  const [selectedIndex, setSelectedIndex] = useState<null | number>(null);
-  useEffect(() => {
-    setSelectedIndex(0);
-  }, []);
   return (
     <Tab.Group
       as="div"
-      className="mb-8 max-w-5xl rounded-lg border border-background md:mx-auto"
+      className="mb-8 max-w-5xl rounded-lg border border-background md:mx-auto md:mb-16"
     >
-      <Tab.List className="flex divide-x overflow-x-auto border-b border-background">
-        <Tab as={React.Fragment}>
-          {({ selected }) => (
-            <StyledButton selected={selected}>All</StyledButton>
-          )}
-        </Tab>
-        <Tab>
-          {({ selected }) => (
-            <StyledButton selected={selected}>Talks</StyledButton>
-          )}
-        </Tab>
-        <Tab>
-          {({ selected }) => (
-            <StyledButton selected={selected}>Reunions</StyledButton>
-          )}
-        </Tab>
-        <Tab>
-          {({ selected }) => (
-            <StyledButton selected={selected}>Conferences</StyledButton>
-          )}
-        </Tab>
-        <Tab>
-          {({ selected }) => (
-            <StyledButton selected={selected}>Others</StyledButton>
-          )}
-        </Tab>
-      </Tab.List>
+      <div className="h-16 overflow-hidden border-b border-background">
+        <Tab.List className="flex h-20 divide-x overflow-x-auto pb-4">
+          <Tab>
+            {({ selected }) => (
+              <StyledButton selected={selected}>All</StyledButton>
+            )}
+          </Tab>
+          <Tab>
+            {({ selected }) => (
+              <StyledButton selected={selected}>Talks</StyledButton>
+            )}
+          </Tab>
+          <Tab>
+            {({ selected }) => (
+              <StyledButton selected={selected}>Reunions</StyledButton>
+            )}
+          </Tab>
+          <Tab>
+            {({ selected }) => (
+              <StyledButton selected={selected}>Conferences</StyledButton>
+            )}
+          </Tab>
+          <Tab>
+            {({ selected }) => (
+              <StyledButton selected={selected}>Others</StyledButton>
+            )}
+          </Tab>
+        </Tab.List>
+      </div>
       <Tab.Panels className="min-h-screen">
         <Tab.Panel>Content all</Tab.Panel>
         <Tab.Panel>Content talks</Tab.Panel>
@@ -73,7 +71,7 @@ function StyledButton({
       {selected && (
         <motion.span
           layoutId="event-route-filter-underline"
-          className="absolute bottom-0 left-0 inline-block h-0.5 w-full bg-black"
+          className="absolute -bottom-px left-0 inline-block h-0.5 w-full bg-black"
         />
       )}
     </button>
