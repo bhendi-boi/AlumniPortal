@@ -5,3 +5,14 @@ export type AlumniDetails = {
   year: number;
   department: 'CSE' | 'ECE' | 'MECH' | 'SM' | 'CSAI';
 };
+
+export type MemberData = {
+  imagePath: string;
+  name: string;
+  position:
+    | 'Professor In Charge'
+    | 'Secretary'
+    | 'Joint Secretary'
+    | 'Coordinator';
+  email: string;
+};
