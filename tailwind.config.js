@@ -10,6 +10,7 @@ module.exports = {
         'contact-blue': '#0046AF',
         'contact-gray': '#8D93A1',
         'secondary-text': '#727272',
+        'footer-background': '#E5E5E5',
       },
       fontFamily: {
         inter: ['var(--Inter)'],
@@ -21,6 +22,9 @@ module.exports = {
         1.5: '0.375rem',
       },
       height: {
+        0.5: '0.125rem',
+      },
+      gap: {
         0.5: '0.125rem',
       },
     },
