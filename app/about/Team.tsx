@@ -67,7 +67,7 @@ const COORDINATORS: MemberData[] = [
 
 const Team = () => {
   return (
-    <section className="mx-auto my-8 max-w-5xl">
+    <section className="mx-auto my-8 max-w-5xl md:my-16">
       {/* // ! add lines around Team */}
       <header className="mx-auto mb-4 max-w-3xl">
         <h2 className="text-center text-2xl font-medium">Team</h2>
