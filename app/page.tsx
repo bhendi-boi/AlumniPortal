@@ -1,5 +1,5 @@
 import NewsRoom from './NewsRoom';
-import Events from './Events';
+import Activities from './Activities';
 // import Carousel from './Carousel';
 
 const page = () => {
@@ -8,7 +8,7 @@ const page = () => {
       {/* <Carousel /> */}
       <section className="mt-8 flex flex-col gap-4 md:flex-row md:gap-8">
         <NewsRoom />
-        <Events />
+        <Activities />
       </section>
     </div>
   );

@@ -32,7 +32,7 @@ const NewsRoom = () => {
   return (
     <section
       aria-labelledby="newsroom"
-      className="rounded-md border border-background md:max-w-3xl"
+      className="w-full rounded-md border border-background md:max-w-3xl"
     >
       <h2
         id="newsroom"
