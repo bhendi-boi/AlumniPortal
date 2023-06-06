@@ -88,11 +88,11 @@ const NavBar = () => {
         </NavLink>
         <Services active={path === 'services'} />
         <NavLink
-          href="/fund"
-          variant={path === 'fund' ? 'active' : 'primary'}
-          title="Fund"
+          href="/alumniDirectory"
+          variant={path === 'alumniDirectory' ? 'active' : 'primary'}
+          title="Alumni Directory"
         >
-          Fund
+          Directory
         </NavLink>
         {/* <NavLink href="/login" variant="filled" title="Login (Admin Only)">
           Login
@@ -175,12 +175,11 @@ const NavBar = () => {
                 </Menu.Item>
                 <Menu.Item as="li">
                   <NavLink
-                    onClick={() => setIsOpen(false)}
-                    href="/fund"
-                    variant={path === 'fund' ? 'active' : 'primary'}
-                    title="Fund"
+                    href="/alumniDirectory"
+                    variant={path === 'alumniDirectory' ? 'active' : 'primary'}
+                    title="Alumni Directory"
                   >
-                    Fund
+                    Directory
                   </NavLink>
                 </Menu.Item>
                 {/* <Menu.Item as="li">
@@ -238,10 +237,10 @@ function Services({ active }: { active: boolean }) {
                 {({ active }) => (
                   <Link
                     className={active ? 'text-black' : 'text-secondary-text'}
-                    title="Alumni Directory"
-                    href="/services/alumniDirectory"
+                    title="Alumni Achievements"
+                    href="/services/alumniAchievements"
                   >
-                    Alumni Directory
+                    Alumni Achievements
                   </Link>
                 )}
               </Menu.Item>
@@ -249,10 +248,10 @@ function Services({ active }: { active: boolean }) {
                 {({ active }) => (
                   <Link
                     className={active ? 'text-black' : 'text-secondary-text'}
-                    title="Alumni Achievements"
-                    href="/services/alumniAchievements"
+                    title="Alumni Directory"
+                    href="/services/fund"
                   >
-                    Alumni Achievements
+                    Fund
                   </Link>
                 )}
               </Menu.Item>

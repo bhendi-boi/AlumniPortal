@@ -29,19 +29,15 @@ const page = () => {
         <li>
           <NavLink
             variant="active"
-            title="Alumni Directory"
-            href="/services/alumniDirectory"
-          >
-            Alumni Directory
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            variant="active"
             title="Alumni Achievements"
             href="/services/alumniAchievements"
           >
             Alumni Achievements
+          </NavLink>
+        </li>
+        <li>
+          <NavLink variant="active" title="Alumni Fund" href="/services/fund">
+            Fund
           </NavLink>
         </li>
         <li>
