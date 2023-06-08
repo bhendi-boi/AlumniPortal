@@ -1,14 +1,22 @@
 import NewsRoom from './NewsRoom';
 import Activities from './Activities';
 import Carousel from './Carousel';
+import { supabase } from './supabase';
 
-const page = () => {
+async function getData() {
+  const { data, error } = await supabase.from('activities').select();
+
+  return data;
+}
+
+const page = async () => {
+  const data = await getData();
   return (
     <div className="my-20">
-      <Carousel />
+      {/* <Carousel /> */}
       <section className="mt-8 flex flex-col gap-4 md:flex-row md:gap-8">
         <NewsRoom />
-        <Activities />
+        <Activities data={data} />
       </section>
     </div>
   );
