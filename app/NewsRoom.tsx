@@ -29,7 +29,6 @@ async function getNewsRoomData() {
 
 const NewsRoom = async () => {
   const { data, error } = await getNewsRoomData();
-  console.log(data);
   const newsArticles = data?.map((item) => {
     const time = getTime(new Date(item.created_at));
     return {
