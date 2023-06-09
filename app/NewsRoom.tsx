@@ -1,34 +1,43 @@
-import React from 'react';
+import { supabase } from './supabase';
 
-const data = [
-  {
-    title:
-      'Venkata Chandrashekharan, IIITDM Alumni helping Elon Musk with Twitter',
-    time: '24th March, 2023',
-  },
-  {
-    title: 'Welcoming New Members of Alumni Affairs',
-    time: '7th March, 2023',
-  },
-  {
-    title: 'Lab Visits at IISc Bangalore',
-    time: '23rd January, 2023',
-  },
-  {
-    title: 'MBAtrek Corporate Competition - UXO 3.0',
-    time: '12th December, 2022',
-  },
-  {
-    title: 'Alumni Mentorship Programme',
-    time: '10th December, 2022',
-  },
-  {
-    title: 'Key Tips for attending Interviews',
-    time: '15th November, 2022',
-  },
+const MONTHS = [
+  'JAN',
+  'FEB',
+  'MAR',
+  'APR',
+  'MAY',
+  'JUN',
+  'JUL',
+  'AUG',
+  'SEP',
+  'OCT',
+  'NOV',
+  'DEC',
 ];
 
-const NewsRoom = () => {
+function getTime(d: Date) {
+  const year = d.getUTCFullYear();
+  const month = MONTHS[d.getUTCMonth()];
+  const date = d.getUTCDate();
+  return `${date} ${month}, ${year}`;
+}
+
+async function getNewsRoomData() {
+  const { data, error } = await supabase.from('newsroom').select();
+  return { data, error };
+}
+
+const NewsRoom = async () => {
+  const { data, error } = await getNewsRoomData();
+  console.log(data);
+  const newsArticles = data?.map((item) => {
+    const time = getTime(new Date(item.created_at));
+    return {
+      title: item.title,
+      time,
+    };
+  });
+
   return (
     <section
       aria-labelledby="newsroom"
@@ -40,19 +49,27 @@ const NewsRoom = () => {
       >
         NewsRoom
       </h2>
-      <div className="divide-y divide-background">
-        {data.map((newsArticle) => {
-          return (
-            <div
-              key={newsArticle.title}
-              className="flex flex-col px-5 py-3 md:flex-row"
-            >
-              <h3 className="flex-1 text-black">{newsArticle.title}</h3>
-              <p className="text-sm text-secondary-text">{newsArticle.time}</p>
-            </div>
-          );
-        })}
-      </div>
+      {error || data?.length === 0 ? (
+        <div className="p-6">
+          <p className="text-lg">No articles to show</p>
+        </div>
+      ) : (
+        <ul className="divide-y divide-background">
+          {newsArticles?.map((newsArticle) => {
+            return (
+              <li
+                key={newsArticle.title}
+                className="flex flex-col px-5 py-3 md:flex-row"
+              >
+                <h3 className="flex-1 text-black">{newsArticle.title}</h3>
+                <p className="text-sm text-secondary-text">
+                  {newsArticle.time}
+                </p>
+              </li>
+            );
+          })}
+        </ul>
+      )}
     </section>
   );
 };

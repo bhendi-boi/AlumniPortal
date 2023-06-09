@@ -1,4 +1,4 @@
-import React from 'react';
+import { supabase } from './supabase';
 
 type Activity = {
   title: string;
@@ -28,26 +28,24 @@ function sameDate(d1: Date, d2: Date) {
   return true;
 }
 
-const Activities = ({
-  data,
-}: {
-  data:
-    | {
-        [x: string]: any;
-      }[]
-    | null;
-}) => {
+// ! TODO error handling
+async function getActivitiesData() {
+  const { data, error } = await supabase.from('activities').select();
+  return data;
+}
+
+const Activities = async () => {
+  const data = await getActivitiesData();
   if (!data) {
     return null;
   }
 
   const activities: Activity[] = data.map((item) => {
-    console.log(new Date(item.time).getUTCDate());
     const dateObject = new Date(item.time);
     const today = new Date();
     const relativeTime = sameDate(dateObject, today) ? 'today' : 'upcoming';
-    const month = MONTHS[dateObject.getMonth()];
-    const date = dateObject.getDate().toString();
+    const month = MONTHS[dateObject.getUTCMonth()];
+    const date = dateObject.getUTCDate().toString();
     return {
       title: item.title,
       time: [month, date],
