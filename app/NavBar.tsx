@@ -24,7 +24,6 @@ const NavBar = () => {
       } else {
         setShowShadow(false);
       }
-      console.log(window.scrollY);
     };
     window.addEventListener('scroll', handler, { passive: true });
     return () => window.removeEventListener('scroll', handler);
