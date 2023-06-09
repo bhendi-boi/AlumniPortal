@@ -10,23 +10,48 @@ const Footer = () => {
           {/* institute links */}
           <ul className="flex w-full flex-col gap-1">
             <li>
-              <Link target="_blank" href="https://iiitdm.ac.in/">
+              <Link
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://iiitdm.ac.in/"
+              >
                 Institute Website
               </Link>
             </li>
             <li>
-              <Link target="_blank" href="https://www.placements.iiitdm.ac.in/">
+              <Link
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://www.placements.iiitdm.ac.in/"
+              >
                 Institute Placement cell
               </Link>
             </li>
             <li>
-              <Link target="_blank" href="http://www.madeit.iiitdm.ac.in/">
+              <Link
+                rel="noopener noreferrer"
+                target="_blank"
+                href="http://www.madeit.iiitdm.ac.in/"
+              >
                 MaDeIT website
               </Link>
             </li>
             <li>
-              <Link target="_blank" href="http://www.techsac.iiitdm.ac.in/">
+              <Link
+                rel="noopener noreferrer"
+                target="_blank"
+                href="http://www.techsac.iiitdm.ac.in/"
+              >
                 Technical Affairs
+              </Link>
+            </li>
+            <li>
+              <Link
+                rel="noopener noreferrer"
+                target="_blank"
+                href="http://hostel.iiitdm.ac.in/"
+              >
+                Hostel Office
               </Link>
             </li>
           </ul>
