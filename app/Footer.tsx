@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="mx-auto max-w-5xl">
         <div className="mb-20 flex flex-col gap-8 px-4 sm:flex-row sm:px-8 md:px-12 lg:px-16">
           {/* institute links */}
-          <ul className="flex w-full flex-col gap-1">
+          <ul className="flex w-full flex-col gap-1.5">
             <li>
               <Link
                 rel="noopener noreferrer"
