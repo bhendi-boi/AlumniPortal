@@ -8,7 +8,13 @@ import clsx from 'clsx';
 const images = [
   {
     src: '/nirf.jpg',
-    alt: 'NIRF 2023 IIITDM place',
+    alt: 'NIRF 2023 IIITDM ranking in innovation.',
+    height: 500,
+    width: 1600,
+  },
+  {
+    src: '/5thInterIIITSportsMeet.png',
+    alt: 'Fifth inter IIIT sports meet.',
     height: 500,
     width: 1600,
   },
@@ -21,12 +27,6 @@ const images = [
   {
     src: '/HomePageHeroSection.png',
     alt: 'Poster for MDes (IPD) 2023',
-    height: 424,
-    width: 1360,
-  },
-  {
-    src: '/convocation.png',
-    alt: 'IIITDM celebrates 10th convocation.',
     height: 424,
     width: 1360,
   },
@@ -53,47 +53,53 @@ const Carousel = () => {
     setCurrentIndex(nextIndex);
   };
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     handleClick('plus');
-  //   }, 1000);
-  //   () => clearInterval(interval);
-  // }, []);
-
-  console.log(currentIndex);
   return (
-    <div className="relative isolate my-auto h-96 overflow-hidden">
-      <NavigationButton variant="left" onClick={() => handleClick('minus')}>
-        <AiOutlineLeft size={30} />
-      </NavigationButton>
-      <NavigationButton variant="right" onClick={() => handleClick('plus')}>
-        <AiOutlineRight size={30} />
-      </NavigationButton>
-      <ul className="my-auto flex h-[400px] overflow-x-auto overflow-y-hidden pb-4">
-        {images.map((image, index) => {
-          if (currentIndex === index)
+    <div>
+      <div className="relative isolate my-auto max-h-[24rem]">
+        <NavigationButton variant="left" onClick={() => handleClick('minus')}>
+          <AiOutlineLeft className="h-4 w-4 sm:h-6 sm:w-6 md:h-8 md:w-8" />
+        </NavigationButton>
+        <NavigationButton variant="right" onClick={() => handleClick('plus')}>
+          <AiOutlineRight className="h-4 w-4 sm:h-6 sm:w-6 md:h-8 md:w-8" />
+        </NavigationButton>
+        <div className="flex min-h-full items-center">
+          <AnimatePresence mode="wait">
+            <motion.div
+              initial={{ opacity: 0.8 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0.8 }}
+              transition={{
+                type: 'tween',
+                ease: 'easeInOut',
+                duration: 0.5,
+              }}
+              layoutId="carousel-images"
+              className=""
+              key={images[currentIndex].src}
+            >
+              <Image className="object-contain" {...images[currentIndex]} />
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </div>
+      <div className="my-4">
+        <ul className="flex justify-center gap-4">
+          {images.map((_, index) => {
             return (
-              <AnimatePresence>
-                <motion.li
-                  initial={{ opacity: 0.8 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0.8 }}
-                  transition={{
-                    type: 'tween',
-                    duration: 4,
-                    ease: 'circInOut',
-                  }}
-                  layoutId="carousel-images"
-                  className="my-auto max-w-full shrink-0 md:h-[400px]"
-                  key={index}
-                >
-                  <Image className="object-cover" {...image} />
-                </motion.li>
-              </AnimatePresence>
+              <li
+                onClick={() => {
+                  setCurrentIndex(index);
+                }}
+                className={clsx(
+                  'h-3 w-3 cursor-pointer rounded-full',
+                  currentIndex === index && 'bg-black',
+                  currentIndex !== index && 'bg-zinc-400',
+                )}
+              ></li>
             );
-          return null;
-        })}
-      </ul>
+          })}
+        </ul>
+      </div>
     </div>
   );
 };
@@ -113,7 +119,7 @@ function NavigationButton({
     <button
       {...rest}
       className={clsx(
-        'absolute  z-10 -translate-y-1/2 cursor-pointer rounded-full bg-gray-50 p-2 text-gray-900 hover:bg-zinc-200 active:bg-zinc-100',
+        'absolute z-10 -translate-y-1/2 cursor-pointer rounded-full bg-gray-50 p-2 text-gray-900 opacity-80 hover:bg-zinc-200 hover:opacity-100 active:bg-zinc-100 active:opacity-100',
         variant === 'left' && 'left-1 top-1/2',
         variant === 'right' && 'right-1 top-1/2',
       )}
