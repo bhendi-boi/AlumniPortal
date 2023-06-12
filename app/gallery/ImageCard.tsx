@@ -1,19 +1,17 @@
 import React from 'react';
-import Image from 'next/image';
-type ImageCardProps = {
-  src: string;
-  alt: string;
-};
-const ImageCard = ({ src, alt }: ImageCardProps) => {
+import Image, { ImageProps } from 'next/image';
+
+const ImageCard = ({ src, alt, width, height }: ImageProps) => {
   return (
-    // ! add src
-    <Image
-      src={'/convocation.png'}
-      alt={alt}
-      width={400}
-      height={225}
-      className="overflow-hidden rounded-md"
-    />
+    <li>
+      <Image
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        className="overflow-hidden rounded-md"
+      />
+    </li>
   );
 };
 

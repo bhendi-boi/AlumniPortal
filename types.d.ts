@@ -72,6 +72,30 @@ export interface Database {
         };
         Relationships: [];
       };
+      gallery: {
+        Row: {
+          alt_text: string;
+          height: number;
+          id: number;
+          link: string;
+          width: number;
+        };
+        Insert: {
+          alt_text: string;
+          height: number;
+          id?: number;
+          link: string;
+          width: number;
+        };
+        Update: {
+          alt_text?: string;
+          height?: number;
+          id?: number;
+          link?: string;
+          width?: number;
+        };
+        Relationships: [];
+      };
       newsroom: {
         Row: {
           content: string;
