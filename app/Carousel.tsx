@@ -73,7 +73,7 @@ function StateCarousel({ images }: { images: Images }) {
                 duration: 0.5,
               }}
               layoutId="carousel-images"
-              className=""
+              className="overflow-hidden rounded-lg bg-gradient-to-br from-gray-600/30 via-gray-600/50 to-gray-600/30"
             >
               <Image
                 className="object-contain"
