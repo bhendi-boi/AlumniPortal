@@ -75,21 +75,21 @@ export interface Database {
       newsroom: {
         Row: {
           content: string;
-          created_at: string | null;
+          created_at: string;
           id: number;
           summary_for_seo: string;
           title: string;
         };
         Insert: {
           content: string;
-          created_at?: string | null;
+          created_at?: string;
           id?: number;
           summary_for_seo: string;
           title: string;
         };
         Update: {
           content?: string;
-          created_at?: string | null;
+          created_at?: string;
           id?: number;
           summary_for_seo?: string;
           title?: string;
