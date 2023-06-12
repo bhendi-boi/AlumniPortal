@@ -4,37 +4,34 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
 import clsx from 'clsx';
+import { supabase } from './supabase';
 
-const images = [
-  {
-    src: '/nirf.jpg',
-    alt: 'NIRF 2023 IIITDM ranking in innovation.',
-    height: 500,
-    width: 1600,
-  },
-  {
-    src: '/5thInterIIITSportsMeet.png',
-    alt: 'Fifth inter IIIT sports meet.',
-    height: 500,
-    width: 1600,
-  },
-  {
-    src: '/usConVisit.jpg',
-    alt: 'Officials from the US consulate, chennai visited IIITDM',
-    height: 480,
-    width: 1536,
-  },
-  {
-    src: '/HomePageHeroSection.png',
-    alt: 'Poster for MDes (IPD) 2023',
-    height: 424,
-    width: 1360,
-  },
-];
+async function getImagesData() {
+  const { data, error } = await supabase.from('carousel').select();
+  return { data, error };
+}
 
-const Carousel = () => {
+const Carousel = async () => {
+  const { data: images, error } = await getImagesData();
+  if (!images || error) {
+    return;
+  }
+  // ! Don't change this because turbopack is throwing useState is null as error
+  return <StateCarousel images={images} />;
+};
+
+export default Carousel;
+
+type Images = {
+  alt_text: string;
+  height: number;
+  id: number;
+  link: string;
+  width: number;
+}[];
+
+function StateCarousel({ images }: { images: Images }) {
   const [currentIndex, setCurrentIndex] = useState(0);
-
   const handleClick = (action: 'plus' | 'minus') => {
     let nextIndex;
     if (action === 'minus') {
@@ -52,6 +49,7 @@ const Carousel = () => {
     }
     setCurrentIndex(nextIndex);
   };
+  console.log(currentIndex);
 
   return (
     <div>
@@ -65,6 +63,7 @@ const Carousel = () => {
         <div className="flex min-h-full items-center">
           <AnimatePresence mode="wait">
             <motion.div
+              key={images[currentIndex].id}
               initial={{ opacity: 0.8 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0.8 }}
@@ -75,9 +74,14 @@ const Carousel = () => {
               }}
               layoutId="carousel-images"
               className=""
-              key={images[currentIndex].src}
             >
-              <Image className="object-contain" {...images[currentIndex]} />
+              <Image
+                className="object-contain"
+                src={images[currentIndex].link}
+                alt={images[currentIndex].alt_text}
+                width={images[currentIndex].width}
+                height={images[currentIndex].height}
+              />
             </motion.div>
           </AnimatePresence>
         </div>
@@ -87,6 +91,7 @@ const Carousel = () => {
           {images.map((_, index) => {
             return (
               <li
+                key={index}
                 onClick={() => {
                   setCurrentIndex(index);
                 }}
@@ -102,9 +107,7 @@ const Carousel = () => {
       </div>
     </div>
   );
-};
-
-export default Carousel;
+}
 
 type NavigationButtonProps = {
   variant: 'left' | 'right';
