@@ -35,7 +35,7 @@ export default function StateCarousel({ images }: { images: Images }) {
   useEffect(() => {
     const timeout = setTimeout(() => {
       handleClick('plus');
-    }, 2500);
+    }, 5000);
     return () => clearTimeout(timeout);
   });
 
