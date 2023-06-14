@@ -1,4 +1,5 @@
 import { supabase } from './supabase';
+import NavLink from './NavLink';
 
 const MONTHS = [
   'JAN',
@@ -34,6 +35,7 @@ const NewsRoom = async () => {
     return {
       title: item.title,
       time,
+      id: item.id,
     };
   });
 
@@ -56,14 +58,17 @@ const NewsRoom = async () => {
         <ul className="divide-y divide-background">
           {newsArticles?.map((newsArticle) => {
             return (
-              <li
-                key={newsArticle.title}
-                className="flex flex-col px-5 py-3 md:flex-row"
-              >
-                <h3 className="flex-1 text-black">{newsArticle.title}</h3>
-                <p className="text-sm text-secondary-text">
-                  {newsArticle.time}
-                </p>
+              <li key={newsArticle.title} className="">
+                <NavLink
+                  variant="newsroom"
+                  title={`Go to ${newsArticle.title}`}
+                  href={`/services/newsroom/${newsArticle.id}`}
+                >
+                  <h3 className="flex-1 text-black">{newsArticle.title}</h3>
+                  <p className="text-sm text-secondary-text">
+                    {newsArticle.time}
+                  </p>
+                </NavLink>
               </li>
             );
           })}

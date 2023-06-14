@@ -15,6 +15,7 @@ const link = cva('link', {
       cardActive: [
         'text-nav-blue underline underline-offset-4 font-medium text-sm w-full block',
       ],
+      newsroom: ['flex flex-col px-5 py-3 md:flex-row'],
     },
   },
   defaultVariants: {
