@@ -4,7 +4,7 @@ import { ReactNode } from 'react';
 const layout = ({ children }: { children: ReactNode }) => {
   return (
     <>
-      <Header title="Newsroom" />
+      <Header title="Newsroom" link="/services/newsroom" />
       {children}
     </>
   );
