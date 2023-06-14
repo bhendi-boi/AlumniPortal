@@ -18,7 +18,6 @@ export type MemberData = {
 };
 
 // ? types generated from supabase
-
 export type Json =
   | string
   | number
@@ -98,25 +97,31 @@ export interface Database {
       };
       newsroom: {
         Row: {
-          content: string;
+          content: string[];
           created_at: string;
           id: number;
+          image_link: string;
           summary_for_seo: string;
           title: string;
+          video_link: string | null;
         };
         Insert: {
-          content: string;
+          content: string[];
           created_at?: string;
           id?: number;
+          image_link: string;
           summary_for_seo: string;
           title: string;
+          video_link?: string | null;
         };
         Update: {
-          content?: string;
+          content?: string[];
           created_at?: string;
           id?: number;
+          image_link?: string;
           summary_for_seo?: string;
           title?: string;
+          video_link?: string | null;
         };
         Relationships: [];
       };
