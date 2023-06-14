@@ -6,9 +6,7 @@ export const openGraph = {
   siteName: 'Alumni Portal',
   images: [
     {
-      url: '/newLogo.png',
-      width: 708,
-      height: 227,
+      url: '/og-image.png',
     },
   ],
   locale: 'en-IN',
