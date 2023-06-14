@@ -24,7 +24,7 @@ const Card = ({ id, title, content, imageSrc }: CardProps) => {
         <h2 className="text-2xl font-bold">{title}</h2>
         <p className="my-2 text-sm">{content}</p>
         <NavLink
-          href={`/services/alumniAchievements/${id + 1}`}
+          href={`/services/newsroom/${id + 1}`}
           variant="cardActive"
           title={`link to ${title}`}
         >
