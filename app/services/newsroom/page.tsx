@@ -1,12 +1,27 @@
 import type { Metadata } from 'next';
 import Card from './Card';
-import { getNewsArticleData } from './getNewsArticlesData';
+import { getNewsArticleData } from './fetchers';
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Alumni Achievements | IIITDM',
+    absolute: 'Newsroom | IIITDM',
   },
-  description: 'Here are some of the milestones achieved by our alumni.',
+  description:
+    'Stay up-to-date on the latest achievements of your school alumni! This newsroom features stories about alumni who have made significant contributions in their fields, from starting their own businesses to winning awards for their work. Read about their successes and be inspired to follow in their footsteps.',
+  openGraph: {
+    title: 'Newsroom | Alumni Portal',
+    description:
+      'Stay up-to-date on the latest achievements of your school alumni! This newsroom features stories about alumni who have made significant contributions in their fields, from starting their own businesses to winning awards for their work. Read about their successes and be inspired to follow in their footsteps.',
+    url: 'https://alumni-portal-alpha.vercel.app/services/newsroom',
+    siteName: 'Alumni Portal',
+    images: [
+      {
+        url: '/og-image.png',
+      },
+    ],
+    locale: 'en-IN',
+    type: 'website',
+  },
 };
 
 const page = async () => {

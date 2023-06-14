@@ -2,7 +2,42 @@ import ArticleHeader from './Header';
 import ImageCard from './ImageCard';
 import Navigation from './Navigation';
 import clsx from 'clsx';
-import { getNewsArticleData } from '../getNewsArticlesData';
+import { getANewsArticleData, getNewsArticleData } from '../fetchers';
+import { Metadata } from 'next';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { id: string };
+}): Promise<Metadata> {
+  const id = Number(params.id);
+  const { data, error } = await getANewsArticleData(id);
+  if (!data || error) {
+    return {
+      title: 'Error',
+    };
+  }
+  const article = data[0];
+  return {
+    title: {
+      absolute: article.title,
+    },
+    description: article.summary_for_seo,
+    openGraph: {
+      title: article.title,
+      description: article.summary_for_seo,
+      url: `https://alumni-portal-alpha.vercel.app/services/newsroom/${id}`,
+      siteName: 'Alumni Portal',
+      images: [
+        {
+          url: '/og-image.png',
+        },
+      ],
+      locale: 'en-IN',
+      type: 'website',
+    },
+  };
+}
 
 const page = async ({ params }: { params: { id: string } }) => {
   const { id: idAsString } = params;
@@ -25,7 +60,7 @@ const page = async ({ params }: { params: { id: string } }) => {
 
   return (
     <>
-      <section className="mx-auto mb-12 min-h-screen max-w-5xl rounded-lg border border-background">
+      <section className="max-w-5xl min-h-screen mx-auto mb-12 border rounded-lg border-background">
         <Navigation id={id} maxId={maxId} />
         <article className="p-8">
           <ArticleHeader title={data.title} postedOn="24 MAY, 2023" />
