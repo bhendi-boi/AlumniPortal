@@ -30,9 +30,9 @@ const page = () => {
           <NavLink
             variant="active"
             title="Alumni Achievements"
-            href="/services/alumniAchievements"
+            href="/services/newsroom"
           >
-            Alumni Achievements
+            Newsroom
           </NavLink>
         </li>
         <li>

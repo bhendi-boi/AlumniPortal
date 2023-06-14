@@ -3,14 +3,15 @@ import Image from 'next/image';
 import React from 'react';
 
 type CardProps = {
+  id: number;
   title: string;
-  description: string;
-  src: string;
+  content: string;
+  imageSrc: string;
 };
 
-const Card = ({ title, description, src }: CardProps) => {
+const Card = ({ id, title, content, imageSrc }: CardProps) => {
   return (
-    <li className="flex flex-col items-center gap-4 py-5 md:flex-row md:gap-8 md:py-10">
+    <li className="flex flex-col items-center justify-between gap-4 py-5 md:flex-row md:gap-8 md:py-10">
       {/* //! src */}
       <Image
         src="/convocation.png"
@@ -21,9 +22,9 @@ const Card = ({ title, description, src }: CardProps) => {
       />
       <div className="">
         <h2 className="text-2xl font-bold">{title}</h2>
-        <p className="my-2 text-sm">{description}</p>
+        <p className="my-2 text-sm">{content}</p>
         <NavLink
-          href={`/services/alumniAchievements/${title}`}
+          href={`/services/alumniAchievements/${id + 1}`}
           variant="cardActive"
           title={`link to ${title}`}
         >

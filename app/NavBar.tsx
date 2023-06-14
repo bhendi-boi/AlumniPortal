@@ -236,10 +236,10 @@ function Services({ active }: { active: boolean }) {
                 {({ active }) => (
                   <Link
                     className={active ? 'text-black' : 'text-secondary-text'}
-                    title="Alumni Achievements"
-                    href="/services/alumniAchievements"
+                    title="Newsroom"
+                    href="/services/newsroom"
                   >
-                    Alumni Achievements
+                    Newsroom
                   </Link>
                 )}
               </Menu.Item>
