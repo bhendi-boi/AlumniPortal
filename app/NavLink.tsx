@@ -13,7 +13,7 @@ const link = cva('link', {
       ],
       active: ['text-nav-blue font-medium text-xl w-full block relative'],
       cardActive: [
-        'text-nav-blue underline underline-offset-4 font-medium text-sm w-full block',
+        'text-nav-blue underline underline-offset-4 font-medium text-sm',
       ],
       newsroom: ['flex flex-col px-5 py-3 md:flex-row'],
     },
