@@ -2,7 +2,6 @@ import { Inter } from 'next/font/google';
 import NavBar from './NavBar';
 import Footer from './Footer';
 import '../styles/globals.css';
-import { openGraph } from './shared-metadata';
 
 const inter = Inter({
   weight: '400',
@@ -17,10 +16,8 @@ export const metadata = {
     template: '%s | Alumni Portal',
     absolute: 'Home | Alumni Portal',
   },
-  description: 'Welcome to Alumni Portal, IIITDM where alumni can ....',
-  openGraph: {
-    ...openGraph,
-  },
+  description:
+    'The Alumni Portal allows alumni to connect with each other, stay up-to-date on school news, and find resources and opportunities.',
 };
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -32,7 +29,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       </head>
       <body id="body" className={`bg-white ${inter.variable} font-inter`}>
         <NavBar />
-        <main className="mx-auto min-h-screen max-w-7xl px-5 md:px-10">
+        <main className="min-h-screen px-5 mx-auto max-w-7xl md:px-10">
           {children}
         </main>
         <Footer />
