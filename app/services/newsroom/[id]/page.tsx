@@ -1,13 +1,8 @@
-import Navigation from './Navigation';
 import ArticleHeader from './Header';
 import ImageCard from './ImageCard';
-import { supabase } from 'app/supabase';
+import Navigation from './Navigation';
 import clsx from 'clsx';
-
-async function getNewsArticleData() {
-  const { data, error } = await supabase.from('newsroom').select();
-  return { data, error };
-}
+import { getNewsArticleData } from '../getNewsArticlesData';
 
 const page = async ({ params }: { params: { id: string } }) => {
   const { id: idAsString } = params;
@@ -36,9 +31,9 @@ const page = async ({ params }: { params: { id: string } }) => {
           <ArticleHeader title={data.title} postedOn="24 MAY, 2023" />
           <ImageCard
             src={data.image_link}
-            altText="alt text"
-            width={1600}
-            height={500}
+            altText={data.alt_text}
+            width={data.image_width}
+            height={data.image_height}
           />
           {data.content.map((para, index) => {
             return (
