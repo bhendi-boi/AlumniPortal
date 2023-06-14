@@ -97,28 +97,37 @@ export interface Database {
       };
       newsroom: {
         Row: {
+          alt_text: string;
           content: string[];
           created_at: string;
           id: number;
+          image_height: number;
           image_link: string;
+          image_width: number;
           summary_for_seo: string;
           title: string;
           video_link: string | null;
         };
         Insert: {
+          alt_text: string;
           content: string[];
           created_at?: string;
           id?: number;
+          image_height: number;
           image_link: string;
+          image_width: number;
           summary_for_seo: string;
           title: string;
           video_link?: string | null;
         };
         Update: {
+          alt_text?: string;
           content?: string[];
           created_at?: string;
           id?: number;
+          image_height?: number;
           image_link?: string;
+          image_width?: number;
           summary_for_seo?: string;
           title?: string;
           video_link?: string | null;
