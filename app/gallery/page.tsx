@@ -6,7 +6,20 @@ import { supabase } from 'app/supabase';
 
 export const metadata: Metadata = {
   title: 'Gallery',
-  description: 'A Gallery of Images which show our recent work.',
+  description: 'A Gallery of images associated with Alumni Affairs, IIITDM',
+  openGraph: {
+    title: 'Gallery | Alumni Portal',
+    description: 'A Gallery of images associated with Alumni Affairs, IIITDM',
+    url: 'https://alumni-portal-alpha.vercel.app/gallery',
+    siteName: 'Alumni Portal',
+    images: [
+      {
+        url: '/og-image.png',
+      },
+    ],
+    locale: 'en-IN',
+    type: 'website',
+  },
 };
 async function getGalleryData() {
   const { data, error } = await supabase.from('gallery').select();
@@ -27,7 +40,7 @@ const page = async () => {
           <p className="text-lg">No images to display.</p>
         </div>
       ) : (
-        <ul className="mx-auto mb-8 grid min-h-screen max-w-5xl grid-cols-1 gap-5 rounded-lg border border-background p-6 sm:grid-cols-2 sm:p-8 md:mb-16 md:grid-cols-3 md:p-12">
+        <ul className="grid max-w-5xl min-h-screen grid-cols-1 gap-5 p-6 mx-auto mb-8 border rounded-lg border-background sm:grid-cols-2 sm:p-8 md:mb-16 md:grid-cols-3 md:p-12">
           {data?.map((image, index) => (
             <ImageCard
               key={index}
