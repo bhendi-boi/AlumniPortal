@@ -14,12 +14,11 @@ const page = () => {
   return (
     <>
       <Header title="Alumni Services" />
-      <h2 className="my-2 text-2xl font-medium">Useful Links 👇</h2>
       <ul className="flex max-w-5xl flex-col gap-4 md:mx-auto">
         {/* //? Using NavLink active variant just for styling */}
         <li>
           <NavLink
-            variant="active"
+            variant="cardActive"
             title="Send Query"
             href="/services/sendQuery"
           >
@@ -28,21 +27,25 @@ const page = () => {
         </li>
         <li>
           <NavLink
-            variant="active"
-            title="Alumni Achievements"
+            variant="cardActive"
+            title="Newsroom"
             href="/services/newsroom"
           >
             Newsroom
           </NavLink>
         </li>
         <li>
-          <NavLink variant="active" title="Alumni Fund" href="/services/fund">
+          <NavLink
+            variant="cardActive"
+            title="Alumni Fund"
+            href="/services/fund"
+          >
             Fund
           </NavLink>
         </li>
         <li>
           <NavLink
-            variant="active"
+            variant="cardActive"
             title="Volunteer"
             href="/services/volunteer"
           >
