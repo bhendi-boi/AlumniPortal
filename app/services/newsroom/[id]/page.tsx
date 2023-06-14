@@ -5,6 +5,28 @@ import clsx from 'clsx';
 import { getANewsArticleData, getNewsArticleData } from '../fetchers';
 import { Metadata } from 'next';
 
+const MONTHS = [
+  'JAN',
+  'FEB',
+  'MAR',
+  'APR',
+  'MAY',
+  'JUN',
+  'JUL',
+  'AUG',
+  'SEP',
+  'OCT',
+  'NOV',
+  'DEC',
+];
+
+function getTime(d: Date) {
+  const year = d.getUTCFullYear();
+  const month = MONTHS[d.getUTCMonth()];
+  const date = d.getUTCDate();
+  return `${date} ${month}, ${year}`;
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -63,7 +85,10 @@ const page = async ({ params }: { params: { id: string } }) => {
       <section className="max-w-5xl min-h-screen mx-auto mb-12 border rounded-lg border-background">
         <Navigation id={id} maxId={maxId} />
         <article className="p-8">
-          <ArticleHeader title={data.title} postedOn="24 MAY, 2023" />
+          <ArticleHeader
+            title={data.title}
+            postedOn={getTime(new Date(data.created_at))}
+          />
           <ImageCard
             src={data.image_link}
             altText={data.alt_text}
