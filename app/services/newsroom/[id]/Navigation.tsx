@@ -1,15 +1,24 @@
 'use client';
-import { ReactNode } from 'react';
+import { ComponentProps, ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
 
-const Navigation = ({ id }: { id: number }) => {
+const Navigation = ({ id, maxId }: { id: number; maxId: number }) => {
   return (
     <div className="flex items-center justify-between border-b border-background px-8 py-4">
-      <Button disabled={id == 0} action="decrement" currentId={id}>
+      <Button
+        title="Go to previous article"
+        disabled={id === 1}
+        action="decrement"
+        currentId={id}
+      >
         Previous
       </Button>
-      // ! TODO add constraints
-      <Button disabled={false} action="increment" currentId={id}>
+      <Button
+        title="Go to next article"
+        disabled={id === maxId}
+        action="increment"
+        currentId={id}
+      >
         Next
       </Button>
     </div>
@@ -22,13 +31,12 @@ function Button({
   children,
   currentId,
   action,
-  disabled,
+  ...rest
 }: {
   children: ReactNode;
   currentId: number;
   action: 'increment' | 'decrement';
-  disabled: boolean;
-}) {
+} & ComponentProps<'button'>) {
   const router = useRouter();
 
   function handleClick(action: 'increment' | 'decrement') {
@@ -43,7 +51,7 @@ function Button({
   return (
     <button
       type="button"
-      disabled={disabled}
+      {...rest}
       onClick={() => handleClick(action)}
       className="font-medium underline disabled:cursor-no-drop disabled:text-secondary-text disabled:no-underline"
     >
