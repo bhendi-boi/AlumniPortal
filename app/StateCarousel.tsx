@@ -84,11 +84,18 @@ export default function StateCarousel({ images }: { images: Images }) {
                   setCurrentIndex(index);
                 }}
                 className={clsx(
-                  'h-3 w-3 cursor-pointer rounded-full',
-                  currentIndex === index && 'bg-black',
-                  currentIndex !== index && 'bg-zinc-400',
+                  'relative h-3 w-3 cursor-pointer overflow-hidden rounded-full bg-zinc-400',
                 )}
-              ></li>
+              >
+                {index === currentIndex && (
+                  <motion.div
+                    initial={{ x: '-100%' }}
+                    animate={{ x: 0 }}
+                    layoutId="carousel-current-index-indicator"
+                    className="absolute inset-0 bg-black"
+                  />
+                )}
+              </li>
             );
           })}
         </ul>
