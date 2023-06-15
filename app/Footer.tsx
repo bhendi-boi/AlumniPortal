@@ -4,11 +4,11 @@ import { CiMail } from 'react-icons/ci';
 
 const Footer = () => {
   return (
-    <footer className="relative py-10 bg-footer-background">
-      <div className="max-w-5xl mx-auto">
-        <div className="flex flex-col gap-8 px-4 mb-20 sm:flex-row sm:px-8 md:px-12 lg:px-16">
+    <footer className="relative bg-footer-background py-10">
+      <div className="mx-auto max-w-5xl">
+        <div className="mb-20 flex flex-col gap-8 px-4 sm:flex-row sm:px-8 md:px-12 lg:px-16">
           {/* institute links */}
-          <ul className="flex flex-col w-full gap-2">
+          <ul className="flex w-full flex-col gap-2 text-lg">
             <li>
               <Link
                 rel="noopener noreferrer"
@@ -56,7 +56,7 @@ const Footer = () => {
             </li>
           </ul>
           {/* contact */}
-          <div className="flex w-full flex-col gap-0.5 md:text-right">
+          <div className="flex w-full flex-col gap-0.5 text-lg md:text-right">
             <p className="text-3xl font-bold text-nav-blue">Alumni Affairs</p>
             <p>A-103, Admin Block,</p>
             <p>IIITDM Kancheepuram,</p>
@@ -97,7 +97,7 @@ const Footer = () => {
               </Link>
             </li>
           </ul>
-          <p className="font-medium text-center ">
+          <p className="text-center font-medium ">
             © {new Date().getFullYear()} Alumni Affairs, IIITDM Kancheepuram
           </p>
         </div>
