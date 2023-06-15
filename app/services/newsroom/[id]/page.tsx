@@ -52,6 +52,9 @@ export async function generateMetadata({
       siteName: 'Alumni Portal',
       images: [
         {
+          url: article.image_link
+        },
+        {
           url: '/og-image.png',
         },
       ],
