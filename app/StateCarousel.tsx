@@ -61,7 +61,7 @@ export default function StateCarousel({ images }: { images: Images }) {
                 duration: 0.5,
               }}
               layoutId="carousel-images"
-              className="overflow-hidden rounded-lg bg-gradient-to-br from-gray-600/30 via-gray-600/50 to-gray-600/30"
+              className="overflow-hidden rounded-lg bg-gradient-to-br from-gray-100/80 via-gray-200/50 to-gray-400/10"
             >
               <Image
                 className="object-contain"
