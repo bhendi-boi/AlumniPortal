@@ -57,7 +57,9 @@ const Footer = () => {
           </ul>
           {/* contact */}
           <div className="flex w-full flex-col gap-0.5 text-lg md:text-right">
-            <p className="text-3xl font-bold text-nav-blue">Alumni Affairs</p>
+            <p className="mb-1 text-3xl font-bold text-nav-blue">
+              Alumni Affairs
+            </p>
             <p>A-103, Admin Block,</p>
             <p>IIITDM Kancheepuram,</p>
             <p>Chennai - 600 127</p>
