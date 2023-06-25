@@ -65,8 +65,8 @@ https://nextjs.link/turbopack-feedback
 
 ##### `/services/newsroom/[id]`
 
-- SSR
+- SSG
 
-### Directory
+### `Directory`
 
 - SSG

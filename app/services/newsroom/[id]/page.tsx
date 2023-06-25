@@ -52,7 +52,7 @@ export async function generateMetadata({
       siteName: 'Alumni Portal',
       images: [
         {
-          url: article.image_link
+          url: article.image_link,
         },
         {
           url: '/og-image.png',
@@ -62,6 +62,14 @@ export async function generateMetadata({
       type: 'website',
     },
   };
+}
+
+export async function generateStaticParams() {
+  const { data, error } = await getNewsArticleData();
+  if (!data || error) return [];
+  return data.map((item) => {
+    return item.id;
+  });
 }
 
 const page = async ({ params }: { params: { id: string } }) => {
@@ -85,7 +93,7 @@ const page = async ({ params }: { params: { id: string } }) => {
 
   return (
     <>
-      <section className="max-w-5xl min-h-screen mx-auto mb-12 border rounded-lg border-background">
+      <section className="mx-auto mb-12 min-h-screen max-w-5xl rounded-lg border border-background">
         <Navigation id={id} maxId={maxId} />
         <article className="p-8">
           <ArticleHeader
