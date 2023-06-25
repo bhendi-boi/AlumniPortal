@@ -11,6 +11,7 @@ module.exports = {
         'contact-gray': '#8D93A1',
         'secondary-text': '#727272',
         'footer-background': '#E5E5E5',
+        'button-green': '#22C55E',
       },
       fontFamily: {
         inter: ['var(--Inter)'],

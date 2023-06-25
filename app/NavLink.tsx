@@ -16,6 +16,9 @@ const link = cva('link', {
         'text-nav-blue underline underline-offset-4 font-medium text-sm',
       ],
       newsroom: ['flex flex-col px-5 py-3 md:flex-row'],
+      eventsRegister: [
+        'bg-button-green rounded-full py-3 font-medium text-white text-sm px-12 hover:bg-opacity-80 active:bg-opacity-100',
+      ],
     },
   },
   defaultVariants: {
@@ -30,7 +33,13 @@ interface NavLinkProps extends LinkProps, VariantProps<typeof link> {
 
 const NavLink = ({ children, variant, title, ...restProps }: NavLinkProps) => {
   return (
-    <Link {...restProps} title={title} className={link({ variant })}>
+    <Link
+      // ?  _self is the default value for target attribute
+      target={variant === 'eventsRegister' ? '_blank' : '_self'}
+      {...restProps}
+      title={title}
+      className={link({ variant })}
+    >
       {children}
       {variant === 'active' && (
         <motion.span
