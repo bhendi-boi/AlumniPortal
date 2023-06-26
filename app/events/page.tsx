@@ -25,7 +25,7 @@ const page = () => {
   return (
     <>
       <Header title="Events" />
-      <Tabs />
+      {/* <Tabs /> */}
     </>
   );
 };
