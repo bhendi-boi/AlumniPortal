@@ -11,7 +11,7 @@ const ImageCard = ({ src, altText, height, width }: Props) => {
   return (
     <figure className="mb-8">
       <Image
-        className="overflow-hidden rounded-lg bg-gradient-to-br from-gray-100/80 via-gray-200/50 to-gray-400/10"
+        className="w-full overflow-hidden rounded-lg bg-gradient-to-br from-gray-100/80 via-gray-200/50 to-gray-400/10"
         src={src}
         alt={altText}
         width={width}
