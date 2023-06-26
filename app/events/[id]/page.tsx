@@ -27,6 +27,7 @@ const page = () => {
           time={data.time}
         />
         <Image
+          className="mt-4 overflow-hidden rounded-lg bg-gradient-to-br from-gray-100/80 via-gray-200/50 to-gray-400/10 sm:mt-6 md:mt-8"
           src={data.image_link}
           alt={data.alt_text}
           width={data.image_width}
