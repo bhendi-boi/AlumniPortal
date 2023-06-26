@@ -14,11 +14,11 @@ const Team = () => {
           <TeamMemberCard key={member.name} {...member} />
         ))}
       </div>
-      <div className="flex max-w-5xl flex-col items-center justify-between gap-4 px-5 md:flex-row md:gap-0 md:p-0">
+      {/* <div className="flex flex-col items-center justify-between max-w-5xl gap-4 px-5 md:flex-row md:gap-0 md:p-0">
         {COORDINATORS.map((coordinator) => (
           <TeamMemberCard key={coordinator.name} {...coordinator} />
         ))}
-      </div>
+      </div> */}
     </section>
   );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { messageFromTheDirector, messageFromThePIC } from 'content/about';
+import { messageFromTheDirector, messageFromTheChairman } from 'content/about';
 
 const Message = () => {
   return (
@@ -9,7 +9,7 @@ const Message = () => {
         className="mb-4 rounded-lg bg-secondary-background p-4 md:ml-40"
       >
         <h2 id="message-from-director" className="sr-only">
-          Message from Director, IIITDM Kancheepuram
+          Message from the Director, IIITDM Kancheepuram
         </h2>
         <p className={`before:content-['"'] after:content-['"']`}>
           {messageFromTheDirector}
@@ -22,14 +22,14 @@ const Message = () => {
         aria-labelledby="message-from-pic"
         className="rounded-lg bg-secondary-background p-4 md:mr-40"
       >
-        <h2 id="message-from-pic" className="sr-only">
-          Message from Director, IIITDM Kancheepuram
+        <h2 id="message-from-chairman" className="sr-only">
+          Message from the Chairman, IIITDM Kancheepuram
         </h2>
         <p className={`before:content-['"'] after:content-['"']`}>
-          {messageFromThePIC}
+          {messageFromTheChairman}
         </p>
         <p className="mt-2 font-bold text-contact-blue">
-          Professor In Charge (PIC)
+          Chairman, IIITDM Kancheepuram
         </p>
       </section>
     </div>

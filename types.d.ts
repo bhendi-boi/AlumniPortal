@@ -15,6 +15,7 @@ export type MemberData = {
     | 'Joint Secretary'
     | 'Coordinator';
   email: string;
+  linkedIn?: string;
 };
 
 // ? types generated from supabase
