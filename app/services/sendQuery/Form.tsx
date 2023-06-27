@@ -56,7 +56,7 @@ const Form = () => {
             name="name"
             placeholder="John Doe"
             required
-            className="rounded-md bg-background p-4"
+            className="rounded-md bg-secondary-background p-4"
           />
         </div>
         <div className="mb-4 flex flex-col gap-1">
@@ -73,7 +73,7 @@ const Form = () => {
             name="email"
             placeholder="johndoe@gmail.com"
             required
-            className="rounded-md bg-background p-4"
+            className="rounded-md bg-secondary-background p-4"
           />
         </div>
         <fieldset className="mb-4 flex flex-col gap-1">
@@ -89,7 +89,7 @@ const Form = () => {
             title="Your message goes here"
             placeholder="Your message goes here"
             required
-            className="min-h-[10rem] rounded-md bg-background p-4"
+            className="min-h-[10rem] rounded-md bg-secondary-background p-4"
           />
         </fieldset>
         <p className="text-center text-sm">
