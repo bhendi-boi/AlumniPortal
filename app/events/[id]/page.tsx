@@ -3,24 +3,49 @@ import React from 'react';
 import EventHeader from './EventHeader';
 import Image from 'next/image';
 import clsx from 'clsx';
+import { getAnActivityData } from '../fetchers';
 
-const data = {
-  title: 'Online Alumni Talks on Accelerated Neural Networks with Eashan Dash',
-  link: 'https://chat.openai.com/',
-  date: 'Friday, 24th March 2023',
-  time: '4:30 PM',
-  image_link:
-    'https://ocufbllgoonzjowlkkhp.supabase.co/storage/v1/object/public/main/carousel/nirf.jpg?t=2023-06-12T06%3A23%3A33.564Z',
-  alt_text: 'alt text for 2',
-  image_height: 500,
-  image_width: 1600,
-  content: [
-    'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, similique!',
-    'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis deserunt sunt nulla rerum enim soluta provident quae, possimus magnam nam. Tempora perferendis ex rem, architecto, quisquam porro quia excepturi facilis veniam nobis ab? Sequi non, alias harum fugit quibusdam quam amet voluptate nisi possimus sunt autem similique sint fuga illum reiciendis? Impedit commodi doloribus ab veritatis laborum sequi officiis, eum aliquam, magnam corrupti temporibus ducimus nisi animi error ut? Fugiat incidunt tempore eius cum, voluptate earum officia similique labore hic ducimus blanditiis nostrum ad dolor praesentium mollitia quidem, pariatur laboriosam iure nesciunt excepturi nulla vero expedita! Asperiores illo ea tempora?',
-  ],
-};
+const MONTHS = [
+  'JAN',
+  'FEB',
+  'MAR',
+  'APR',
+  'MAY',
+  'JUN',
+  'JUL',
+  'AUG',
+  'SEP',
+  'OCT',
+  'NOV',
+  'DEC',
+];
 
-const page = () => {
+function getTime(d: Date) {
+  const year = d.getFullYear();
+  const month = MONTHS[d.getMonth()];
+  const date = d.getDate();
+  const hours = d.getHours();
+  const minutes = d.getMinutes() < 9 ? `0${d.getMinutes()}` : d.getMinutes();
+  return { date: `${date} ${month}, ${year}`, time: `${hours}:${minutes} HRS` };
+}
+
+const page = async ({ params }: { params: { id: string } }) => {
+  const { id: idAsString } = params;
+  const id = Number(idAsString);
+
+  // ? data fetching
+  const { data: rawData, error } = await getAnActivityData(id);
+  if (!rawData || error) {
+    throw new Error('Failed to fetch news articles');
+  }
+  const data = rawData.find((item) => item.id === id);
+  if (typeof data === 'undefined') {
+    throw new Error('Index out of range');
+  }
+  // ? finding date and time from date object
+  const dateObject = new Date(data.time);
+  const { date, time } = getTime(dateObject);
+
   return (
     <>
       <Header title="Event Details" />
@@ -28,8 +53,8 @@ const page = () => {
         <EventHeader
           title={data.title}
           link={data.link}
-          date={data.date}
-          time={data.time}
+          date={date}
+          time={time}
         />
         <Image
           className="mt-4 overflow-hidden rounded-lg bg-gradient-to-br from-gray-100/80 via-gray-200/50 to-gray-400/10 sm:mt-6 md:mt-8"
