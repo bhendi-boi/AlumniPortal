@@ -21,9 +21,9 @@ const MONTHS = [
 ];
 
 function getTime(d: Date) {
-  const year = d.getUTCFullYear();
-  const month = MONTHS[d.getUTCMonth()];
-  const date = d.getUTCDate();
+  const year = d.getFullYear();
+  const month = MONTHS[d.getMonth()];
+  const date = d.getDate();
   return `${date} ${month}, ${year}`;
 }
 
