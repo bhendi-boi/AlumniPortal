@@ -2,6 +2,7 @@ import Header from 'app/Header';
 import React from 'react';
 import EventHeader from './EventHeader';
 import Image from 'next/image';
+import clsx from 'clsx';
 
 const data = {
   title: 'Online Alumni Talks on Accelerated Neural Networks with Eashan Dash',
@@ -13,6 +14,10 @@ const data = {
   alt_text: 'alt text for 2',
   image_height: 500,
   image_width: 1600,
+  content: [
+    'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, similique!',
+    'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis deserunt sunt nulla rerum enim soluta provident quae, possimus magnam nam. Tempora perferendis ex rem, architecto, quisquam porro quia excepturi facilis veniam nobis ab? Sequi non, alias harum fugit quibusdam quam amet voluptate nisi possimus sunt autem similique sint fuga illum reiciendis? Impedit commodi doloribus ab veritatis laborum sequi officiis, eum aliquam, magnam corrupti temporibus ducimus nisi animi error ut? Fugiat incidunt tempore eius cum, voluptate earum officia similique labore hic ducimus blanditiis nostrum ad dolor praesentium mollitia quidem, pariatur laboriosam iure nesciunt excepturi nulla vero expedita! Asperiores illo ea tempora?',
+  ],
 };
 
 const page = () => {
@@ -33,6 +38,21 @@ const page = () => {
           width={data.image_width}
           height={data.image_height}
         />
+        <div className="mt-8">
+          {data.content.map((para, index) => {
+            return (
+              <p
+                className={clsx(
+                  'first-letter:ml-20',
+                  'mb-8 selection:bg-contact-blue selection:text-white',
+                )}
+                key={index}
+              >
+                {para}
+              </p>
+            );
+          })}
+        </div>
       </article>
     </>
   );

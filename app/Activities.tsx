@@ -1,6 +1,8 @@
+import NavLink from './NavLink';
 import { supabase } from './supabase';
 
 type Activity = {
+  id: number;
   title: string;
   time: string[];
   relativeTime: 'today' | 'upcoming';
@@ -47,6 +49,7 @@ const Activities = async () => {
     const month = MONTHS[dateObject.getUTCMonth()];
     const date = dateObject.getUTCDate().toString();
     return {
+      id: item.id,
       title: item.title,
       time: [month, date],
       relativeTime,
@@ -72,19 +75,27 @@ const Activities = async () => {
         <ul className="divide-y divide-background">
           {activities.map((activity, index) => {
             return (
-              <li key={index} className="flex items-center gap-4 px-5 py-3">
-                <div className="flex flex-col">
-                  <span className="text-lg uppercase">{activity.time[0]}</span>
-                  <span className="text-3xl font-semibold">
-                    {activity.time[1]}
-                  </span>
-                </div>
-                <div className="flex-1">
-                  <span className="text-xs uppercase text-secondary-text">
-                    {activity.relativeTime}
-                  </span>
-                  <h3 className="">{activity.title}</h3>
-                </div>
+              <li key={index} className="">
+                <NavLink
+                  variant="activities"
+                  title={`Know more about ${activity.title}`}
+                  href={`events/${activity.id}`}
+                >
+                  <div className="flex flex-col">
+                    <span className="text-lg uppercase">
+                      {activity.time[0]}
+                    </span>
+                    <span className="text-3xl font-semibold">
+                      {activity.time[1]}
+                    </span>
+                  </div>
+                  <div className="flex-1">
+                    <span className="text-xs uppercase text-secondary-text">
+                      {activity.relativeTime}
+                    </span>
+                    <h3 className="">{activity.title}</h3>
+                  </div>
+                </NavLink>
               </li>
             );
           })}

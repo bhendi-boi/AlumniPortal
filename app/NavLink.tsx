@@ -16,6 +16,7 @@ const link = cva('link', {
         'text-nav-blue underline underline-offset-4 font-medium text-sm',
       ],
       newsroom: ['flex flex-col px-5 py-3 md:flex-row'],
+      activities: ['flex items-center gap-4 px-5 py-3'],
       eventsRegister: [
         'bg-button-green rounded-full py-3 font-medium text-white text-sm px-12 hover:bg-opacity-80 active:bg-opacity-100 text-center',
       ],
