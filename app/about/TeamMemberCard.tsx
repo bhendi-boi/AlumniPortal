@@ -35,7 +35,7 @@ const TeamMemberCard = ({
       <div className="flex flex-col gap-2">
         <div>
           <p className="font-medium">{position}</p>
-          <p className="mt-1 mb-2 text-sm font-semibold text-contact-blue md:my-0 md:font-medium">
+          <p className="mb-2 mt-1 text-sm font-semibold text-contact-blue md:my-0 md:font-medium">
             {name}
           </p>
         </div>

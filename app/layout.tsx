@@ -29,7 +29,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       </head>
       <body id="body" className={`bg-white ${inter.variable} font-inter`}>
         <NavBar />
-        <main className="min-h-screen px-5 mx-auto max-w-7xl md:px-10">
+        <main className="mx-auto min-h-screen max-w-7xl px-5 md:px-10">
           {children}
         </main>
         <Footer />

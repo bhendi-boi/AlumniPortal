@@ -40,7 +40,7 @@ const page = async () => {
           <p className="text-lg">No images to display.</p>
         </div>
       ) : (
-        <ul className="grid max-w-5xl min-h-screen grid-cols-1 gap-5 p-6 mx-auto mb-8 border rounded-lg border-background sm:grid-cols-2 sm:p-8 md:mb-16 md:grid-cols-3 md:p-12">
+        <ul className="mx-auto mb-8 grid min-h-screen max-w-5xl grid-cols-1 gap-5 rounded-lg border border-background p-6 sm:grid-cols-2 sm:p-8 md:mb-16 md:grid-cols-3 md:p-12">
           {data?.map((image, index) => (
             <ImageCard
               key={index}
