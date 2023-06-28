@@ -1,4 +1,4 @@
-import ArticleHeader from './Header';
+import ArticleHeader from './ArticleHeader';
 import ImageCard from './ImageCard';
 import Navigation from './Navigation';
 import clsx from 'clsx';
