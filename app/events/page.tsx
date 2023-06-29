@@ -1,7 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import Tabs from './Tabs';
-import Header from 'app/Header';
+import { getActivitiesData } from './fetchers';
 
 export const metadata: Metadata = {
   title: 'Events',
@@ -21,12 +20,17 @@ export const metadata: Metadata = {
   },
 };
 
-const page = () => {
+const page = async () => {
+  const { data, error } = await getActivitiesData();
+  if (!data || error) {
+    throw new Error('Failed to fetch news articles');
+  }
   return (
-    <>
-      <Header title="Events" />
-      {/* <Tabs /> */}
-    </>
+    <ul className="mx-auto mb-12 min-h-screen max-w-5xl divide-y-2 rounded-lg border border-background px-4 md:mb-16 md:px-8">
+      {data.map((article, index) => (
+        <div>{article.title}</div>
+      ))}
+    </ul>
   );
 };
 
