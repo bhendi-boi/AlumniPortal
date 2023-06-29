@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import { getActivitiesData } from './fetchers';
+import Card from './Card';
 
 export const metadata: Metadata = {
   title: 'Events',
@@ -27,8 +28,8 @@ const page = async () => {
   }
   return (
     <ul className="mx-auto mb-12 min-h-screen max-w-5xl divide-y-2 rounded-lg border border-background px-4 md:mb-16 md:px-8">
-      {data.map((article, index) => (
-        <div>{article.title}</div>
+      {data.map((event, index) => (
+        <Card key={index} {...event} />
       ))}
     </ul>
   );
