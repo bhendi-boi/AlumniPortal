@@ -1,6 +1,6 @@
 import { supabase } from 'app/supabase';
 
-export async function getArticlesData() {
+export async function getActivitiesData() {
   const { data, error } = await supabase.from('activities').select();
   return { data, error };
 }

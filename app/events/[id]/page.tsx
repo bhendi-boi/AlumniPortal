@@ -3,7 +3,7 @@ import React from 'react';
 import EventHeader from './EventHeader';
 import Image from 'next/image';
 import clsx from 'clsx';
-import { getAnActivityData, getArticlesData } from '../fetchers';
+import { getActivitiesData, getAnActivityData } from '../fetchers';
 
 const MONTHS = [
   'JAN',
@@ -30,7 +30,7 @@ function getTime(d: Date) {
 }
 
 export async function generateStaticParams() {
-  const { data, error } = await getArticlesData();
+  const { data, error } = await getActivitiesData();
   if (!data || error) return [];
   return data.map((item) => {
     return item.id;
