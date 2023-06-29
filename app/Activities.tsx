@@ -1,11 +1,13 @@
 import NavLink from './NavLink';
-import { supabase } from './supabase';
+import { getActivitiesData } from './events/fetchers';
 
+// this Activity is not the same as the one we fetch.
+// It has an extra `relativeTime` field and doesn't contain all the fields present in activity row in supabase
 type Activity = {
   id: number;
   title: string;
   time: string[];
-  relativeTime: 'today' | 'upcoming';
+  relativeTime: 'today' | 'upcoming' | 'past';
 };
 
 const MONTHS = [
@@ -23,29 +25,55 @@ const MONTHS = [
   'DEC',
 ];
 
-function sameDate(d1: Date, d2: Date) {
-  if (d1.getUTCFullYear() !== d2.getUTCFullYear()) return false;
-  if (d1.getUTCMonth() !== d2.getUTCMonth()) return false;
-  if (d1.getUTCDate() !== d2.getUTCDate()) return false;
-  return true;
-}
-
-// ! TODO error handling
-async function getActivitiesData() {
-  const { data, error } = await supabase.from('activities').select();
-  return data;
+function getRelativeTime(
+  day: Date,
+): Pick<Activity, 'relativeTime'>['relativeTime'] {
+  const today = new Date();
+  // checking for year
+  if (today.getFullYear() < day.getFullYear()) {
+    return 'upcoming';
+  } else if (today.getFullYear() > day.getFullYear()) {
+    return 'past';
+  }
+  // if the year is same we check for months
+  if (today.getMonth() < day.getMonth()) {
+    return 'upcoming';
+  } else if (today.getMonth() > day.getMonth()) {
+    return 'past';
+  }
+  // if the month is also same we check for the date
+  if (today.getDate() < day.getDate()) {
+    return 'upcoming';
+  } else if (today.getDate() > day.getDate()) {
+    return 'past';
+  }
+  return 'today';
 }
 
 const Activities = async () => {
-  const data = await getActivitiesData();
-  if (!data) {
-    return null;
+  const { data, error } = await getActivitiesData();
+  if (error || !data) {
+    return (
+      <section
+        aria-labelledby="activities"
+        className="max-h-fit w-full rounded-md border border-background"
+      >
+        <h2
+          id="activities"
+          className="border-b border-background px-5 py-2 text-xl font-medium uppercase text-nav-blue"
+        >
+          Activities
+        </h2>
+        <div className="p-6">
+          <p className="text-lg">Failed to fetch activities</p>
+        </div>
+      </section>
+    );
   }
 
   const activities: Activity[] = data.map((item) => {
     const dateObject = new Date(item.time);
-    const today = new Date();
-    const relativeTime = sameDate(dateObject, today) ? 'today' : 'upcoming';
+    const relativeTime = getRelativeTime(dateObject);
     const month = MONTHS[dateObject.getUTCMonth()];
     const date = dateObject.getUTCDate().toString();
     return {
@@ -67,40 +95,32 @@ const Activities = async () => {
         Activities
       </h2>
 
-      {data.length === 0 ? (
-        <div className="p-6">
-          <p className="text-lg">No upcoming events</p>
-        </div>
-      ) : (
-        <ul className="divide-y divide-background">
-          {activities.map((activity, index) => {
-            return (
-              <li key={index} className="">
-                <NavLink
-                  variant="activities"
-                  title={`Know more about ${activity.title}`}
-                  href={`events/${activity.id}`}
-                >
-                  <div className="flex flex-col">
-                    <span className="text-lg uppercase">
-                      {activity.time[0]}
-                    </span>
-                    <span className="text-3xl font-semibold">
-                      {activity.time[1]}
-                    </span>
-                  </div>
-                  <div className="flex-1">
-                    <span className="text-xs uppercase text-secondary-text">
-                      {activity.relativeTime}
-                    </span>
-                    <h3 className="">{activity.title}</h3>
-                  </div>
-                </NavLink>
-              </li>
-            );
-          })}
-        </ul>
-      )}
+      <ul className="divide-y divide-background">
+        {activities.map((activity, index) => {
+          return (
+            <li key={index} className="">
+              <NavLink
+                variant="activities"
+                title={`Know more about ${activity.title}`}
+                href={`events/${activity.id}`}
+              >
+                <div className="flex flex-col">
+                  <span className="text-lg uppercase">{activity.time[0]}</span>
+                  <span className="text-3xl font-semibold">
+                    {activity.time[1]}
+                  </span>
+                </div>
+                <div className="flex-1">
+                  <span className="text-xs uppercase text-secondary-text">
+                    {activity.relativeTime}
+                  </span>
+                  <h3 className="">{activity.title}</h3>
+                </div>
+              </NavLink>
+            </li>
+          );
+        })}
+      </ul>
     </section>
   );
 };
