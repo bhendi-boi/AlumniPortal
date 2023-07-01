@@ -34,7 +34,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const id = Number(params.id);
   const { data, error } = await getANewsArticleData(id);
-  if (!data || error) {
+  if (data?.length === 0 || error || !data) {
     return {
       title: 'Error',
     };

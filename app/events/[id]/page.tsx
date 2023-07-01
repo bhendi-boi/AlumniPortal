@@ -4,6 +4,7 @@ import EventHeader from './EventHeader';
 import Image from 'next/image';
 import clsx from 'clsx';
 import { getActivitiesData, getAnActivityData } from '../fetchers';
+import { Metadata } from 'next';
 
 const MONTHS = [
   'JAN',
@@ -35,6 +36,43 @@ export async function generateStaticParams() {
   return data.map((item) => {
     return item.id;
   });
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { id: string };
+}): Promise<Metadata> {
+  const id = Number(params.id);
+  const { data, error } = await getAnActivityData(id);
+  if (data?.length === 0 || error || !data) {
+    return {
+      title: 'Error',
+    };
+  }
+  const article = data[0];
+  return {
+    title: {
+      absolute: article.title,
+    },
+    description: article.summary_for_seo,
+    openGraph: {
+      title: article.title,
+      description: article.summary_for_seo,
+      url: `https://alumni-portal-alpha.vercel.app/events/${id}`,
+      siteName: 'Alumni Portal',
+      images: [
+        {
+          url: article.image_link,
+        },
+        {
+          url: '/og-image.png',
+        },
+      ],
+      locale: 'en-IN',
+      type: 'website',
+    },
+  };
 }
 
 const page = async ({ params }: { params: { id: string } }) => {
@@ -73,13 +111,7 @@ const page = async ({ params }: { params: { id: string } }) => {
         <div className="mt-8">
           {data.content.map((para, index) => {
             return (
-              <p
-                className={clsx(
-                  'first-letter:ml-20',
-                  'mb-8 selection:bg-contact-blue selection:text-white',
-                )}
-                key={index}
-              >
+              <p className={clsx('first-letter:pl-20', 'mb-8')} key={index}>
                 {para}
               </p>
             );
