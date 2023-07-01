@@ -22,10 +22,10 @@ export default function Error({
       </h2>
 
       <Link
-        href="/services/newsroom"
+        href="/events"
         className="rounded-md bg-contact-blue px-6 py-3 font-medium text-white hover:opacity-90 active:opacity-80"
       >
-        Back to Newsroom
+        Back to Events
       </Link>
     </div>
   );
