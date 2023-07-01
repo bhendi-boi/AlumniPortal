@@ -26,7 +26,6 @@ export type Json =
   | null
   | { [key: string]: Json }
   | Json[];
-
 export interface Database {
   public: {
     Tables: {
@@ -39,8 +38,10 @@ export interface Database {
           image_link: string;
           image_width: number;
           link: string;
+          summary_for_seo: string;
           time: string;
           title: string;
+          video_link: string | null;
         };
         Insert: {
           alt_text: string;
@@ -50,8 +51,10 @@ export interface Database {
           image_link: string;
           image_width: number;
           link: string;
+          summary_for_seo: string;
           time: string;
           title: string;
+          video_link?: string | null;
         };
         Update: {
           alt_text?: string;
@@ -61,8 +64,10 @@ export interface Database {
           image_link?: string;
           image_width?: number;
           link?: string;
+          summary_for_seo?: string;
           time?: string;
           title?: string;
+          video_link?: string | null;
         };
         Relationships: [];
       };
