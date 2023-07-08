@@ -5,7 +5,7 @@ import React from 'react';
 type CardProps = {
   id: number;
   title: string;
-  content: string[];
+  content: string;
   image_link: string;
   alt_text: string;
   image_width: number;
@@ -32,7 +32,7 @@ const Card = ({
       />
       <div className="flex-1">
         <h2 className="text-2xl font-bold">{title}</h2>
-        <p className="my-2 line-clamp-5 text-sm">{content[0]}</p>
+        <p className="my-2 line-clamp-5 text-sm">{content}</p>
         <NavLink
           href={`/services/newsroom/${id}`}
           variant="cardActive"
