@@ -122,7 +122,7 @@ export interface Database {
       newsroom: {
         Row: {
           alt_text: string;
-          content: string[];
+          content: string;
           created_at: string;
           id: number;
           image_height: number;
@@ -134,7 +134,7 @@ export interface Database {
         };
         Insert: {
           alt_text: string;
-          content: string[];
+          content: string;
           created_at?: string;
           id?: number;
           image_height: number;
@@ -146,7 +146,7 @@ export interface Database {
         };
         Update: {
           alt_text?: string;
-          content?: string[];
+          content?: string;
           created_at?: string;
           id?: number;
           image_height?: number;
