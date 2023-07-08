@@ -91,7 +91,7 @@ const page = async ({ params }: { params: { id: string } }) => {
     return item.id;
   });
   const maxId = Math.max(...ids);
-
+  console.log(data.content);
   return (
     <>
       <section className="mx-auto mb-12 min-h-screen max-w-5xl rounded-lg border border-background">
