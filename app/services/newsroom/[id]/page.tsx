@@ -1,6 +1,7 @@
 import ArticleHeader from './ArticleHeader';
 import ImageCard from './ImageCard';
 import Navigation from './Navigation';
+import YTPlayer from 'app/YTPlayer';
 import { getANewsArticleData, getNewsArticleData } from '../fetchers';
 import { Metadata } from 'next';
 
@@ -108,6 +109,7 @@ const page = async ({ params }: { params: { id: string } }) => {
           />
           <p>{data.content}</p>
         </article>
+        {data.video_link && <YTPlayer url={data.video_link} />}
       </section>
     </>
   );
