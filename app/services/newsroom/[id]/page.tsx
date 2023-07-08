@@ -1,7 +1,6 @@
 import ArticleHeader from './ArticleHeader';
 import ImageCard from './ImageCard';
 import Navigation from './Navigation';
-import clsx from 'clsx';
 import { getANewsArticleData, getNewsArticleData } from '../fetchers';
 import { Metadata } from 'next';
 
@@ -77,6 +76,7 @@ const page = async ({ params }: { params: { id: string } }) => {
   const id = Number(idAsString);
 
   // ? data fetching
+  // ! querying all the files because we have to find maxId
   const { data: rawData, error } = await getNewsArticleData();
   if (!rawData || error) {
     throw new Error('Failed to fetch news articles');
@@ -106,19 +106,7 @@ const page = async ({ params }: { params: { id: string } }) => {
             width={data.image_width}
             height={data.image_height}
           />
-          {data.content.map((para, index) => {
-            return (
-              <p
-                className={clsx(
-                  // index === 0 && 'first-letter:text-2xl ',
-                  'mb-4 selection:bg-contact-blue selection:text-white',
-                )}
-                key={index}
-              >
-                {para}
-              </p>
-            );
-          })}
+          <p>{data.content}</p>
         </article>
       </section>
     </>
