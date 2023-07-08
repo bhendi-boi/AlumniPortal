@@ -94,6 +94,24 @@ const Form = () => {
             className="rounded-md bg-secondary-background p-4"
           />
         </div>
+        <div className="mb-4 flex flex-col gap-1">
+          <label
+            htmlFor="phone-number"
+            className="cursor-pointer font-medium text-contact-blue"
+          >
+            Phone number
+          </label>
+          <input
+            title="Your Phone number"
+            type="tel"
+            id="phone-number"
+            name="phone-number"
+            placeholder="1234567890"
+            pattern="[0-9]{10}"
+            required
+            className="rounded-md bg-secondary-background p-4"
+          />
+        </div>
         <div className="mb-8">
           <Popover className="relative w-2/5">
             <Popover.Button className="hover:bg-primary-background flex w-full cursor-pointer items-center justify-between rounded-md py-4 pr-4 font-medium text-contact-blue">
@@ -178,12 +196,12 @@ const Form = () => {
       <Toast
         state={isSuccess}
         setState={setIsSuccess}
-        message="Email sent successfully !"
+        message="Message sent successfully !"
       />
       <Toast
         state={isFailure}
         setState={setIsFailure}
-        message="Unable to send the email. Try again"
+        message="Unable to send the message. Try again"
       />
     </>
   );
