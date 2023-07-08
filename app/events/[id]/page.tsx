@@ -1,7 +1,6 @@
-import Header from 'app/Header';
-import React from 'react';
-import EventHeader from './EventHeader';
 import Image from 'next/image';
+import EventHeader from './EventHeader';
+import YTPlayer from 'app/YTPlayer';
 import clsx from 'clsx';
 import { getActivitiesData, getAnActivityData } from '../fetchers';
 import { Metadata } from 'next';
@@ -117,6 +116,7 @@ const page = async ({ params }: { params: { id: string } }) => {
             );
           })}
         </div>
+        {data.video_link && <YTPlayer url={data.video_link} />}
       </article>
     </>
   );
