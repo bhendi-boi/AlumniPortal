@@ -1,4 +1,4 @@
-import React from 'react';
+'use client';
 
 const YTPlayer = ({ url }: { url: string }) => {
   const sanitizedUrl = 'https://www.youtube.com/embed/' + url.split('/').pop();
