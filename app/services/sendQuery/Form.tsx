@@ -22,7 +22,7 @@ const Form = () => {
   const [isSuccess, setIsSuccess] = useState(false);
   const [isFailure, setIsFailure] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [pickSubject, setPickSubject] = useState<Subjects>('Campus Visit');
+  const [pickSubject, setPickSubject] = useState<Subjects | undefined>();
   const [otherSubject, setOtherSubject] = useState('');
   const subject = pickSubject === 'Others' ? otherSubject : pickSubject;
 
@@ -112,13 +112,18 @@ const Form = () => {
             className="rounded-md bg-secondary-background p-4"
           />
         </div>
-        <div className="mb-8">
-          <Popover className="relative w-2/5">
-            <Popover.Button className="hover:bg-primary-background flex w-full cursor-pointer items-center justify-between rounded-md py-4 pr-4 font-medium text-contact-blue">
-              <span>Pick your Query</span>{' '}
+        <div className={pickSubject === 'Others' ? 'mb-0' : 'mb-4'}>
+          <Popover className="relative">
+            <Popover.Button className="hover:bg-primary-background flex w-full cursor-pointer items-center justify-between rounded-md py-4 pr-4 font-medium text-contact-blue sm:w-2/5">
+              <span>Your Query</span>{' '}
               <HiChevronUpDown className="h-6 w-6 text-black" />{' '}
             </Popover.Button>
-            <Popover.Panel className="absolute left-0 top-14 z-10 w-full overflow-hidden rounded-md bg-neutral-50 shadow-md">
+            {pickSubject && pickSubject !== 'Others' && (
+              <div className="w-full rounded-md bg-secondary-background p-4">
+                {subject}
+              </div>
+            )}
+            <Popover.Panel className="absolute left-0 top-14 z-10 w-full overflow-hidden rounded-md bg-neutral-50 shadow-md sm:w-2/5">
               {({ close }) => (
                 <div className="flex flex-col overflow-hidden">
                   {subjects.map((item) => {
@@ -151,6 +156,7 @@ const Form = () => {
             <input
               type="text"
               id="other-query"
+              placeholder="Specify your Query here"
               required
               value={otherSubject}
               onChange={(e) => setOtherSubject(e.currentTarget.value)}
