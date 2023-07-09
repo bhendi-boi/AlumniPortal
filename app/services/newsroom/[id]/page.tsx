@@ -72,6 +72,7 @@ export async function generateStaticParams() {
     return item.id;
   });
 }
+export const revalidate = 0;
 
 const page = async ({ params }: { params: { id: string } }) => {
   const { id: idAsString } = params;
