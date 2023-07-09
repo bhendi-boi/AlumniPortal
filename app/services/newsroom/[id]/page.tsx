@@ -108,8 +108,8 @@ const page = async ({ params }: { params: { id: string } }) => {
             height={data.image_height}
           />
           <p>{data.content}</p>
+          {data.video_link && <YTPlayer url={data.video_link} />}
         </article>
-        {data.video_link && <YTPlayer url={data.video_link} />}
       </section>
     </>
   );
