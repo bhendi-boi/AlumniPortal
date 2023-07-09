@@ -1,3 +1,4 @@
+import { compileMDX } from 'next-mdx-remote/rsc';
 import ArticleHeader from './ArticleHeader';
 import ImageCard from './ImageCard';
 import Navigation from './Navigation';
@@ -91,12 +92,13 @@ const page = async ({ params }: { params: { id: string } }) => {
     return item.id;
   });
   const maxId = Math.max(...ids);
-  console.log(data.content);
+  // ? parsing MDX
+  const { content } = await compileMDX({ source: data.content });
   return (
     <>
       <section className="mx-auto mb-12 min-h-screen max-w-5xl rounded-lg border border-background">
         <Navigation id={id} maxId={maxId} />
-        <article className="p-8">
+        <article className="prose prose-sm max-w-none px-8 pb-8 sm:prose-base md:prose-lg prose-p:text-black">
           <ArticleHeader
             title={data.title}
             postedOn={getTime(new Date(data.created_at))}
@@ -107,7 +109,7 @@ const page = async ({ params }: { params: { id: string } }) => {
             width={data.image_width}
             height={data.image_height}
           />
-          <p>{data.content}</p>
+          <p>{content}</p>
           {data.video_link && <YTPlayer url={data.video_link} />}
         </article>
       </section>
