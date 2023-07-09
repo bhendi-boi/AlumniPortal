@@ -9,7 +9,7 @@ const ImageCard = ({ src, alt, width, height }: ImageProps) => {
         alt={alt}
         width={width}
         height={height}
-        className="overflow-hidden rounded-lg bg-gradient-to-br from-gray-100/80 via-gray-200/50 to-gray-400/10"
+        className="skeleton overflow-hidden rounded-lg"
       />
     </li>
   );

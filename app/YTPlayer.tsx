@@ -8,7 +8,7 @@ const YTPlayer = ({ url }: { url: string }) => {
         title="video"
         src={sanitizedUrl}
         allow="autoplay; picture-in-picture"
-        className="aspect-video w-full"
+        className="skeleton aspect-video w-full"
       ></iframe>
     </div>
   );

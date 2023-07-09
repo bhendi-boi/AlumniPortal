@@ -76,3 +76,23 @@ select {
         scroll-behavior: auto !important;
     }
 }
+
+@layer base {
+    @keyframes skeleton-loading {
+        0% {
+            background-color: var(--loading-color-1);
+        }
+
+        100% {
+            background-color: var(--loading-color-2);
+        }
+    }
+}
+
+@layer components {
+    .skeleton {
+        --loading-color-1: rgb(243 244 246 / 0.5);
+        --loading-color-2: rgb(156 163 175 / 0.5);
+        animation: skeleton-loading 1s linear infinite alternate;
+    }
+}
