@@ -5,6 +5,7 @@ import Navigation from './Navigation';
 import YTPlayer from 'app/YTPlayer';
 import { getANewsArticleData, getNewsArticleData } from '../fetchers';
 import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 
 const MONTHS = [
   'JAN',
@@ -86,7 +87,7 @@ const page = async ({ params }: { params: { id: string } }) => {
   }
   const data = rawData.find((item) => item.id === id);
   if (typeof data === 'undefined') {
-    throw new Error('Index out of range');
+    notFound()
   }
   // ? finding maxId
   const ids = rawData.map((item) => {
@@ -97,9 +98,9 @@ const page = async ({ params }: { params: { id: string } }) => {
   const { content } = await compileMDX({ source: data.content });
   return (
     <>
-      <section className="mx-auto mb-12 min-h-screen max-w-5xl rounded-lg border border-background">
+      <section className="max-w-5xl min-h-screen mx-auto mb-12 border rounded-lg border-background">
         <Navigation id={id} maxId={maxId} />
-        <article className="prose prose-sm max-w-none px-8 pb-8 sm:prose-base md:prose-lg prose-p:text-black">
+        <article className="px-8 pb-8 prose-sm prose max-w-none sm:prose-base md:prose-lg prose-p:text-black">
           <ArticleHeader
             title={data.title}
             postedOn={getTime(new Date(data.created_at))}
