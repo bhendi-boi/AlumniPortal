@@ -25,7 +25,7 @@ async function getImagesData() {
   return { data, error };
 }
 
-export const revalidate = 3600;
+export const revalidate = 60;
 
 const page = async () => {
   const { data: images, error } = await getImagesData();
