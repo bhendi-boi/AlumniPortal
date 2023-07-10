@@ -1,4 +1,5 @@
 import { compileMDX } from 'next-mdx-remote/rsc';
+import Image, { ImageProps } from 'next/image';
 import ArticleHeader from './ArticleHeader';
 import ImageCard from './ImageCard';
 import Navigation from './Navigation';
@@ -87,7 +88,7 @@ const page = async ({ params }: { params: { id: string } }) => {
   }
   const data = rawData.find((item) => item.id === id);
   if (typeof data === 'undefined') {
-    notFound()
+    notFound();
   }
   // ? finding maxId
   const ids = rawData.map((item) => {
@@ -95,12 +96,17 @@ const page = async ({ params }: { params: { id: string } }) => {
   });
   const maxId = Math.max(...ids);
   // ? parsing MDX
-  const { content } = await compileMDX({ source: data.content });
+  const { content } = await compileMDX({
+    source: data.content,
+    components: {
+      img: (props) => <img loading="lazy" decoding="async" {...props} />,
+    },
+  });
   return (
     <>
-      <section className="max-w-5xl min-h-screen mx-auto mb-12 border rounded-lg border-background">
+      <section className="mx-auto mb-12 min-h-screen max-w-5xl rounded-lg border border-background">
         <Navigation id={id} maxId={maxId} />
-        <article className="px-8 pb-8 prose-sm prose max-w-none sm:prose-base md:prose-lg prose-p:text-black">
+        <article className="prose-img:skeleton prose prose-sm max-w-none px-8 pb-8 sm:prose-base md:prose-lg prose-p:text-black prose-img:overflow-hidden prose-img:rounded-lg">
           <ArticleHeader
             title={data.title}
             postedOn={getTime(new Date(data.created_at))}
