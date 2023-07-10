@@ -1,3 +1,4 @@
+import { supabase } from './supabase';
 import NewsRoom from './NewsRoom';
 import Activities from './Activities';
 import Carousel from './Carousel';
@@ -19,11 +20,19 @@ export const metadata = {
   },
 };
 
+async function getImagesData() {
+  const { data, error } = await supabase.from('carousel').select().order("id");
+  return { data, error };
+}
+
+export const revalidate = 3600;
+
 const page = async () => {
+  const { data: images, error } = await getImagesData();
   return (
     <div className="my-20">
-      <Carousel />
-      <section className="mt-8 flex flex-col gap-4 md:flex-row md:gap-8">
+      <Carousel images={images} error={error} />
+      <section className="flex flex-col gap-4 mt-8 md:flex-row md:gap-8">
         <NewsRoom />
         <Activities />
       </section>
