@@ -4,6 +4,7 @@ import YTPlayer from 'app/YTPlayer';
 import clsx from 'clsx';
 import { getActivitiesData, getAnActivityData } from '../fetchers';
 import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 
 const MONTHS = [
   'JAN',
@@ -85,7 +86,7 @@ const page = async ({ params }: { params: { id: string } }) => {
   }
   const data = rawData.find((item) => item.id === id);
   if (typeof data === 'undefined') {
-    throw new Error('Index out of range');
+    notFound();
   }
   // ? finding date and time from date object
   const dateObject = new Date(data.time);
@@ -93,7 +94,7 @@ const page = async ({ params }: { params: { id: string } }) => {
 
   return (
     <>
-      <article className="mx-auto mb-8 min-h-screen max-w-5xl rounded-lg border border-background px-4 sm:mb-12 md:mb-16 md:px-8">
+      <article className="max-w-5xl min-h-screen px-4 mx-auto mb-8 border rounded-lg border-background sm:mb-12 md:mb-16 md:px-8">
         <EventHeader
           title={data.title}
           link={data.link}
