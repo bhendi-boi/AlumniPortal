@@ -24,6 +24,8 @@ export const metadata: Metadata = {
   },
 };
 
+export const revalidate = 60;
+
 const page = async () => {
   const { data, error } = await getNewsArticleData();
   if (!data || error) {
