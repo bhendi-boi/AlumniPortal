@@ -75,6 +75,8 @@ export async function generateMetadata({
   };
 }
 
+export const revalidate = 60;
+
 const page = async ({ params }: { params: { id: string } }) => {
   const { id: idAsString } = params;
   const id = Number(idAsString);
@@ -94,7 +96,7 @@ const page = async ({ params }: { params: { id: string } }) => {
 
   return (
     <>
-      <article className="max-w-5xl min-h-screen px-4 mx-auto mb-8 border rounded-lg border-background sm:mb-12 md:mb-16 md:px-8">
+      <article className="mx-auto mb-8 min-h-screen max-w-5xl rounded-lg border border-background px-4 sm:mb-12 md:mb-16 md:px-8">
         <EventHeader
           title={data.title}
           link={data.link}
