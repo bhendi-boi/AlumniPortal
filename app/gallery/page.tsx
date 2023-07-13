@@ -32,26 +32,29 @@ const page = async () => {
     throw new Error(error.message);
   }
 
+  if (!data || error) {
+    return (
+      <>
+        <Header title="Gallery" />
+        <p>Error</p>
+      </>
+    );
+  }
+
   return (
     <>
       <Header title="Gallery" />
-      {data?.length === 0 ? (
-        <div className="px-16 py-4">
-          <p className="text-lg">No images to display.</p>
-        </div>
-      ) : (
-        <ul className="mx-auto mb-8 grid min-h-screen max-w-5xl grid-cols-1 gap-5 rounded-lg border border-background p-6 sm:grid-cols-2 sm:p-8 md:mb-16 md:grid-cols-3 md:p-12">
-          {data?.map((image, index) => (
-            <ImageCard
-              key={index}
-              src={image.link}
-              alt={image.alt_text}
-              width={image.width}
-              height={image.height}
-            />
-          ))}
-        </ul>
-      )}
+      <ul className="mx-auto mb-8 flex min-h-screen max-w-5xl grid-cols-1 flex-wrap gap-6 rounded-lg border border-background p-6 sm:p-8 md:mb-16 md:p-12">
+        {data.map((image, index) => (
+          <ImageCard
+            key={index}
+            src={image.link}
+            alt={image.alt_text}
+            width={image.width}
+            height={image.height}
+          />
+        ))}
+      </ul>
     </>
   );
 };
