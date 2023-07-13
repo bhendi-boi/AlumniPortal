@@ -1,3 +1,4 @@
+import { compileMDX } from 'next-mdx-remote/rsc';
 import Image from 'next/image';
 import EventHeader from './EventHeader';
 import YTPlayer from 'app/YTPlayer';
@@ -94,6 +95,14 @@ const page = async ({ params }: { params: { id: string } }) => {
   const dateObject = new Date(data.time);
   const { date, time } = getTime(dateObject);
 
+  // ? parsing MDX
+  const { content } = await compileMDX({
+    source: data.content,
+    components: {
+      img: (props) => <img loading="lazy" decoding="async" {...props} />,
+    },
+  });
+
   return (
     <>
       <article className="mx-auto mb-8 min-h-screen max-w-5xl rounded-lg border border-background px-4 sm:mb-12 md:mb-16 md:px-8">
@@ -110,14 +119,8 @@ const page = async ({ params }: { params: { id: string } }) => {
           width={data.image_width}
           height={data.image_height}
         />
-        <div className="mt-8">
-          {data.content.map((para, index) => {
-            return (
-              <p className={clsx('first-letter:pl-20', 'mb-8')} key={index}>
-                {para}
-              </p>
-            );
-          })}
+        <div className="prose-img:skeleton prose prose-sm mt-8 max-w-none px-8 pb-8 sm:prose-base md:prose-lg prose-p:text-black prose-img:overflow-hidden prose-img:rounded-lg">
+          {content}
         </div>
         {data.video_link && <YTPlayer url={data.video_link} />}
       </article>

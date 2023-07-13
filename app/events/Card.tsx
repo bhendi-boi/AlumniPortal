@@ -5,7 +5,7 @@ import React from 'react';
 type CardProps = {
   id: number;
   title: string;
-  content: string[];
+  summary_for_seo: string;
   image_link: string;
   alt_text: string;
   image_width: number;
@@ -15,7 +15,7 @@ type CardProps = {
 const Card = ({
   id,
   title,
-  content,
+  summary_for_seo,
   image_link,
   alt_text,
   image_height,
@@ -32,7 +32,7 @@ const Card = ({
       />
       <div className="flex-1">
         <h2 className="text-2xl font-bold">{title}</h2>
-        <p className="my-2 line-clamp-5 text-sm">{content[0]}</p>
+        <p className="my-2 line-clamp-5 text-sm">{summary_for_seo}</p>
         <NavLink
           href={`/events/${id}`}
           variant="cardActive"
