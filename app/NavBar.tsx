@@ -39,16 +39,17 @@ const NavBar = () => {
     <header
       style={{ boxSizing: 'border-box' }}
       className={clsx(
-        'sticky top-0 z-10 flex h-16 border-b border-background bg-white px-5 md:px-10',
+        'sticky top-0 z-10 flex h-16 justify-between border-b border-background bg-white px-5 md:px-10',
         showShadow && 'shadow-lg',
       )}
     >
-      <div className="flex flex-1 items-center gap-4">
+      <div className="flex items-center gap-4">
         <Link href="https://iiitdm.ac.in" rel="norefer" target="_blank">
           <Image src={'/iiitdm.png'} alt="IIITDM Logo" width={40} height={40} />
         </Link>
         <Link href="/">
           <Image
+            priority
             src={'/aa_logo.png'}
             alt="IIITDM Logo"
             width={40}
@@ -56,14 +57,7 @@ const NavBar = () => {
           />
         </Link>
       </div>
-      <nav className="hidden items-center gap-8 md:flex">
-        <NavLink
-          href="/"
-          variant={path === null ? 'active' : 'primary'}
-          title="Home"
-        >
-          Home
-        </NavLink>
+      <nav className="items-center justify-end flex-1 hidden gap-6 md:flex">
         <NavLink
           href="/about"
           variant={path === 'about' ? 'active' : 'primary'}
@@ -85,7 +79,6 @@ const NavBar = () => {
         >
           Gallery
         </NavLink>
-        <Services active={path === 'services'} />
         <NavLink
           href="/alumniDirectory"
           variant={path === 'alumniDirectory' ? 'active' : 'primary'}
@@ -93,9 +86,27 @@ const NavBar = () => {
         >
           Directory
         </NavLink>
-        {/* <NavLink href="/login" variant="filled" title="Login (Admin Only)">
-          Login
-        </NavLink> */}
+        <NavLink
+          href="/newsroom"
+          variant={path === 'newsroom' ? 'active' : 'primary'}
+          title="Newsroom"
+        >
+          Newsroom
+        </NavLink>
+        <NavLink
+          href="/contact"
+          variant={path === 'contact' ? 'active' : 'primary'}
+          title="Newsroom"
+        >
+          Contact us
+        </NavLink>
+        <NavLink
+          href="/alumniFund"
+          variant={path === 'alumniFund' ? 'active' : 'primary'}
+          title="Alumni Fund"
+        >
+          Alumni Fund
+        </NavLink>
       </nav>
       {/* mobile nav */}
       <Menu>
@@ -104,23 +115,21 @@ const NavBar = () => {
           title="Menu button"
           onClick={() => setIsOpen((prev) => !prev)}
         >
-          {({ open }) =>
-            open ? <GrFormClose size={30} /> : <HiMenuAlt4 size={30} />
-          }
+          {isOpen ? <GrFormClose size={30} /> : <HiMenuAlt4 size={30} />}
         </Menu.Button>
         <AnimatePresence>
           {isOpen && (
             <Menu.Items
               static
               onClick={() => setIsOpen(false)}
-              className="absolute right-0 top-16 z-10 h-screen w-full overflow-hidden bg-neutral-950/30"
+              className="absolute right-0 z-10 w-full h-screen overflow-hidden top-16 bg-neutral-950/30"
             >
               <motion.ul
                 initial={{ x: '100%', opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: '100%', opacity: 1 }}
                 transition={{ type: 'tween', duration: 0.25 }}
-                className="absolute right-0 top-0 flex h-screen w-2/3 flex-col gap-4 bg-background p-6"
+                className="absolute top-0 right-0 flex flex-col w-2/3 h-screen gap-4 p-6 bg-background"
               >
                 <Menu.Item as="li" className="">
                   <NavLink
@@ -164,16 +173,6 @@ const NavBar = () => {
                 </Menu.Item>
                 <Menu.Item as="li">
                   <NavLink
-                    onClick={() => setIsOpen(false)}
-                    href="/services"
-                    variant={path === 'services' ? 'active' : 'primary'}
-                    title="Services"
-                  >
-                    Services
-                  </NavLink>
-                </Menu.Item>
-                <Menu.Item as="li">
-                  <NavLink
                     href="/alumniDirectory"
                     variant={path === 'alumniDirectory' ? 'active' : 'primary'}
                     title="Alumni Directory"
@@ -181,16 +180,33 @@ const NavBar = () => {
                     Directory
                   </NavLink>
                 </Menu.Item>
-                {/* <Menu.Item as="li">
+                <Menu.Item as="li">
                   <NavLink
                     onClick={() => setIsOpen(false)}
-                    href="/login"
-                    variant="filled"
-                    title="Login (Admin Only)"
+                    href="/newsroom"
+                    title="Newsroom"
                   >
-                    Login
+                    Newsroom
                   </NavLink>
-                </Menu.Item> */}
+                </Menu.Item>
+                <Menu.Item as="li">
+                  <NavLink
+                    onClick={() => setIsOpen(false)}
+                    href="/contact"
+                    title="Contact"
+                  >
+                    Contact
+                  </NavLink>
+                </Menu.Item>
+                <Menu.Item as="li">
+                  <NavLink
+                    onClick={() => setIsOpen(false)}
+                    href="/alumniFund"
+                    title="Alumni Fund"
+                  >
+                    Alumni Fund
+                  </NavLink>
+                </Menu.Item>
               </motion.ul>
             </Menu.Items>
           )}
@@ -201,74 +217,3 @@ const NavBar = () => {
 };
 
 export default NavBar;
-
-function Services({ active }: { active: boolean }) {
-  return (
-    <Menu as="div" className="relative">
-      {({ open }) => (
-        <>
-          <Menu.Button className="block w-full text-xl font-medium text-black">
-            Services
-            {active && (
-              <motion.span
-                className="absolute -bottom-[0.125rem] left-0 h-0.5 w-full bg-nav-blue"
-                layoutId="nav-link-underline"
-              />
-            )}
-          </Menu.Button>
-          {open && (
-            <Menu.Items
-              as="ul"
-              className="absolute right-0 top-8 flex min-w-[12rem] flex-col gap-2 divide-y divide-background rounded-lg border border-background bg-white px-4 py-2 text-sm"
-            >
-              <Menu.Item>
-                {({ active }) => (
-                  <Link
-                    className={active ? 'text-black' : 'text-secondary-text'}
-                    title="Send Query"
-                    href="/services/sendQuery"
-                  >
-                    Send Query
-                  </Link>
-                )}
-              </Menu.Item>
-              <Menu.Item>
-                {({ active }) => (
-                  <Link
-                    className={active ? 'text-black' : 'text-secondary-text'}
-                    title="Newsroom"
-                    href="/services/newsroom"
-                  >
-                    Newsroom
-                  </Link>
-                )}
-              </Menu.Item>
-              <Menu.Item>
-                {({ active }) => (
-                  <Link
-                    className={active ? 'text-black' : 'text-secondary-text'}
-                    title="Alumni Directory"
-                    href="/services/fund"
-                  >
-                    Fund
-                  </Link>
-                )}
-              </Menu.Item>
-              <Menu.Item>
-                {({ active }) => (
-                  <Link
-                    className={active ? 'text-black' : 'text-secondary-text'}
-                    title="Volunteer"
-                    href="/services/volunteer"
-                  >
-                    Volunteer
-                  </Link>
-                )}
-              </Menu.Item>
-            </Menu.Items>
-          )}
-        </>
-      )}
-    </Menu>
-  );
-}

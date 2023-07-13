@@ -34,7 +34,7 @@ const Card = ({
         <h2 className="text-2xl font-bold">{title}</h2>
         <p className="my-2 line-clamp-5 text-sm">{summary_for_seo}</p>
         <NavLink
-          href={`/services/newsroom/${id}`}
+          href={`/newsroom/${id}`}
           variant="cardActive"
           title={`link to ${title}`}
         >

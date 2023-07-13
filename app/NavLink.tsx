@@ -7,11 +7,11 @@ import { cva, type VariantProps } from 'class-variance-authority';
 const link = cva('link', {
   variants: {
     variant: {
-      primary: ['text-black font-medium text-xl w-full block'],
+      primary: ['text-black font-medium text-xl inline-block'],
       filled: [
         'bg-nav-blue text-white font-medium text-xl px-6 py-1.5 rounded-lg w-full block text-center',
       ],
-      active: ['text-nav-blue font-medium text-xl w-full block relative'],
+      active: ['text-nav-blue font-medium text-xl inline-block relative'],
       cardActive: [
         'text-nav-blue underline underline-offset-4 font-medium text-sm',
       ],

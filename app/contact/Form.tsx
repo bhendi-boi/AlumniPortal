@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, FormEvent } from 'react';
 import { Popover } from '@headlessui/react';
-import Toast from '../Toast';
+import Toast from '../services/Toast';
 import { HiChevronUpDown } from 'react-icons/hi2';
 
 type Subjects =

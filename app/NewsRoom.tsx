@@ -1,6 +1,6 @@
 import { supabase } from './supabase';
 import NavLink from './NavLink';
-import { getNewsArticleData } from './services/newsroom/fetchers';
+import { getNewsArticleData } from './newsroom/fetchers';
 
 const MONTHS = [
   'JAN',
@@ -30,11 +30,11 @@ const NewsRoom = async () => {
     return (
       <section
         aria-labelledby="newsroom"
-        className="w-full rounded-md border border-background md:max-w-3xl"
+        className="w-full border rounded-md border-background md:max-w-3xl"
       >
         <h2
           id="newsroom"
-          className="border-b border-background px-5 py-2 text-xl font-medium uppercase text-nav-blue"
+          className="px-5 py-2 text-xl font-medium uppercase border-b border-background text-nav-blue"
         >
           NewsRoom
         </h2>
@@ -56,11 +56,11 @@ const NewsRoom = async () => {
   return (
     <section
       aria-labelledby="newsroom"
-      className="w-full rounded-md border border-background md:max-w-3xl"
+      className="w-full border rounded-md border-background md:max-w-3xl"
     >
       <h2
         id="newsroom"
-        className="border-b border-background px-5 py-2 text-xl font-medium uppercase text-nav-blue"
+        className="px-5 py-2 text-xl font-medium uppercase border-b border-background text-nav-blue"
       >
         NewsRoom
       </h2>
@@ -72,7 +72,7 @@ const NewsRoom = async () => {
               <NavLink
                 variant="newsroom"
                 title={`Go to ${newsArticle.title}`}
-                href={`/services/newsroom/${newsArticle.id}`}
+                href={`/newsroom/${newsArticle.id}`}
               >
                 <h3 className="flex-1 text-black">{newsArticle.title}</h3>
                 <p className="text-sm text-secondary-text">
