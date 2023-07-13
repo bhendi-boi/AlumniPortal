@@ -1,5 +1,4 @@
 import { compileMDX } from 'next-mdx-remote/rsc';
-import Image, { ImageProps } from 'next/image';
 import ArticleHeader from './ArticleHeader';
 import ImageCard from './ImageCard';
 import Navigation from './Navigation';
