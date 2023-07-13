@@ -11,7 +11,7 @@ type Activity = {
 };
 type Data = {
   alt_text: string;
-  content: string[];
+  content: string;
   id: number;
   image_height: number;
   image_link: string;
