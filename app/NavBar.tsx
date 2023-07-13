@@ -59,6 +59,13 @@ const NavBar = () => {
       </div>
       <nav className="items-center justify-end flex-1 hidden gap-6 md:flex">
         <NavLink
+          href="/"
+          variant={path === null ? 'active' : 'primary'}
+          title="Home"
+        >
+          Home
+        </NavLink>
+        <NavLink
           href="/about"
           variant={path === 'about' ? 'active' : 'primary'}
           title="About"
