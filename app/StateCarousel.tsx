@@ -42,10 +42,18 @@ export default function StateCarousel({ images }: { images: Images }) {
   return (
     <div>
       <div className="relative isolate my-auto max-h-[24rem]">
-        <NavigationButton variant="left" onClick={() => handleClick('minus')}>
+        <NavigationButton
+          title="Go to Previous Image"
+          variant="left"
+          onClick={() => handleClick('minus')}
+        >
           <AiOutlineLeft className="h-4 w-4 sm:h-6 sm:w-6 md:h-8 md:w-8" />
         </NavigationButton>
-        <NavigationButton variant="right" onClick={() => handleClick('plus')}>
+        <NavigationButton
+          title="Go to Next Image"
+          variant="right"
+          onClick={() => handleClick('plus')}
+        >
           <AiOutlineRight className="h-4 w-4 sm:h-6 sm:w-6 md:h-8 md:w-8" />
         </NavigationButton>
         <div className="flex min-h-full items-center">
