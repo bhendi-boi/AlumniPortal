@@ -22,7 +22,7 @@ const TeamMemberCard = ({
       className={clsx(
         'flex w-full items-center gap-4 rounded-lg px-4 py-4 md:w-44 md:flex-col md:px-0',
         position !== 'Secretary' && 'bg-secondary-background drop-shadow-md',
-        position === 'Secretary' && 'bg-white  shadow-xl drop-shadow-xl',
+        position === 'Secretary' && 'bg-white shadow-xl ring-2 ring-black/5',
       )}
     >
       <Image
@@ -40,7 +40,7 @@ const TeamMemberCard = ({
           </p>
         </div>
 
-        <div className={clsx('flex', linkedIn && 'justify-center gap-2')}>
+        <div className={clsx('flex md:justify-center', linkedIn && 'gap-4')}>
           <Link
             href={`mailto:${email}`}
             target="_blank"
