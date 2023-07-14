@@ -35,12 +35,12 @@ const TeamMemberCard = ({
       <div className="flex flex-col gap-2">
         <div>
           <p className="font-medium">{position}</p>
-          <p className="mb-2 mt-1 text-sm font-semibold text-contact-blue md:my-0 md:font-medium">
+          <p className="mt-1 mb-2 text-sm font-semibold text-contact-blue md:my-0 md:font-medium">
             {name}
           </p>
         </div>
 
-        <div className={clsx('flex md:justify-center', linkedIn && 'gap-4')}>
+        <div className={clsx('flex md:justify-center', linkedIn && 'gap-6')}>
           <Link
             href={`mailto:${email}`}
             target="_blank"
@@ -48,7 +48,7 @@ const TeamMemberCard = ({
             className="md:self-center"
             title={`Email of ${name}`}
           >
-            <CiMail size={20} />
+            <CiMail size={24} />
           </Link>
           {linkedIn && (
             <Link
@@ -58,7 +58,7 @@ const TeamMemberCard = ({
               className="md:self-center"
               title={`LinkedIn profile of ${name}`}
             >
-              <AiFillLinkedin size={20} />
+              <AiFillLinkedin size={24} />
             </Link>
           )}
         </div>
