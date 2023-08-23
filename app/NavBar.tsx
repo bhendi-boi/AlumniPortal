@@ -105,7 +105,7 @@ const NavBar = () => {
           variant={path === 'contact' ? 'active' : 'primary'}
           title="Newsroom"
         >
-          Contact us
+          Contact Us
         </NavLink>
         <NavLink
           href="/alumniFund"
