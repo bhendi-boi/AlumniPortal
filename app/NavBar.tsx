@@ -37,27 +37,43 @@ const NavBar = () => {
   }, [isOpen]);
   return (
     <header
-      style={{ boxSizing: 'border-box' }}
       className={clsx(
-        'sticky top-0 z-10 flex h-16 justify-between border-b border-background bg-white px-5 md:px-10',
+        'z-10 flex h-16 items-center border-b border-background bg-white px-5 md:h-52 md:flex-col md:items-stretch md:px-10 md:pt-5',
         showShadow && 'shadow-lg',
       )}
     >
-      <div className="flex items-center gap-4">
+      <div className="flex flex-1 items-center gap-4 md:gap-0">
         <Link href="https://iiitdm.ac.in" rel="norefer" target="_blank">
-          <Image src={'/iiitdm.png'} alt="IIITDM Logo" width={40} height={40} />
+          <Image
+            className="w-10 md:w-24"
+            src={'/iiitdm.png'}
+            alt="IIITDM Logo"
+            width={90}
+            height={90}
+          />
         </Link>
         <Link href="/">
           <Image
             priority
+            className="block md:hidden"
             src={'/aa_logo.png'}
-            alt="IIITDM Logo"
+            alt="Alumni Affairs IIITDM Logo"
             width={40}
             height={40}
           />
         </Link>
+        <Link href="/">
+          <Image
+            priority
+            className="hidden md:block"
+            src={'/logo_longclg2.png'}
+            alt="Alumni Affairs IIITDM Logo"
+            width={400}
+            height={400}
+          />
+        </Link>
       </div>
-      <nav className="items-center justify-end flex-1 hidden gap-6 md:flex">
+      <nav className="hidden flex-1 flex-wrap items-center justify-between gap-4 px-4 md:flex">
         <NavLink
           href="/"
           variant={path === null ? 'active' : 'primary'}
@@ -129,14 +145,14 @@ const NavBar = () => {
             <Menu.Items
               static
               onClick={() => setIsOpen(false)}
-              className="absolute right-0 z-10 w-full h-screen overflow-hidden top-16 bg-neutral-950/30"
+              className="absolute right-0 top-16 z-10 h-screen w-full overflow-hidden bg-neutral-950/30"
             >
               <motion.ul
                 initial={{ x: '100%', opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: '100%', opacity: 1 }}
                 transition={{ type: 'tween', duration: 0.25 }}
-                className="absolute top-0 right-0 flex flex-col w-2/3 h-screen gap-4 p-6 bg-background"
+                className="absolute right-0 top-0 flex h-screen w-2/3 flex-col gap-4 bg-background p-6"
               >
                 <Menu.Item as="li" className="">
                   <NavLink
