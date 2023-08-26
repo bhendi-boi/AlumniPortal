@@ -63,7 +63,7 @@ const Footer = () => {
             <p>A-103, Admin Block,</p>
             <p>IIITDM Kancheepuram,</p>
             <p>Chennai - 600 127</p>
-            <ul className="flex justify-end gap-4">
+            <ul className="flex gap-4 sm:justify-end">
               <li>
                 <Link
                   href={`mailto:@alumni.affairs@iiitdm.ac.in`}
