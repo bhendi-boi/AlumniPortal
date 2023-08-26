@@ -25,6 +25,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       <head>
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <link rel="icon" type="image/x-icon" href="/aa_logo.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body id="body" className={`bg-white ${inter.variable} font-inter`}>
