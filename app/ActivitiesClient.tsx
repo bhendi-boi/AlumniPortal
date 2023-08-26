@@ -1,8 +1,9 @@
 'use client';
 import NavLink from './NavLink';
+// ! THIS COMPONENT EXISTS because handling time in client components is not advised
 
-// this Activity is not the same as the one we fetch.
-// It has an extra `relativeTime` field and doesn't contain all the fields present in activity row in supabase
+// ? this Activity is not the same as the one we fetch.
+// ? It has an extra `relativeTime` field and doesn't contain all the fields present in activity row in supabase
 type Activity = {
   id: number;
   title: string;

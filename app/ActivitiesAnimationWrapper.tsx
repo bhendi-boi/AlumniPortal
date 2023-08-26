@@ -1,4 +1,6 @@
 'use client';
+// ! THIS COMPONENT is required to use framer motion
+
 import { motion } from 'framer-motion';
 import ActivitiesClient from './ActivitiesClient';
 export const ActivitiesAnimationWrapper = ({

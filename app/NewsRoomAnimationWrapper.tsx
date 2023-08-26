@@ -1,4 +1,5 @@
 'use client';
+// ! THIS COMPONENT is required to use framer motion
 import { motion } from 'framer-motion';
 import NavLink from './NavLink';
 export const AnimationWrapper = ({
