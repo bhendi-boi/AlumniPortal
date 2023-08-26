@@ -63,42 +63,42 @@ const Footer = () => {
             <p>A-103, Admin Block,</p>
             <p>IIITDM Kancheepuram,</p>
             <p>Chennai - 600 127</p>
+            <ul className="flex justify-end gap-4">
+              <li>
+                <Link
+                  href={`mailto:@alumni.affairs@iiitdm.ac.in`}
+                  target="_blank"
+                  rel="norefer"
+                  title="Mail us ?"
+                >
+                  <CiMail size={30} />
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="https://www.linkedin.com/company/alumni-affairs-iiitdm/"
+                  target="_blank"
+                  rel="norefer"
+                  title="Our LinkedIn Page"
+                >
+                  <AiFillLinkedin size={30} />
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="https://www.instagram.com/alumniaffairsiiitdm/"
+                  target="_blank"
+                  rel="norefer"
+                  title="Our Instagram Page"
+                >
+                  <AiOutlineInstagram size={30} />
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
         {/* icons and copyright */}
         <div className="flex flex-col items-center justify-center gap-4">
-          <ul className="flex gap-4">
-            <li>
-              <Link
-                href={`mailto:@alumni.affairs@iiitdm.ac.in`}
-                target="_blank"
-                rel="norefer"
-                title="Mail us ?"
-              >
-                <CiMail size={30} />
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="https://www.linkedin.com/company/alumni-affairs-iiitdm/"
-                target="_blank"
-                rel="norefer"
-                title="Our LinkedIn Page"
-              >
-                <AiFillLinkedin size={30} />
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="https://www.instagram.com/alumniaffairsiiitdm/"
-                target="_blank"
-                rel="norefer"
-                title="Our Instagram Page"
-              >
-                <AiOutlineInstagram size={30} />
-              </Link>
-            </li>
-          </ul>
           <p className="text-center font-medium ">
             © {new Date().getFullYear()} Alumni Affairs, IIITDM Kancheepuram
           </p>
