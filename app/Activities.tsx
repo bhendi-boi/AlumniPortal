@@ -1,4 +1,4 @@
-import ActivitiesClient from './ActivitiesClient';
+import { ActivitiesAnimationWrapper } from './ActivitiesAnimationWrapper';
 import { getActivitiesData } from './events/fetchers';
 
 const Activities = async () => {
@@ -22,20 +22,7 @@ const Activities = async () => {
     );
   }
 
-  return (
-    <section
-      aria-labelledby="activities"
-      className="max-h-fit w-full rounded-md border border-background"
-    >
-      <h2
-        id="activities"
-        className="border-b border-background px-5 py-2 text-xl font-medium uppercase text-nav-blue"
-      >
-        Activities
-      </h2>
-      <ActivitiesClient data={data} />
-    </section>
-  );
+  return <ActivitiesAnimationWrapper data={data} />;
 };
 
 export default Activities;
