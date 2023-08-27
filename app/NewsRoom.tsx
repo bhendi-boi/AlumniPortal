@@ -38,7 +38,9 @@ const NewsRoom = async () => {
           NewsRoom
         </h2>
         <div className="p-6">
-          <p className="text-lg">Failed to fetch newsroom articles</p>
+          <p className="text-lg text-red-600">
+            Failed to fetch newsroom articles
+          </p>
         </div>
       </section>
     );

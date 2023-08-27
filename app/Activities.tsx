@@ -16,7 +16,7 @@ const Activities = async () => {
           Activities
         </h2>
         <div className="p-6">
-          <p className="text-lg">Failed to fetch activities</p>
+          <p className="text-lg text-red-600">Failed to fetch activities</p>
         </div>
       </section>
     );
