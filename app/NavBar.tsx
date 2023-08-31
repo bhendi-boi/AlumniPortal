@@ -44,7 +44,7 @@ const NavBar = () => {
           showShadow && 'shadow-lg md:shadow-none',
         )}
       >
-        <div className="flex flex-1 items-center gap-4 md:gap-0">
+        <div className="z-20 flex flex-1 items-center gap-4 md:gap-0">
           <Link href="https://iiitdm.ac.in" rel="norefer" target="_blank">
             <Image
               className="w-10 md:w-24"
@@ -151,7 +151,7 @@ const NavBar = () => {
         {/* mobile nav */}
         <Menu>
           <Menu.Button
-            className="md:hidden"
+            className="z-20 md:hidden"
             title="Menu button"
             onClick={() => setIsOpen((prev) => !prev)}
           >
@@ -161,95 +161,90 @@ const NavBar = () => {
             {isOpen && (
               <Menu.Items
                 static
+                as={motion.ul}
+                initial={{ y: '-100%', opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: '-100%', opacity: 1 }}
+                transition={{ damping: 20, stiffness: 400 }}
+                className="absolute left-0 top-16 z-10 flex h-screen w-full flex-col gap-6 overflow-hidden bg-white p-6"
                 onClick={() => setIsOpen(false)}
-                className="absolute right-0 top-16 z-10 h-screen w-full overflow-hidden bg-neutral-950/30"
               >
-                <motion.ul
-                  initial={{ x: '100%', opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  exit={{ x: '100%', opacity: 1 }}
-                  transition={{ type: 'tween', duration: 0.25 }}
-                  className="absolute right-0 top-0 flex h-screen w-2/3 flex-col gap-4 bg-background p-6"
-                >
-                  <Menu.Item as="li" className="">
-                    <NavLink
-                      onClick={() => setIsOpen(false)}
-                      href="/"
-                      variant={path === null ? 'active' : 'primary'}
-                      title="Home"
-                    >
-                      Home
-                    </NavLink>
-                  </Menu.Item>
-                  <Menu.Item as="li">
-                    <NavLink
-                      onClick={() => setIsOpen(false)}
-                      href="/about"
-                      variant={path === 'about' ? 'active' : 'primary'}
-                      title="About"
-                    >
-                      About
-                    </NavLink>
-                  </Menu.Item>
-                  <Menu.Item as="li">
-                    <NavLink
-                      onClick={() => setIsOpen(false)}
-                      href="/events"
-                      variant={path === 'events' ? 'active' : 'primary'}
-                      title="Events"
-                    >
-                      Events
-                    </NavLink>
-                  </Menu.Item>
-                  <Menu.Item as="li">
-                    <NavLink
-                      onClick={() => setIsOpen(false)}
-                      href="/gallery"
-                      variant={path === 'gallery' ? 'active' : 'primary'}
-                      title="Gallery"
-                    >
-                      Gallery
-                    </NavLink>
-                  </Menu.Item>
-                  <Menu.Item as="li">
-                    <NavLink
-                      href="/alumniDirectory"
-                      variant={
-                        path === 'alumniDirectory' ? 'active' : 'primary'
-                      }
-                      title="Alumni Directory"
-                    >
-                      Directory
-                    </NavLink>
-                  </Menu.Item>
-                  <Menu.Item as="li">
-                    <NavLink
-                      onClick={() => setIsOpen(false)}
-                      href="/newsroom"
-                      title="Newsroom"
-                    >
-                      Newsroom
-                    </NavLink>
-                  </Menu.Item>
-                  <Menu.Item as="li">
-                    <NavLink
-                      onClick={() => setIsOpen(false)}
-                      href="/contact"
-                      title="Contact"
-                    >
-                      Contact
-                    </NavLink>
-                  </Menu.Item>
-                  <Menu.Item as="li">
-                    <NavLink
-                      onClick={() => setIsOpen(false)}
-                      href="/alumniFund"
-                      title="Alumni Fund"
-                    >
-                      Alumni Fund
-                    </NavLink>
-                  </Menu.Item>
-                </motion.ul>
+                <Menu.Item as="li" className="">
+                  <NavLink
+                    onClick={() => setIsOpen(false)}
+                    href="/"
+                    variant={path === null ? 'active' : 'primary'}
+                    title="Home"
+                  >
+                    Home
+                  </NavLink>
+                </Menu.Item>
+                <Menu.Item as="li">
+                  <NavLink
+                    onClick={() => setIsOpen(false)}
+                    href="/about"
+                    variant={path === 'about' ? 'active' : 'primary'}
+                    title="About"
+                  >
+                    About
+                  </NavLink>
+                </Menu.Item>
+                <Menu.Item as="li">
+                  <NavLink
+                    onClick={() => setIsOpen(false)}
+                    href="/events"
+                    variant={path === 'events' ? 'active' : 'primary'}
+                    title="Events"
+                  >
+                    Events
+                  </NavLink>
+                </Menu.Item>
+                <Menu.Item as="li">
+                  <NavLink
+                    onClick={() => setIsOpen(false)}
+                    href="/gallery"
+                    variant={path === 'gallery' ? 'active' : 'primary'}
+                    title="Gallery"
+                  >
+                    Gallery
+                  </NavLink>
+                </Menu.Item>
+                <Menu.Item as="li">
+                  <NavLink
+                    href="/alumniDirectory"
+                    variant={path === 'alumniDirectory' ? 'active' : 'primary'}
+                    title="Alumni Directory"
+                  >
+                    Directory
+                  </NavLink>
+                </Menu.Item>
+                <Menu.Item as="li">
+                  <NavLink
+                    onClick={() => setIsOpen(false)}
+                    href="/newsroom"
+                    title="Newsroom"
+                  >
+                    Newsroom
+                  </NavLink>
+                </Menu.Item>
+                <Menu.Item as="li">
+                  <NavLink
+                    onClick={() => setIsOpen(false)}
+                    href="/contact"
+                    title="Contact"
+                  >
+                    Contact
+                  </NavLink>
+                </Menu.Item>
+                <Menu.Item as="li">
+                  <NavLink
+                    onClick={() => setIsOpen(false)}
+                    href="/alumniFund"
+                    title="Alumni Fund"
+                  >
+                    Alumni Fund
+                  </NavLink>
+                </Menu.Item>
               </Menu.Items>
             )}
           </AnimatePresence>
