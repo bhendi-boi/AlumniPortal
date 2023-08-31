@@ -1,6 +1,7 @@
 import { Inter } from 'next/font/google';
 import NavBar from './NavBar';
 import Footer from './Footer';
+import NextTopLoader from 'nextjs-toploader';
 import '../styles/globals.css';
 
 const inter = Inter({
@@ -29,6 +30,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body id="body" className={`bg-white ${inter.variable} font-inter`}>
+        <NextTopLoader color="#123262" showSpinner={false} />
         <NavBar />
         <main className="mx-auto min-h-screen max-w-7xl px-5 md:px-10">
           {children}
