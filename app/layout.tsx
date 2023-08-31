@@ -1,4 +1,4 @@
-import { Inter } from 'next/font/google';
+import { Inter, Lato } from 'next/font/google';
 import NavBar from './NavBar';
 import Footer from './Footer';
 import NextTopLoader from 'nextjs-toploader';
@@ -10,6 +10,13 @@ const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
   variable: '--Inter',
+});
+const lato = Lato({
+  weight: '400',
+  style: 'normal',
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--Lato',
 });
 
 export const metadata = {
@@ -29,7 +36,10 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <link rel="icon" type="image/x-icon" href="/aa_logo.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
-      <body id="body" className={`bg-white ${inter.variable} font-inter`}>
+      <body
+        id="body"
+        className={`bg-white ${inter.variable} ${lato.variable} font-inter`}
+      >
         <NextTopLoader color="#123262" showSpinner={false} />
         <NavBar />
         <main className="mx-auto min-h-screen max-w-7xl px-5 md:px-10">
