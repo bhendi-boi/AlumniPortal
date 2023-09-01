@@ -14,7 +14,7 @@ const Header = ({
           <h1 className="inline text-left font-lora text-4xl">{title}</h1>
         </Link>
       ) : (
-        <h1 className="font-lato text-left text-4xl">{title}</h1>
+        <h1 className="text-left font-lora text-4xl">{title}</h1>
       )}
     </header>
   );
