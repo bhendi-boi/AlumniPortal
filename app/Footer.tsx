@@ -57,7 +57,7 @@ const Footer = () => {
           </ul>
           {/* contact */}
           <div className="flex w-full flex-col gap-0.5 text-lg md:text-right">
-            <p className="mb-1 font-lora text-3xl font-bold text-nav-blue">
+            <p className="mb-1 font-lora text-3xl font-bold tracking-wide text-nav-blue">
               Alumni Affairs
             </p>
             <p>A-103, Admin Block,</p>
