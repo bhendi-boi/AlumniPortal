@@ -1,10 +1,26 @@
-export type AlumniDetails = {
-  src: string;
-  name: string;
-  degree: 'B Tech' | 'M Tech' | 'Dual Degree' | 'M Des' | 'PhD';
-  year: number;
-  department: 'CSE' | 'ECE' | 'MECH' | 'SM' | 'CSAI';
-};
+export type AlumniDetails =
+  | {
+      name: string;
+      year: number;
+      degree: 'B. Tech.' | 'M. Tech.' | 'Dual Degree' | 'M. Des.' | 'PhD';
+      department:
+        | 'Mechanical Engineering'
+        | 'Mechanical Systems'
+        | 'Mechanical Engineering  with specialization in Design and Manufacturing'
+        | 'Electronic Systems'
+        | 'Electronics Engineering'
+        | 'Communication Systems'
+        | 'Electronics and Communication Engineering'
+        | 'Computer Engineering';
+    }
+  | {
+      name: string;
+      year: number;
+      degree: 'B. Tech.+M. Tech.';
+      department:
+        | 'Computer Engineering'
+        | 'Mechanical Engineering with specialization in Design and Manufacturing+Product Design';
+    };
 
 export type MemberData = {
   imagePath: string;
@@ -13,8 +29,10 @@ export type MemberData = {
     | 'Professor In Charge'
     | 'Secretary'
     | 'Joint Secretary'
-    | 'Coordinator';
-  email: string;
+    | 'Mentor'
+    | 'Co Lead'
+    | 'Co-ordinator';
+  email?: string;
   linkedIn?: string;
 };
 

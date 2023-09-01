@@ -29,35 +29,35 @@ export const CORE_TEAM: MemberData[] = [
   },
 ];
 
-export const COORDINATORS: MemberData[] = [
+export const EVENT_MANAGEMENT_TEAM: MemberData[] = [
   {
     imagePath: '/iiitdm.jpg',
-    name: '.....',
-    position: 'Coordinator',
-    email: 'alumni.affairs@iiitdm.ac.in',
+    name: 'Meghna',
+    position: 'Mentor',
   },
   {
     imagePath: '/iiitdm.jpg',
-    name: '.....',
-    position: 'Coordinator',
-    email: 'alumni.affairs@iiitdm.ac.in',
+    name: 'Hilton Paul',
+    position: 'Co Lead',
   },
   {
     imagePath: '/iiitdm.jpg',
-    name: '.....',
-    position: 'Coordinator',
-    email: 'alumni.affairs@iiitdm.ac.in',
+    name: 'Arpita Gautham',
+    position: 'Co Lead',
   },
   {
     imagePath: '/iiitdm.jpg',
-    name: '.....',
-    position: 'Coordinator',
-    email: 'alumni.affairs@iiitdm.ac.in',
+    name: 'Phanish Vajahala',
+    position: 'Co-ordinator',
   },
   {
     imagePath: '/iiitdm.jpg',
-    name: '.....',
-    position: 'Coordinator',
-    email: 'alumni.affairs@iiitdm.ac.in',
+    name: 'Swetha',
+    position: 'Co-ordinator',
+  },
+  {
+    imagePath: '/iiitdm.jpg',
+    name: 'P Srinidi',
+    position: 'Co-ordinator',
   },
 ];
