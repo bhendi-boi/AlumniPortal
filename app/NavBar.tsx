@@ -44,16 +44,7 @@ const NavBar = () => {
           showShadow && 'shadow-lg md:shadow-none',
         )}
       >
-        <div className="z-20 flex flex-1 items-center gap-4 md:gap-0">
-          <Link href="https://iiitdm.ac.in" rel="norefer" target="_blank">
-            <Image
-              className="w-10 md:w-24"
-              src={'/iiitdm.png'}
-              alt="IIITDM Logo"
-              width={90}
-              height={90}
-            />
-          </Link>
+        <div className="z-20 flex flex-1 items-center  gap-4 md:gap-0">
           <Link href="/">
             <Image
               priority
@@ -64,6 +55,9 @@ const NavBar = () => {
               height={40}
             />
           </Link>
+          <h2 className="font-lora text-xl font-bold tracking-wider md:hidden">
+            Alumni Affairs IIITDM
+          </h2>
           <Link href="/">
             <Image
               priority
@@ -74,6 +68,9 @@ const NavBar = () => {
               height={400}
             />
           </Link>
+          <h2 className="ml-auto hidden font-lora text-xl font-bold tracking-wider md:block">
+            Tag line goes here
+          </h2>
         </div>
 
         {!showShadow && (
