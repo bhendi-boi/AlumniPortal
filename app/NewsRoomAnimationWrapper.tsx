@@ -21,7 +21,7 @@ export const AnimationWrapper = ({
     >
       <h2
         id="newsroom"
-        className="border-b border-background px-5 py-2 text-xl font-medium uppercase text-nav-blue"
+        className="border-b border-background px-5 py-2 font-lora text-xl font-medium uppercase text-nav-blue"
       >
         NewsRoom
       </h2>

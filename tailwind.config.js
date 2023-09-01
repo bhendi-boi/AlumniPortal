@@ -6,7 +6,7 @@ module.exports = {
       colors: {
         background: '#E5E5E5',
         'secondary-background': '#F5F5F5',
-        'nav-blue': '#123262',
+        'nav-blue': '#2c4a87',
         'contact-blue': '#0046AF',
         'contact-gray': '#8D93A1',
         'secondary-text': '#727272',
