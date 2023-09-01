@@ -1,4 +1,4 @@
-import { Inter, Lato } from 'next/font/google';
+import { Inter, Lora } from 'next/font/google';
 import NavBar from './NavBar';
 import Footer from './Footer';
 import NextTopLoader from 'nextjs-toploader';
@@ -11,12 +11,12 @@ const inter = Inter({
   display: 'swap',
   variable: '--Inter',
 });
-const lato = Lato({
+const lora = Lora({
   weight: '400',
   style: 'normal',
   subsets: ['latin'],
   display: 'swap',
-  variable: '--Lato',
+  variable: '--Lora',
 });
 
 export const metadata = {
@@ -38,7 +38,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       </head>
       <body
         id="body"
-        className={`bg-white ${inter.variable} ${lato.variable} font-inter`}
+        className={`bg-white ${inter.variable} ${lora.variable} font-inter`}
       >
         <NextTopLoader color="#123262" showSpinner={false} />
         <NavBar />

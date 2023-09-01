@@ -15,7 +15,7 @@ module.exports = {
       },
       fontFamily: {
         inter: ['var(--Inter)'],
-        lato: ['var(--Lato)'],
+        lora: ['var(--Lora)'],
       },
       fontSize: {
         xxs: ['0.5rem', '0.75rem'],
