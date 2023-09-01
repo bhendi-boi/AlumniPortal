@@ -1,7 +1,26 @@
 import TeamMemberCard from './TeamMemberCard';
-import { CORE_TEAM, COORDINATORS } from 'content/about';
+import { CORE_TEAM, EVENT_MANAGEMENT_TEAM } from 'content/about';
+import { CiMail } from 'react-icons/ci';
 
 const Team = () => {
+  const teamNames = [
+    {
+      icon: <CiMail className="h-12 w-12" />,
+      name: 'Event Management',
+    },
+    {
+      icon: <CiMail className="h-12 w-12" />,
+      name: 'Public Relations and Marketing',
+    },
+    {
+      icon: <CiMail className="h-12 w-12" />,
+      name: 'Alumni Relations',
+    },
+    {
+      icon: <CiMail className="h-12 w-12" />,
+      name: 'Operations',
+    },
+  ];
   return (
     <section className="mx-auto my-8 max-w-5xl md:my-16">
       <header className="mx-auto mb-4 max-w-3xl text-center">
@@ -14,11 +33,16 @@ const Team = () => {
           <TeamMemberCard key={member.name} {...member} />
         ))}
       </div>
-      {/* <div className="flex flex-col items-center justify-between max-w-5xl gap-4 px-5 md:flex-row md:gap-0 md:p-0">
-        {COORDINATORS.map((coordinator) => (
-          <TeamMemberCard key={coordinator.name} {...coordinator} />
-        ))}
-      </div> */}
+      <ul className="mx-auto flex max-w-5xl justify-between">
+        {teamNames.map((team) => {
+          return (
+            <li className="flex aspect-[7/5] w-52 flex-col items-center justify-center gap-4 bg-white px-4 drop-shadow-md">
+              {team.icon}
+              <h3 className="font-medium">{team.name}</h3>
+            </li>
+          );
+        })}
+      </ul>
     </section>
   );
 };
