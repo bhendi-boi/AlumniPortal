@@ -31,7 +31,7 @@ const Card = ({
         className="max-w-xs md:my-4"
       />
       <div className="flex-1">
-        <h2 className="text-2xl font-bold">{title}</h2>
+        <h2 className="font-lora text-2xl font-bold">{title}</h2>
         <p className="my-2 line-clamp-5 text-sm">{summary_for_seo}</p>
         <NavLink
           href={`/events/${id}`}

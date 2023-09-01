@@ -7,7 +7,7 @@ const ArticleHeader = ({
 }) => {
   return (
     <header className="mb-4">
-      <h2 className="mb-1 text-xl font-bold md:text-3xl">{title}</h2>
+      <h2 className="mb-1 font-lora text-xl font-bold md:text-3xl">{title}</h2>
       <p className="text-xs text-secondary-text md:text-sm">
         Posted on {postedOn}
       </p>

@@ -11,7 +11,7 @@ type Props = {
 const EventHeader = ({ title, link, date, time }: Props) => {
   return (
     <header className="">
-      <h2 className="border-b border-background/70 pb-4 pt-6 text-xl font-bold sm:text-3xl">
+      <h2 className="border-b border-background/70 pb-4 pt-6 font-lora text-xl font-bold sm:text-3xl">
         {title}
       </h2>
       <div className="mt-2 flex flex-col justify-between gap-4 border-b border-background/70 py-4 sm:flex-row sm:items-center">

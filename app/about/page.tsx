@@ -28,7 +28,7 @@ const page = () => {
   return (
     <>
       <header className="pb-8 pt-16">
-        <h1 className="text-center text-4xl">About us</h1>
+        <h1 className="text-center font-lora text-4xl">About us</h1>
       </header>
       <HistoryAndVision />
       <Message />
