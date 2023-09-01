@@ -6,94 +6,55 @@ import Card from './Card';
 
 const data: AlumniDetails[] = [
   {
-    src: '/convocation.png',
     name: 'Anurag Kashyap',
     year: 2020,
-    degree: 'B Tech',
-    department: 'CSE',
+    degree: 'M. Tech.',
+    department: 'Mechanical Systems',
   },
   {
-    src: '/convocation.png',
-    name: 'Anurag Kashyap',
+    name: 'Aabhas Parik',
     year: 2020,
-    degree: 'B Tech',
-    department: 'CSE',
+    degree: 'M. Des.',
+    department: 'Electronics Engineering',
   },
   {
-    src: '/convocation.png',
-    name: 'Anurag Kashyap',
+    name: 'Adel Ahmed Quershi',
     year: 2020,
-    degree: 'B Tech',
-    department: 'CSE',
+    degree: 'B. Tech.',
+    department: 'Computer Engineering',
   },
   {
-    src: '/convocation.png',
-    name: 'Anurag Kashyap',
+    name: 'Aman Kumar',
     year: 2020,
-    degree: 'B Tech',
-    department: 'CSE',
+    degree: 'B. Tech.+M. Tech.',
+    department: 'Computer Engineering',
   },
   {
-    src: '/convocation.png',
-    name: 'Anurag Kashyap',
+    name: 'Kannam Sai Teja',
     year: 2020,
-    degree: 'B Tech',
-    department: 'CSE',
-  },
-  {
-    src: '/convocation.png',
-    name: 'Anurag Kashyap',
-    year: 2020,
-    degree: 'B Tech',
-    department: 'CSE',
-  },
-  {
-    src: '/convocation.png',
-    name: 'Anurag Kashyap',
-    year: 2020,
-    degree: 'B Tech',
-    department: 'CSE',
-  },
-  {
-    src: '/convocation.png',
-    name: 'Anurag Kashyap',
-    year: 2020,
-    degree: 'B Tech',
-    department: 'CSE',
-  },
-  {
-    src: '/convocation.png',
-    name: 'Anurag Kashyap',
-    year: 2020,
-    degree: 'B Tech',
-    department: 'CSE',
-  },
-  {
-    src: '/convocation.png',
-    name: 'Anurag Kashyap',
-    year: 2020,
-    degree: 'B Tech',
-    department: 'CSE',
+    degree: 'B. Tech.+M. Tech.',
+    department:
+      'Mechanical Engineering with specialization in Design and Manufacturing+Product Design',
   },
 ];
 
 const Directory = () => {
   const [year, setYear] = useState(2022);
-  console.log(year);
   return (
     <section
       aria-labelledby="dir"
-      className="mx-auto mb-8 min-h-screen max-w-5xl rounded-lg border border-background md:mb-16"
+      className="mx-auto mb-8 max-w-5xl rounded-lg border border-background pb-4 md:mb-16"
     >
       <h2 id="dir" className="sr-only">
         {year}'s directory
       </h2>
       <Controls year={year} setYear={setYear} />
-      <ul className="mx-5 my-8 grid grid-cols-2 gap-4 sm:grid-cols-3 md:mx-10 lg:grid-cols-5">
+      <ul className="mx-5 my-8 flex min-h-screen flex-col md:mx-10">
         {data.map((alumni, index) => (
           <Card key={index} {...alumni} />
         ))}
       </ul>
+      <p className="text-center">Showing 1 to 25 out of 80</p>
     </section>
   );
 };

@@ -6,7 +6,7 @@ export default function NotFound() {
   const pathname = usePathname();
   const id = pathname.split('/').pop();
   return (
-    <div className="max-w-5xl mx-auto">
+    <div className="mx-auto max-w-5xl">
       <h2 className="mb-4 text-5xl font-bold text-red-600">Error 404</h2>
       <div className="my-4">
         <p className="mb-1">
@@ -17,7 +17,7 @@ export default function NotFound() {
       </div>
       <Link
         href="/events"
-        className="px-6 py-3 font-medium text-white rounded-md bg-contact-blue hover:opacity-90 active:opacity-80"
+        className="rounded-md bg-contact-blue px-6 py-3 font-medium text-white hover:opacity-90 active:opacity-80"
       >
         Back to Events
       </Link>

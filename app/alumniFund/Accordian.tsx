@@ -14,7 +14,7 @@ const Accordian = ({
     <Disclosure as="li" className="border-b border-background">
       {({ open }) => (
         <>
-          <Disclosure.Button className="flex items-center justify-between w-full py-2 pr-4 cursor-pointer">
+          <Disclosure.Button className="flex w-full cursor-pointer items-center justify-between py-2 pr-4">
             <p className="text-xl font-medium">{question}</p>
             <motion.span
               whileHover={{ backgroundColor: 'rgb(161 161 170 / 0.3)' }}
@@ -24,7 +24,7 @@ const Accordian = ({
                 duration: 0.15,
                 type: 'tween',
               }}
-              className="p-2 rounded-full text-neutral-950"
+              className="rounded-full p-2 text-neutral-950"
             >
               <HiArrowDown size={24} />
             </motion.span>
