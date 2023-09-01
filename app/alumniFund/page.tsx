@@ -24,7 +24,7 @@ const page = () => {
   return (
     <>
       <Header title="Alumni Fund" />
-      <div className="flex items-center justify-center">
+      <div className="mx-auto max-w-5xl pt-10">
         <h2 className="text-4xl">Coming soon ...</h2>
       </div>
       {/* <FAQ /> */}
