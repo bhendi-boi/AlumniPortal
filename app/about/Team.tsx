@@ -33,16 +33,19 @@ const Team = () => {
           <TeamMemberCard key={member.name} {...member} />
         ))}
       </div>
-      <ul className="mx-auto flex max-w-5xl justify-between">
-        {teamNames.map((team) => {
-          return (
-            <li className="flex aspect-[7/5] w-52 flex-col items-center justify-center gap-4 bg-white px-4 drop-shadow-md">
-              {team.icon}
-              <h3 className="font-medium">{team.name}</h3>
-            </li>
-          );
-        })}
-      </ul>
+
+      <div className="h-44 overflow-hidden">
+        <ul className="mx-auto flex max-w-5xl justify-between gap-4 overflow-auto pb-4">
+          {teamNames.map((team) => {
+            return (
+              <li className="flex aspect-[7/5] h-40 shrink-0 flex-col items-center justify-center gap-4 bg-white px-4 drop-shadow-md">
+                {team.icon}
+                <h3 className="font-medium">{team.name}</h3>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </section>
   );
 };
