@@ -55,7 +55,7 @@ const NavBar = () => {
               height={40}
             />
           </Link>
-          <h2 className="font-lora text-xl font-bold tracking-wider md:hidden">
+          <h2 className="font-lora text-lg font-bold tracking-wider md:hidden">
             Alumni Affairs IIITDM
           </h2>
           <Link href="/">
