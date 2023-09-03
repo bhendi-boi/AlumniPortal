@@ -69,7 +69,7 @@ const NavBar = () => {
             />
           </Link>
           <h2 className="ml-auto hidden font-lora text-xl font-bold tracking-wider md:block">
-            Tag line goes here
+            Bridging Campus to Community
           </h2>
         </div>
 
