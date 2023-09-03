@@ -9,7 +9,9 @@ const HistoryAndVision = () => {
         width={711}
         height={400}
       />
-      <h2 className="mb-2 mt-8 text-2xl font-bold">History and Vision</h2>
+      <h2 className="mb-2 mt-8 font-lora text-2xl font-bold">
+        History and Vision
+      </h2>
       <p>
         The Office of Alumni Affairs was established in 20XX IIITDM works to
         connect alumni, students and the institute to create a seamless

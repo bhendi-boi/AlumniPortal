@@ -6,16 +6,16 @@ import clsx from 'clsx';
 import { MemberData } from 'types';
 import Link from 'next/link';
 
-type TeamMemberCardProps = ComponentProps<'article'> & MemberData;
+type ManagementCardProps = ComponentProps<'article'> & MemberData;
 
-const TeamMemberCard = ({
+const ManagementCard = ({
   imagePath,
   name,
   position,
   email,
   linkedIn,
   ...restProps
-}: TeamMemberCardProps) => {
+}: ManagementCardProps) => {
   return (
     <article
       {...restProps}
@@ -67,4 +67,4 @@ const TeamMemberCard = ({
   );
 };
 
-export default TeamMemberCard;
+export default ManagementCard;
