@@ -208,6 +208,7 @@ const NavBar = () => {
                 </Menu.Item>
                 <Menu.Item as="li">
                   <NavLink
+                    onClick={() => setIsOpen(false)}
                     href="/alumniDirectory"
                     variant={path === 'alumniDirectory' ? 'active' : 'primary'}
                     title="Alumni Directory"
