@@ -10,7 +10,7 @@ const Team = () => {
     },
     {
       icon: <CiMail className="h-12 w-12" />,
-      name: 'Public Relations and Marketing',
+      name: 'Public Relations',
     },
     {
       icon: <CiMail className="h-12 w-12" />,
@@ -34,11 +34,15 @@ const Team = () => {
         ))}
       </div>
 
-      <div className="h-44 overflow-hidden">
-        <ul className="mx-auto flex max-w-5xl justify-between gap-4 overflow-auto pb-4">
-          {teamNames.map((team) => {
+      <div className="h-56 overflow-hidden">
+        {/* h-[241px], h-56 and overflow-hidden together removes scrollbar in the bottom */}
+        <ul className="mx-auto flex h-[241px] max-w-5xl snap-x snap-mandatory gap-8 overflow-auto px-8 py-8 md:justify-around  md:px-0">
+          {teamNames.map((team, index) => {
             return (
-              <li className="flex aspect-[7/5] h-40 shrink-0 flex-col items-center justify-center gap-4 bg-white px-4 drop-shadow-md">
+              <li
+                key={index}
+                className="flex aspect-[7/5] h-full shrink-0 snap-center flex-col items-center justify-center gap-4 rounded-md bg-white px-4 ring-2 ring-black/5"
+              >
                 {team.icon}
                 <h3 className="font-medium">{team.name}</h3>
               </li>
