@@ -44,7 +44,7 @@ const page = async () => {
   return (
     <>
       <Header title="Gallery" />
-      <ul className="mx-auto mb-8 flex min-h-screen max-w-5xl grid-cols-1 flex-wrap gap-6 rounded-lg border border-background p-6 sm:p-8 md:mb-16 md:p-12">
+      <ul className="mx-auto mb-8 flex min-h-screen max-w-7xl grid-cols-1 flex-wrap gap-6 rounded-lg border border-background p-6 sm:p-8 md:mb-16 md:p-12">
         {data.map((image, index) => (
           <ImageCard
             key={index}

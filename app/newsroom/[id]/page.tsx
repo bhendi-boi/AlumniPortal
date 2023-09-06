@@ -103,7 +103,7 @@ const page = async ({ params }: { params: { id: string } }) => {
   });
   return (
     <>
-      <section className="mx-auto mb-12 min-h-screen max-w-5xl rounded-lg border border-background">
+      <section className="mx-auto mb-12 min-h-screen max-w-7xl rounded-lg border border-background">
         <Navigation id={id} maxId={maxId} />
         <article className="prose-img:skeleton prose prose-sm max-w-none px-8 pb-8 sm:prose-base md:prose-lg prose-p:text-black prose-img:overflow-hidden prose-img:rounded-lg">
           <ArticleHeader

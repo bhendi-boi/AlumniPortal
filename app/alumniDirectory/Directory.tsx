@@ -43,7 +43,7 @@ const Directory = () => {
   return (
     <section
       aria-labelledby="dir"
-      className="mx-auto mb-8 max-w-5xl rounded-lg border border-background pb-4 md:mb-16"
+      className="mx-auto mb-8 max-w-7xl rounded-lg border border-background pb-4 md:mb-16"
     >
       <h2 id="dir" className="sr-only">
         {year}'s directory
