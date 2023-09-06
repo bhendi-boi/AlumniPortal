@@ -1,5 +1,11 @@
 import ManagementCard from './ManagementCard';
-import { CORE_TEAM, EVENT_MANAGEMENT_TEAM } from 'content/about';
+import {
+  ALUMNI_RELATIONS_TEAM,
+  CORE_TEAM,
+  EVENT_MANAGEMENT_TEAM,
+  OPERATIONS_TEAM,
+  PUBLIC_RELATIONS_AND_MARKETING_TEAM,
+} from 'content/about';
 import { CiMail } from 'react-icons/ci';
 import TeamCard from './TeamCard';
 
@@ -12,18 +18,18 @@ const Team = () => {
     },
     {
       icon: <CiMail className="h-12 w-12" />,
-      name: 'Public Relations',
-      members: EVENT_MANAGEMENT_TEAM,
+      name: 'Public Relations, Marketing',
+      members: PUBLIC_RELATIONS_AND_MARKETING_TEAM,
     },
     {
       icon: <CiMail className="h-12 w-12" />,
       name: 'Alumni Relations',
-      members: EVENT_MANAGEMENT_TEAM,
+      members: ALUMNI_RELATIONS_TEAM,
     },
     {
       icon: <CiMail className="h-12 w-12" />,
       name: 'Operations',
-      members: EVENT_MANAGEMENT_TEAM,
+      members: OPERATIONS_TEAM,
     },
   ];
   return (
@@ -46,7 +52,7 @@ const Team = () => {
             return (
               <li
                 key={index}
-                className="relative aspect-[7/5] h-full shrink-0  snap-center rounded-md bg-white ring-2 ring-black/5"
+                className="relative aspect-[7/5] h-full shrink-0  snap-center overflow-hidden rounded-md bg-white ring-2 ring-black/5"
               >
                 <TeamCard team={team} />
               </li>

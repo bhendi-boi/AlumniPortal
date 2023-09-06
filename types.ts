@@ -30,8 +30,19 @@ export type MemberData = {
     | 'Secretary'
     | 'Joint Secretary'
     | 'Mentor'
+    | 'Lead'
+    | 'Admin'
     | 'Co Lead'
-    | 'Co-ordinator';
+    | 'Co Lead, Data'
+    | 'Co Lead, Outreach'
+    | 'Co-ordinator'
+    | 'Co-ordinator, Data'
+    | 'Co-ordinator, Outreach'
+    | 'Content Creator'
+    | 'Social Media Manager'
+    | 'Graphic Designer'
+    | 'Writer';
+
   email?: string;
   linkedIn?: string;
 };

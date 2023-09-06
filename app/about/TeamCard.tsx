@@ -54,7 +54,7 @@ const TeamCard = ({
                     opacity: 0,
                   }}
                   transition={{ damping: 20, stiffness: 400 }}
-                  className="fixed bottom-0 left-0 h-1/2 w-full overflow-y-auto  bg-white px-8 pb-8 [--y-initial:100%] [--y-animate:0%] [--y-exit:100%] [--scale-exit:1]  [--scale-animate:1] [--scale-initial:1] [--x-initial:0%] [--x-exit:0%] [--x-animate:0%] md:left-1/2  md:h-3/5 md:max-w-xl md:rounded-md  md:[--scale-animate:1] md:[--x-animate:-50%] md:[--x-initial:-50%] md:[--x-exit:-50%] md:[--scale-exit:.8] md:[--scale-initial:.8] md:[--y-animate:-40%] md:[--y-exit:-40%] md:[--y-initial:-40%]"
+                  className="fixed bottom-0 left-0 h-[60%] w-full overflow-y-auto  bg-white px-8 pb-8 [--scale-animate:1] [--scale-exit:1] [--scale-initial:1] [--x-animate:0%]  [--x-exit:0%] [--x-initial:0%] [--y-animate:0%] [--y-exit:100%] [--y-initial:100%] md:left-1/2  md:h-3/5 md:max-w-xl md:rounded-md  md:[--scale-animate:1] md:[--scale-exit:.8] md:[--scale-initial:.8] md:[--x-animate:-50%] md:[--x-exit:-50%] md:[--x-initial:-50%] md:[--y-animate:-40%] md:[--y-exit:-40%] md:[--y-initial:-40%]"
                 >
                   <Dialog.Title className="sticky top-0 bg-inherit pb-4 pt-6 font-lora text-lg font-bold tracking-wide">
                     Meet our {team.name} team
