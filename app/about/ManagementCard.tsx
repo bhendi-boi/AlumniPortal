@@ -20,9 +20,9 @@ const ManagementCard = ({
     <article
       {...restProps}
       className={clsx(
-        'flex w-full items-center gap-4 rounded-lg px-4 py-4 md:w-44 md:flex-col md:px-0',
-        position !== 'Secretary' && 'bg-secondary-background drop-shadow-md',
-        position === 'Secretary' && 'bg-white shadow-xl ring-2 ring-black/5',
+        'flex w-full items-center gap-5 md:gap-3 rounded-lg px-5 py-5 md:w-48 md:flex-col md:px-0',
+        
+        'bg-white ring-2 ring-black/5',
       )}
     >
       <Image
@@ -32,7 +32,7 @@ const ManagementCard = ({
         width={120}
         className="rounded-full"
       />
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 md:text-center">
         <div>
           <p className="font-medium">{position}</p>
           <p className="mb-2 mt-1 text-sm font-semibold text-contact-blue md:my-0 md:font-medium">
@@ -40,7 +40,7 @@ const ManagementCard = ({
           </p>
         </div>
 
-        <div className={clsx('flex md:justify-center', linkedIn && 'gap-6')}>
+        <div className={clsx('flex md:justify-center mt-2', linkedIn && 'gap-6')}>
           <Link
             href={`mailto:${email}`}
             target="_blank"
