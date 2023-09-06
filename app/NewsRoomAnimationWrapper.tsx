@@ -15,6 +15,7 @@ export const AnimationWrapper = ({
     <motion.section
       initial={{ y: '8vh', opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
       transition={{ duration: 0.2 }}
       aria-labelledby="newsroom"
       className="w-full rounded-md border border-background md:max-w-3xl"

@@ -25,6 +25,7 @@ export const ActivitiesAnimationWrapper = ({
       initial={{ y: '8vh', opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.2 }}
+      viewport={{ once: true }}
       aria-labelledby="activities"
       className="max-h-fit w-full rounded-md border border-background"
     >
