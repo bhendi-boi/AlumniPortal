@@ -28,7 +28,7 @@ const page = async () => {
     throw new Error('Failed to fetch news articles');
   }
   return (
-    <ul className="mx-auto mb-12 min-h-screen max-w-5xl divide-y-2 rounded-lg border border-background px-4 md:mb-16 md:px-8">
+    <ul className="mx-auto mb-12 min-h-screen max-w-7xl divide-y-2 rounded-lg border border-background px-4 md:mb-16 md:px-8">
       {data.map((event, index) => (
         <Card key={index} {...event} />
       ))}

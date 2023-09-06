@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import HistoryAndVision from './HistoryAndVision';
 import Message from './Message';
 import Team from './Team';
+import Header from 'app/Header';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -27,9 +28,10 @@ export const metadata: Metadata = {
 const page = () => {
   return (
     <>
-      <header className="pb-8 pt-16">
+      {/* <header className="pb-8 pt-16">
         <h1 className="text-center font-lora text-4xl">About us</h1>
-      </header>
+      </header> */}
+      <Header title="About Us" link='/about'/>
       <HistoryAndVision />
       <Message />
       <Team />

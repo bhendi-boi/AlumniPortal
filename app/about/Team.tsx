@@ -33,13 +33,13 @@ const Team = () => {
     },
   ];
   return (
-    <section className="mx-auto my-8 max-w-5xl md:my-16">
-      <header className="mx-auto mb-4 max-w-3xl text-center">
-        <h2 className="relative inline text-center font-lora text-2xl font-medium before:absolute before:right-full before:top-1/2 before:h-px before:w-0 before:-translate-x-8 before:bg-black before:content-[''] after:absolute after:left-full after:top-1/2 after:h-px after:w-0 after:translate-x-8 after:bg-black after:content-[''] md:before:w-96 md:after:w-96">
+    <section className="mx-auto my-8 max-w-7xl md:my-16">
+      <header className="mx-auto mb-10 max-w-7xl text-center">
+        <h2 className="relative text-contact-blue inline text-center font-lora text-2xl font-medium before:absolute before:right-full before:top-1/2 before:h-px before:w-0 before:-translate-x-8 before:bg-black before:content-[''] after:absolute after:left-full after:top-1/2 after:h-px after:w-0 after:translate-x-8 after:bg-black after:content-[''] md:before:w-0 md:after:w-0">
           Team
         </h2>
       </header>
-      <div className="mx-auto mb-8 flex max-w-2xl flex-col items-center justify-between gap-4 px-5 md:flex-row md:gap-0 md:p-0">
+      <div className="mx-auto mb-8 flex max-w-7xl flex-col items-center justify-center gap-4 px-5 md:flex-row md:gap-5 md:p-0">
         {CORE_TEAM.map((member) => (
           <ManagementCard key={member.name} {...member} />
         ))}
@@ -47,7 +47,7 @@ const Team = () => {
 
       <div className="h-56 overflow-hidden">
         {/* // ? h-[241px], h-56 and overflow-hidden together removes scrollbar in the bottom */}
-        <ul className="mx-auto flex h-[241px] max-w-5xl snap-x snap-mandatory gap-8 overflow-auto px-8 py-8 md:justify-around  md:px-0">
+        <ul className="mx-auto flex h-[241px] max-w-7xl snap-x snap-mandatory gap-5 overflow-auto px-8 py-8 md:justify-center  md:px-0">
           {teamNames.map((team, index) => {
             return (
               <li

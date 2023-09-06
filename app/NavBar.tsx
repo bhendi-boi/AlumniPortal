@@ -40,11 +40,11 @@ const NavBar = () => {
     <>
       <header
         className={clsx(
-          'sticky top-0 z-10 flex h-16 items-center justify-center border-b bg-white px-5 md:static  md:h-auto  md:flex-col md:items-stretch md:px-10 md:pt-5',
+          'sticky top-0 z-10 flex h-16 items-center justify-center border-b bg-white px-5 md:static  md:h-auto  md:flex-col md:items-stretch md:pt-5',
           showShadow && 'shadow-lg md:shadow-none',
         )}
       >
-        <div className="z-20 flex flex-1 items-center  gap-4 md:gap-0">
+        <div className="z-20 flex flex-1 items-center gap-4 md:gap-0 w-full max-w-7xl mx-auto">
           <Link href="/">
             <Image
               priority
@@ -74,75 +74,77 @@ const NavBar = () => {
         </div>
 
         {!showShadow && (
-          <motion.nav
-            key="navbar"
-            initial={{ y: '0', opacity: 1 }}
-            exit={{
-              y: '-10vh',
-              opacity: 0,
-            }}
-            className={clsx(
-              'hidden flex-1 flex-wrap items-center justify-between gap-4 px-4 py-4',
-              !showShadow && 'md:flex',
-            )}
-          >
-            <NavLink
-              href="/"
-              variant={path === null ? 'active' : 'primary'}
-              title="Home"
+          <div className='w-full max-w-7xl mx-auto'>
+            <motion.nav
+              key="navbar"
+              initial={{ y: '0', opacity: 1 }}
+              exit={{
+                y: '-10vh',
+                opacity: 0,
+              }}
+              className={clsx(
+                'hidden flex-1 flex-wrap items-center justify-between gap-4 px-4 py-4',
+                !showShadow && 'md:flex',
+              )}
             >
-              Home
-            </NavLink>
-            <NavLink
-              href="/about"
-              variant={path === 'about' ? 'active' : 'primary'}
-              title="About"
-            >
-              About
-            </NavLink>
-            <NavLink
-              href="/events"
-              variant={path === 'events' ? 'active' : 'primary'}
-              title="Events"
-            >
-              Events
-            </NavLink>
-            <NavLink
-              href="/gallery"
-              variant={path === 'gallery' ? 'active' : 'primary'}
-              title="Gallery"
-            >
-              Gallery
-            </NavLink>
-            <NavLink
-              href="/alumniDirectory"
-              variant={path === 'alumniDirectory' ? 'active' : 'primary'}
-              title="Alumni Directory"
-            >
-              Directory
-            </NavLink>
-            <NavLink
-              href="/newsroom"
-              variant={path === 'newsroom' ? 'active' : 'primary'}
-              title="Newsroom"
-            >
-              Newsroom
-            </NavLink>
-            <NavLink
-              href="/contact"
-              variant={path === 'contact' ? 'active' : 'primary'}
-              title="Newsroom"
-            >
-              Contact Us
-            </NavLink>
-            <NavLink
-              href="/alumniFund"
-              variant={path === 'alumniFund' ? 'active' : 'primary'}
-              title="Alumni Fund"
-            >
-              Alumni Fund
-            </NavLink>
-          </motion.nav>
+              <NavLink
+                href="/"
+                variant={path === null ? 'active' : 'primary'}
+                title="Home"
+              >
+                Home
+              </NavLink>
+              <NavLink
+                href="/about"
+                variant={path === 'about' ? 'active' : 'primary'}
+                title="About"
+              >
+                About
+              </NavLink>
+              <NavLink
+                href="/events"
+                variant={path === 'events' ? 'active' : 'primary'}
+                title="Events"
+              >
+                Events
+              </NavLink>
+              <NavLink
+                href="/gallery"
+                variant={path === 'gallery' ? 'active' : 'primary'}
+                title="Gallery"
+              >
+                Gallery
+              </NavLink>
+              <NavLink
+                href="/alumniDirectory"
+                variant={path === 'alumniDirectory' ? 'active' : 'primary'}
+                title="Alumni Directory"
+              >
+                Directory
+              </NavLink>
+              <NavLink
+                href="/newsroom"
+                variant={path === 'newsroom' ? 'active' : 'primary'}
+                title="Newsroom"
+              >
+                Newsroom
+              </NavLink>
+              <NavLink
+                href="/contact"
+                variant={path === 'contact' ? 'active' : 'primary'}
+                title="Newsroom"
+              >
+                Contact Us
+              </NavLink>
+              <NavLink
+                href="/alumniFund"
+                variant={path === 'alumniFund' ? 'active' : 'primary'}
+                title="Alumni Fund"
+              >
+                Alumni Fund
+              </NavLink>
+            </motion.nav>
+          </div>
         )}
 
         {/* mobile nav */}
@@ -259,68 +261,70 @@ const NavBar = () => {
           transition={{ duration: 0.3, type: 'tween', ease: 'easeInOut' }}
           key="navbar"
           className={clsx(
-            'sticky top-0 z-10 hidden flex-wrap items-center justify-between gap-4 bg-white px-10 py-4',
+            'sticky top-0 z-10 hidden bg-white',
 
             showShadow && 'shadow-lg md:flex',
           )}
         >
-          {' '}
-          <NavLink
-            href="/"
-            variant={path === null ? 'active' : 'primary'}
-            title="Home"
-          >
-            Home
-          </NavLink>
-          <NavLink
-            href="/about"
-            variant={path === 'about' ? 'active' : 'primary'}
-            title="About"
-          >
-            About
-          </NavLink>
-          <NavLink
-            href="/events"
-            variant={path === 'events' ? 'active' : 'primary'}
-            title="Events"
-          >
-            Events
-          </NavLink>
-          <NavLink
-            href="/gallery"
-            variant={path === 'gallery' ? 'active' : 'primary'}
-            title="Gallery"
-          >
-            Gallery
-          </NavLink>
-          <NavLink
-            href="/alumniDirectory"
-            variant={path === 'alumniDirectory' ? 'active' : 'primary'}
-            title="Alumni Directory"
-          >
-            Directory
-          </NavLink>
-          <NavLink
-            href="/newsroom"
-            variant={path === 'newsroom' ? 'active' : 'primary'}
-            title="Newsroom"
-          >
-            Newsroom
-          </NavLink>
-          <NavLink
-            href="/contact"
-            variant={path === 'contact' ? 'active' : 'primary'}
-            title="Newsroom"
-          >
-            Contact Us
-          </NavLink>
-          <NavLink
-            href="/alumniFund"
-            variant={path === 'alumniFund' ? 'active' : 'primary'}
-            title="Alumni Fund"
-          >
-            Alumni Fund
-          </NavLink>
+          <div className='w-full max-w-7xl mx-auto flex items-center justify-between gap-4 px-10 py-4'>
+            {' '}
+            <NavLink
+              href="/"
+              variant={path === null ? 'active' : 'primary'}
+              title="Home"
+            >
+              Home
+            </NavLink>
+            <NavLink
+              href="/about"
+              variant={path === 'about' ? 'active' : 'primary'}
+              title="About"
+            >
+              About
+            </NavLink>
+            <NavLink
+              href="/events"
+              variant={path === 'events' ? 'active' : 'primary'}
+              title="Events"
+            >
+              Events
+            </NavLink>
+            <NavLink
+              href="/gallery"
+              variant={path === 'gallery' ? 'active' : 'primary'}
+              title="Gallery"
+            >
+              Gallery
+            </NavLink>
+            <NavLink
+              href="/alumniDirectory"
+              variant={path === 'alumniDirectory' ? 'active' : 'primary'}
+              title="Alumni Directory"
+            >
+              Directory
+            </NavLink>
+            <NavLink
+              href="/newsroom"
+              variant={path === 'newsroom' ? 'active' : 'primary'}
+              title="Newsroom"
+            >
+              Newsroom
+            </NavLink>
+            <NavLink
+              href="/contact"
+              variant={path === 'contact' ? 'active' : 'primary'}
+              title="Newsroom"
+            >
+              Contact Us
+            </NavLink>
+            <NavLink
+              href="/alumniFund"
+              variant={path === 'alumniFund' ? 'active' : 'primary'}
+              title="Alumni Fund"
+            >
+              Alumni Fund
+            </NavLink>
+          </div>
         </motion.nav>
       )}
     </>

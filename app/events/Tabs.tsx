@@ -8,7 +8,7 @@ const Tabs = () => {
   return (
     <Tab.Group
       as="div"
-      className="mb-8 max-w-5xl rounded-lg border border-background md:mx-auto md:mb-16"
+      className="mb-8 max-w-7xl rounded-lg border border-background md:mx-auto md:mb-16"
     >
       <div className="h-16 overflow-hidden border-b border-background">
         <Tab.List className="flex h-20 divide-x overflow-x-auto pb-4">

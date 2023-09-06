@@ -58,7 +58,7 @@ const Form = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="mb-16 max-w-xl md:ml-20">
+      <form onSubmit={handleSubmit} className="mb-16 max-w-xl md:ml-0">
         <input type="hidden" name="subject" value={subject} />
         <div className="mb-4 flex flex-col gap-1">
           <label

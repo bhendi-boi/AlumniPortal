@@ -105,7 +105,7 @@ const page = async ({ params }: { params: { id: string } }) => {
 
   return (
     <>
-      <article className="mx-auto mb-8 min-h-screen max-w-5xl rounded-lg border border-background px-4 sm:mb-12 md:mb-16 md:px-8">
+      <article className="mx-auto mb-8 min-h-screen max-w-7xl rounded-lg border border-background px-4 sm:mb-12 md:mb-16 md:px-8">
         <EventHeader
           title={data.title}
           link={data.link}

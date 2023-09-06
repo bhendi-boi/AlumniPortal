@@ -2,12 +2,13 @@ import React from 'react';
 import Image from 'next/image';
 const HistoryAndVision = () => {
   return (
-    <section aria-labelledby="history" className="mx-auto max-w-3xl">
+    <section aria-labelledby="history" className="mx-auto max-w-7xl">
       <Image
         src="/convocation.png"
         alt="Convocation 2023"
         width={711}
         height={400}
+        className='rounded-lg w-full h-96 object-cover'
       />
       <h2 className="mb-2 mt-8 font-lora text-2xl font-bold">
         History and Vision
