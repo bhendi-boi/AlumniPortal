@@ -44,24 +44,25 @@ const NavBar = () => {
           showShadow && 'shadow-lg md:shadow-none',
         )}
       >
-        <div className="z-20 flex flex-1 items-center gap-4 md:gap-0 w-full max-w-7xl mx-auto">
-          <Link href="/">
+        <div className="z-20 mx-auto flex w-full max-w-7xl flex-1 items-center gap-4 md:gap-0">
+          <Link href="/" className="flex shrink-0 gap-4 md:hidden">
             <Image
               priority
-              className="block md:hidden"
               src={'/aa_logo.png'}
               alt="Alumni Affairs IIITDM Logo"
               width={40}
               height={40}
             />
+            <h2 className="font-lora text-lg font-bold tracking-wider md:hidden">
+              Alumni Affairs IIITDM
+            </h2>
           </Link>
-          <h2 className="font-lora text-lg font-bold tracking-wider md:hidden">
-            Alumni Affairs IIITDM
-          </h2>
-          <Link href="/">
+          <Link href="/" className="hidden md:block">
+            <h2 className="font-lora text-lg font-bold tracking-wider md:hidden">
+              Alumni Affairs IIITDM
+            </h2>
             <Image
               priority
-              className="hidden md:block"
               src={'/logo_longclg2.png'}
               alt="Alumni Affairs IIITDM Logo"
               width={400}
@@ -74,7 +75,7 @@ const NavBar = () => {
         </div>
 
         {!showShadow && (
-          <div className='w-full max-w-7xl mx-auto'>
+          <div className="mx-auto w-full max-w-7xl">
             <motion.nav
               key="navbar"
               initial={{ y: '0', opacity: 1 }}
@@ -266,7 +267,7 @@ const NavBar = () => {
             showShadow && 'shadow-lg md:flex',
           )}
         >
-          <div className='w-full max-w-7xl mx-auto flex items-center justify-between gap-4 px-10 py-4'>
+          <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-10 py-4">
             {' '}
             <NavLink
               href="/"
