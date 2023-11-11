@@ -57,7 +57,7 @@ export async function generateMetadata({
           url: article.image_link,
         },
         {
-          url: '/og-image.png',
+          url: article.image_link ?? '/og-image.png',
         },
       ],
       locale: 'en-IN',
