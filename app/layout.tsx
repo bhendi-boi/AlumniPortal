@@ -24,6 +24,7 @@ export const metadata = {
     template: '%s | Alumni Portal',
     absolute: 'Home | Alumni Portal',
   },
+  metadataBase: new URL('https://alumniportal.vercel.app'),
   description:
     'The Alumni Portal allows alumni to connect with each other, stay up-to-date on school news, and find resources and opportunities.',
 };
