@@ -36,6 +36,10 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <link rel="icon" type="image/x-icon" href="/aa_logo.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+          name="google-site-verification"
+          content="6c9gocG88EG2X8AXFauiCcylOqRUISBKkSdmh-V62Lg"
+        />
       </head>
       <body
         id="body"
