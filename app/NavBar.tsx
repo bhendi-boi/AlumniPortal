@@ -10,6 +10,7 @@ import NavLink from './NavLink';
 import { HiMenuAlt4 } from 'react-icons/hi';
 import { GrFormClose } from 'react-icons/gr';
 import clsx from 'clsx';
+import { LATESTPASSOUTYEAR } from './alumniDirectory/Directory';
 
 const NavBar = () => {
   const path = useSelectedLayoutSegment();
@@ -44,8 +45,8 @@ const NavBar = () => {
           showShadow && 'shadow-lg md:shadow-none',
         )}
       >
-        <div className="z-20 flex items-center flex-1 w-full gap-4 mx-auto max-w-7xl md:gap-0">
-          <Link href="/" className="flex gap-4 shrink-0 md:hidden">
+        <div className="z-20 mx-auto flex w-full max-w-7xl flex-1 items-center gap-4 md:gap-0">
+          <Link href="/" className="flex shrink-0 gap-4 md:hidden">
             <Image
               priority
               src={'/aa_logo.png'}
@@ -53,12 +54,12 @@ const NavBar = () => {
               width={40}
               height={40}
             />
-            <h2 className="text-lg font-bold tracking-wider font-lora md:hidden">
+            <h2 className="font-lora text-lg font-bold tracking-wider md:hidden">
               Alumni Affairs IIITDM
             </h2>
           </Link>
           <Link href="/" className="hidden md:block">
-            <h2 className="text-lg font-bold tracking-wider font-lora md:hidden">
+            <h2 className="font-lora text-lg font-bold tracking-wider md:hidden">
               Alumni Affairs IIITDM
             </h2>
             <Image
@@ -70,13 +71,13 @@ const NavBar = () => {
               className="aspect-[1400/419]"
             />
           </Link>
-          <h2 className="hidden ml-auto text-xl font-bold tracking-wider font-lora md:block">
+          <h2 className="ml-auto hidden font-lora text-xl font-bold tracking-wider md:block">
             Bridging Campus to Community
           </h2>
         </div>
 
         {!showShadow && (
-          <div className="w-full mx-auto max-w-7xl">
+          <div className="mx-auto w-full max-w-7xl">
             <motion.nav
               key="navbar"
               initial={{ y: '0', opacity: 1 }}
@@ -118,7 +119,7 @@ const NavBar = () => {
                 Gallery
               </NavLink>
               <NavLink
-                href="/alumniDirectory"
+                href={`/alumniDirectory?year=${LATESTPASSOUTYEAR}`}
                 variant={path === 'alumniDirectory' ? 'active' : 'primary'}
                 title="Alumni Directory"
               >
@@ -167,7 +168,7 @@ const NavBar = () => {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: '-100%', opacity: 1 }}
                 transition={{ damping: 20, stiffness: 400 }}
-                className="absolute left-0 z-10 flex flex-col w-full h-screen gap-6 p-6 overflow-hidden bg-white top-16"
+                className="absolute left-0 top-16 z-10 flex h-screen w-full flex-col gap-6 overflow-hidden bg-white p-6"
                 onClick={() => setIsOpen(false)}
               >
                 <Menu.Item as="li" className="">
@@ -213,7 +214,7 @@ const NavBar = () => {
                 <Menu.Item as="li">
                   <NavLink
                     onClick={() => setIsOpen(false)}
-                    href="/alumniDirectory"
+                    href={`/alumniDirectory?year=${LATESTPASSOUTYEAR}`}
                     variant={path === 'alumniDirectory' ? 'active' : 'primary'}
                     title="Alumni Directory"
                   >
@@ -268,7 +269,7 @@ const NavBar = () => {
             showShadow && 'shadow-lg md:flex',
           )}
         >
-          <div className="flex items-center justify-between w-full gap-4 px-10 py-4 mx-auto max-w-7xl">
+          <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-10 py-4">
             {' '}
             <NavLink
               href="/"
@@ -299,7 +300,7 @@ const NavBar = () => {
               Gallery
             </NavLink>
             <NavLink
-              href="/alumniDirectory"
+              href={`/alumniDirectory?year=${LATESTPASSOUTYEAR}`}
               variant={path === 'alumniDirectory' ? 'active' : 'primary'}
               title="Alumni Directory"
             >
