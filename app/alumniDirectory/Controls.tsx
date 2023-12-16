@@ -10,17 +10,17 @@ const Controls = ({ year }: { year: number }) => {
         <h2 className="flex-1 text-lg font-extrabold">{year}</h2>
         <p className="text-center">Showing 1 to 25 out of 80</p>
         <button>
-          <BsFilter size={30} />
+          <BsFilter size={24} />
         </button>
       </div>
 
       {/* will use this buttons to move to the next set in same year rather than next year */}
       <div className="">
         <Button onClick={() => {}}>
-          <AiOutlineLeft size={30} />
+          <AiOutlineLeft size={24} />
         </Button>
         <Button onClick={() => {}}>
-          <AiOutlineRight size={30} />
+          <AiOutlineRight size={24} />
         </Button>
       </div>
     </header>
