@@ -2,6 +2,7 @@
 import { Dialog } from '@headlessui/react';
 import { ComponentProps, useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
+import { motion } from 'framer-motion';
 import clsx from 'clsx';
 
 import { BsFilter } from 'react-icons/bs';
@@ -10,6 +11,7 @@ import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
 
 import { PossibleDegrees } from 'types';
 import { FIRSTPASSOUTYEAR, LATESTPASSOUTYEAR } from './Directory';
+import { AnimatePresence } from 'framer-motion';
 
 const Controls = ({
   year,
@@ -21,7 +23,7 @@ const Controls = ({
   createQueryString: (name: string, value: string) => string;
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const possibleYears = [];
+  const possibleYears: number[] = [];
   for (let i = FIRSTPASSOUTYEAR; i <= LATESTPASSOUTYEAR; i++) {
     possibleYears.push(i);
   }
@@ -60,67 +62,91 @@ const Controls = ({
           onClose={() => setIsMenuOpen(false)}
           className="relative z-50"
         >
-          <div aria-hidden className="fixed inset-0 bg-black/30 blur-3xl"></div>
-          <div className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-            <Dialog.Panel className="z-20 w-96 max-w-[85vw] rounded-md bg-white p-4 ring-2 ring-black/5">
-              <div className="mb-4 flex items-center">
-                <Dialog.Title className="flex-1 text-lg font-semibold ">
-                  Choose Filters
-                </Dialog.Title>
-                <Button onClick={() => setIsMenuOpen(false)}>
-                  <GrFormClose size={24} />
-                </Button>
-              </div>
-              <div className="flex flex-wrap gap-1">
-                {possibleYears.map((possibleYear) => {
-                  return (
-                    <button
-                      key={possibleYear}
-                      onClick={() =>
-                        router.push(
-                          pathname +
-                            '?' +
-                            createQueryString('year', possibleYear.toString()),
-                        )
-                      }
-                      className={clsx(
-                        'rounded-md  px-2 py-1 transition-colors duration-150',
-                        possibleYear === year && 'bg-blue-600 text-white',
-                        possibleYear !== year &&
-                          'bg-secondary-background text-secondary-text',
-                      )}
-                    >
-                      {possibleYear}
-                    </button>
-                  );
-                })}
-              </div>
-              <div className="mt-4 flex flex-wrap gap-1">
-                {possibleDegrees.map((possibleDegree) => {
-                  return (
-                    <button
-                      key={possibleDegree}
-                      onClick={() =>
-                        router.push(
-                          pathname +
-                            '?' +
-                            createQueryString('degree', possibleDegree),
-                        )
-                      }
-                      className={clsx(
-                        'rounded-md  px-2 py-1 transition-colors duration-150',
-                        possibleDegree === degree && 'bg-blue-600 text-white',
-                        possibleDegree !== degree &&
-                          'bg-secondary-background text-secondary-text',
-                      )}
-                    >
-                      {possibleDegree}
-                    </button>
-                  );
-                })}
-              </div>
-            </Dialog.Panel>
-          </div>
+          {({ open }) => (
+            <AnimatePresence mode="wait">
+              {open && (
+                <>
+                  <motion.div
+                    aria-hidden
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="fixed inset-0 bg-black/30"
+                  ></motion.div>
+                  <motion.div
+                    initial={{ scale: 0.95, x: '-50%', y: '-50%' }}
+                    animate={{ scale: 1, x: '-50%', y: '-50%' }}
+                    exit={{ scale: 0.95, x: '-50%', y: '-50%' }}
+                    className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+                  >
+                    <Dialog.Panel className="z-20 w-96 max-w-[85vw] rounded-md bg-white px-6 py-4  ring-2 ring-black/5">
+                      <div className="mb-2 flex items-center">
+                        <Dialog.Title className="flex-1 text-lg font-semibold">
+                          Choose Filters
+                        </Dialog.Title>
+                        <Button onClick={() => setIsMenuOpen(false)}>
+                          <GrFormClose size={24} />
+                        </Button>
+                      </div>
+                      <div className="flex flex-wrap gap-1">
+                        {possibleYears.map((possibleYear) => {
+                          return (
+                            <button
+                              key={possibleYear}
+                              onClick={() =>
+                                router.push(
+                                  pathname +
+                                    '?' +
+                                    createQueryString(
+                                      'year',
+                                      possibleYear.toString(),
+                                    ),
+                                )
+                              }
+                              className={clsx(
+                                'rounded-md  px-2 py-1 transition-colors duration-150',
+                                possibleYear === year &&
+                                  'bg-blue-600 text-white',
+                                possibleYear !== year &&
+                                  'bg-secondary-background text-secondary-text',
+                              )}
+                            >
+                              {possibleYear}
+                            </button>
+                          );
+                        })}
+                      </div>
+                      <div className="mt-4 flex flex-wrap gap-1 pb-2">
+                        {possibleDegrees.map((possibleDegree) => {
+                          return (
+                            <button
+                              key={possibleDegree}
+                              onClick={() =>
+                                router.push(
+                                  pathname +
+                                    '?' +
+                                    createQueryString('degree', possibleDegree),
+                                )
+                              }
+                              className={clsx(
+                                'rounded-md  px-2 py-1 transition-colors duration-150',
+                                possibleDegree === degree &&
+                                  'bg-blue-600 text-white',
+                                possibleDegree !== degree &&
+                                  'bg-secondary-background text-secondary-text',
+                              )}
+                            >
+                              {possibleDegree}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </Dialog.Panel>
+                  </motion.div>
+                </>
+              )}
+            </AnimatePresence>
+          )}
         </Dialog>
       </div>
 
