@@ -1,8 +1,15 @@
+export type PossibleDegrees =
+  | 'B. Tech.'
+  | 'M. Tech.'
+  | 'Dual Degree'
+  | 'M. Des.'
+  | 'PhD';
+
 export type AlumniDetails =
   | {
       name: string;
       year: number;
-      degree: 'B. Tech.' | 'M. Tech.' | 'Dual Degree' | 'M. Des.' | 'PhD';
+      degree: PossibleDegrees;
       department:
         | 'Mechanical Engineering'
         | 'Mechanical Systems'
