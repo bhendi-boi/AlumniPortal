@@ -3,35 +3,7 @@ import React, { ComponentProps } from 'react';
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
 import { BsFilter } from 'react-icons/bs';
 
-const FIRSTPASSOUTYEAR = 2011;
-const LATESTPASSOUTYEAR = 2022;
-
-const Controls = ({
-  year,
-  setYear,
-}: {
-  year: number;
-  setYear: React.Dispatch<React.SetStateAction<number>>;
-}) => {
-  const handleClick = (type: 'plus' | 'minus') => {
-    if (type === 'plus') {
-      setYear((prev) => {
-        let res = (prev += 1);
-        if (res > LATESTPASSOUTYEAR) {
-          res = FIRSTPASSOUTYEAR;
-        }
-        return res;
-      });
-    } else {
-      setYear((prev) => {
-        let res = (prev -= 1);
-        if (res < FIRSTPASSOUTYEAR) {
-          res = LATESTPASSOUTYEAR;
-        }
-        return res;
-      });
-    }
-  };
+const Controls = ({ year }: { year: number }) => {
   return (
     <header className="flex items-center border-b border-background px-5 py-4 text-secondary-text md:px-10">
       <div className="flex flex-1 items-center gap-4">
@@ -44,10 +16,10 @@ const Controls = ({
 
       {/* will use this buttons to move to the next set in same year rather than next year */}
       <div className="">
-        <Button onClick={() => handleClick('minus')}>
+        <Button onClick={() => {}}>
           <AiOutlineLeft size={30} />
         </Button>
-        <Button onClick={() => handleClick('plus')}>
+        <Button onClick={() => {}}>
           <AiOutlineRight size={30} />
         </Button>
       </div>
