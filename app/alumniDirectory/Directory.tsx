@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Controls from './Controls';
 import { AlumniDetails } from 'types';
-import Card from './Card';
+import Row from './Row';
 
 const data: AlumniDetails[] = [
   {
@@ -49,12 +49,19 @@ const Directory = () => {
         {year}'s directory
       </h2>
       <Controls year={year} setYear={setYear} />
-      <ul className="mx-5 my-8 flex min-h-screen flex-col md:mx-10">
-        {data.map((alumni, index) => (
-          <Card key={index} {...alumni} />
-        ))}
-      </ul>
-      <p className="text-center">Showing 1 to 25 out of 80</p>
+      <table className="my-4 flex min-h-screen flex-col">
+        <thead className="border-b px-5 pb-2 text-left md:px-10">
+          <tr className="grid grid-cols-2">
+            <th>Name</th>
+            <th className="hidden sm:table-cell">Degree</th>
+          </tr>
+        </thead>
+        <tbody className="">
+          {data.map((alumni, index) => (
+            <Row key={index} {...alumni} />
+          ))}
+        </tbody>
+      </table>
     </section>
   );
 };

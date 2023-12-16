@@ -33,21 +33,16 @@ const Controls = ({
     }
   };
   return (
-    <header className="mx-5 flex items-center border-b border-background pb-2 pt-4 text-secondary-text md:mx-10 md:pb-4 md:pt-8">
+    <header className="flex items-center border-b border-background px-5 py-4 text-secondary-text md:px-10">
       <div className="flex flex-1 items-center gap-4">
         <h2 className="flex-1 text-lg font-extrabold">{year}</h2>
+        <p className="text-center">Showing 1 to 25 out of 80</p>
         <button>
           <BsFilter size={30} />
         </button>
-        <input
-          type="text"
-          name="alumniName"
-          id=""
-          placeholder="Search across different years"
-          className="hidden rounded-md bg-zinc-200 px-6 py-3 md:block"
-        />
       </div>
 
+      {/* will use this buttons to move to the next set in same year rather than next year */}
       <div className="">
         <Button onClick={() => handleClick('minus')}>
           <AiOutlineLeft size={30} />
