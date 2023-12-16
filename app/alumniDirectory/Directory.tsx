@@ -4,7 +4,7 @@ import { notFound, useSearchParams } from 'next/navigation';
 
 import Row from './Row';
 import Controls from './Controls';
-import { AlumniDetails } from 'types';
+import { AlumniDetails, PossibleDegrees } from 'types';
 
 const data: AlumniDetails[] = [
   {
@@ -46,6 +46,7 @@ export const LATESTPASSOUTYEAR = 2022;
 const Directory = () => {
   const searchParams = useSearchParams();
   const year = Number(searchParams.get('year'));
+  const degree = searchParams.get('degree') as PossibleDegrees;
 
   if (year > LATESTPASSOUTYEAR || year < FIRSTPASSOUTYEAR) {
     notFound();
@@ -69,7 +70,11 @@ const Directory = () => {
       <h2 id="dir" className="sr-only">
         {year}'s directory
       </h2>
-      <Controls year={year} createQueryString={createQueryString} />
+      <Controls
+        year={year}
+        degree={degree}
+        createQueryString={createQueryString}
+      />
       <table className="my-4 flex min-h-screen flex-col">
         <thead className="border-b px-5 pb-2 text-left md:px-10">
           <tr className="grid grid-cols-2">
