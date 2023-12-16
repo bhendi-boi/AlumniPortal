@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { notFound, useSearchParams } from 'next/navigation';
 
 import Row from './Row';
@@ -50,6 +50,17 @@ const Directory = () => {
   if (year > LATESTPASSOUTYEAR || year < FIRSTPASSOUTYEAR) {
     notFound();
   }
+
+  const createQueryString = useCallback(
+    (name: string, value: string) => {
+      const params = new URLSearchParams(searchParams);
+      params.set(name, value);
+
+      return params.toString();
+    },
+    [searchParams],
+  );
+
   return (
     <section
       aria-labelledby="dir"
@@ -58,7 +69,7 @@ const Directory = () => {
       <h2 id="dir" className="sr-only">
         {year}'s directory
       </h2>
-      <Controls year={year} />
+      <Controls year={year} createQueryString={createQueryString} />
       <table className="my-4 flex min-h-screen flex-col">
         <thead className="border-b px-5 pb-2 text-left md:px-10">
           <tr className="grid grid-cols-2">
