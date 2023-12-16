@@ -38,6 +38,13 @@ const Controls = ({
     <header className="flex items-center border-b border-background px-5 py-4 text-secondary-text md:px-10">
       <div className="relative flex flex-1 items-center gap-4">
         <h2 className="flex-1 text-lg font-extrabold">{year}</h2>
+        <div>
+          {degree && (
+            <span className="rounded-md bg-blue-600 px-2 py-1 text-white">
+              {degree}
+            </span>
+          )}
+        </div>
         <button
           onClick={() => {
             setIsMenuOpen((prev) => !prev);
