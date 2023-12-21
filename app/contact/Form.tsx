@@ -114,7 +114,7 @@ const Form = () => {
         </div>
         <div className={pickSubject === 'Others' ? 'mb-0' : 'mb-4'}>
           <Popover className="relative">
-            <Popover.Button className="hover:bg-primary-background flex w-full cursor-pointer items-center justify-between rounded-md py-4 pr-4 font-medium text-contact-blue sm:w-2/5">
+            <Popover.Button className="hover:bg-primary-background flex w-full cursor-pointer items-center justify-between rounded-md py-4 pr-4 font-medium text-contact-blue">
               <span>Your Query</span>{' '}
               <HiChevronUpDown className="h-6 w-6 text-black" />{' '}
             </Popover.Button>
@@ -123,7 +123,7 @@ const Form = () => {
                 {subject}
               </div>
             )}
-            <Popover.Panel className="absolute left-0 top-14 z-10 w-full overflow-hidden rounded-md bg-neutral-50 shadow-md sm:w-2/5">
+            <Popover.Panel className="absolute left-0 top-14 z-10 w-full overflow-hidden rounded-md bg-neutral-50 shadow-md ring-2 ring-black/5">
               {({ close }) => (
                 <div className="flex flex-col overflow-hidden">
                   {subjects.map((item) => {
@@ -134,7 +134,7 @@ const Form = () => {
                           setPickSubject(item);
                           close();
                         }}
-                        className="py-3 transition-colors duration-300 hover:bg-contact-blue hover:text-white"
+                        className="px-6 py-3 text-left transition-colors duration-150 hover:bg-contact-blue hover:text-white"
                       >
                         {item}
                       </button>
