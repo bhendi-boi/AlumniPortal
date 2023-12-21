@@ -51,7 +51,7 @@ const Controls = ({
         </Button>
         <div>
           {degree && (
-            <span className="rounded-md bg-blue-600 px-2 py-1 text-white">
+            <span className="rounded-md bg-contact-blue px-2 py-1 text-white">
               {degree}
             </span>
           )}
@@ -102,7 +102,8 @@ const Controls = ({
                           }
                           className={clsx(
                             'rounded-md  px-2 py-1 transition-colors duration-150',
-                            possibleYear === year && 'bg-blue-600 text-white',
+                            possibleYear === year &&
+                              'bg-contact-blue text-white',
                             possibleYear !== year &&
                               'bg-secondary-background text-secondary-text',
                           )}
@@ -127,7 +128,7 @@ const Controls = ({
                           className={clsx(
                             'rounded-md  px-2 py-1 transition-colors duration-150',
                             possibleDegree === degree &&
-                              'bg-blue-600 text-white',
+                              'bg-contact-blue text-white',
                             possibleDegree !== degree &&
                               'bg-secondary-background text-secondary-text',
                           )}
