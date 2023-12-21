@@ -135,7 +135,7 @@ const NavBar = () => {
               <NavLink
                 href="/contact"
                 variant={path === 'contact' ? 'active' : 'primary'}
-                title="Newsroom"
+                title="Contact Us"
               >
                 Contact Us
               </NavLink>
@@ -234,7 +234,7 @@ const NavBar = () => {
                   <NavLink
                     onClick={() => setIsOpen(false)}
                     href="/contact"
-                    title="Contact"
+                    title="Contact Us"
                   >
                     Contact
                   </NavLink>
@@ -316,7 +316,7 @@ const NavBar = () => {
             <NavLink
               href="/contact"
               variant={path === 'contact' ? 'active' : 'primary'}
-              title="Newsroom"
+              title="Contact Us"
             >
               Contact Us
             </NavLink>
