@@ -3,7 +3,7 @@ import Header from 'app/Header';
 import FAQ from './FAQ';
 import type { Metadata } from 'next';
 
-import upiID from 'public/alumnifundUPIid.jpg';
+import upiID from 'alumnifundUPIid.jpg';
 
 export const metadata: Metadata = {
   title: 'Fund',
@@ -28,8 +28,10 @@ const page = () => {
       <Header title="Alumni Fund" />
       <section className="mx-auto max-w-7xl py-10">
         <Image
-          src={upiID}
+          src="/alumnifundUPIid.jpg"
           alt="An image showing Alumni Fund UPI Id and QR code"
+          width={1833}
+          height={2553}
           className="max-w-xl rounded-lg"
         />
       </section>
