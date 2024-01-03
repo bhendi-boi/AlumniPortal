@@ -66,8 +66,8 @@ const NavBar = () => {
               priority
               src={'/logo_longclg2.png'}
               alt="Alumni Affairs IIITDM Logo"
-              width={688}
-              height={200}
+              width={619}
+              height={180}
               className="aspect-[1400/419]"
             />
           </Link>
