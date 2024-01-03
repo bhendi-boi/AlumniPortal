@@ -9,9 +9,9 @@ export const messageFromTheChairman =
 export const CORE_TEAM: MemberData[] = [
   {
     imagePath: '/iiitdm.jpg',
-    name: 'Dr. Selva Jyothi',
+    name: 'Dr. Selvajyothi K',
     position: 'Professor In Charge',
-    email: 'alumni.affairs@iiitdm.ac.in',
+    email: 'ksjyothi@iiitdm.ac.in',
     linkedIn: 'https://www.linkedin.com/in/kamakshy-selvajyothi-36383a20/',
   },
   {
