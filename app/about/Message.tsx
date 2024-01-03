@@ -23,13 +23,13 @@ const Message = () => {
         className="rounded-lg bg-secondary-background p-4 md:mr-40"
       >
         <h2 id="message-from-chairman" className="sr-only">
-          Message from the Chairman, IIITDM Kancheepuram
+          Message from the PIC Alumni Affairs, IIITDM Kancheepuram
         </h2>
         <p className={`before:content-['"'] after:content-['"']`}>
           {messageFromTheChairman}
         </p>
         <p className="mt-2 font-bold text-contact-blue">
-          Chairman, IIITDM Kancheepuram
+          PIC Alumni Affairs, IIITDM Kancheepuram
         </p>
       </section>
     </div>
