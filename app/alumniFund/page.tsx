@@ -1,7 +1,9 @@
-import React from 'react';
-import type { Metadata } from 'next';
+import Image from 'next/image';
 import Header from 'app/Header';
 import FAQ from './FAQ';
+import type { Metadata } from 'next';
+
+import upiID from 'public/alumnifundUPIid.jpg';
 
 export const metadata: Metadata = {
   title: 'Fund',
@@ -24,9 +26,13 @@ const page = () => {
   return (
     <>
       <Header title="Alumni Fund" />
-      <div className="mx-auto max-w-7xl pt-10">
-        <h2 className="text-4xl">Coming soon ...</h2>
-      </div>
+      <section className="mx-auto max-w-7xl py-10">
+        <Image
+          src={upiID}
+          alt="An image showing Alumni Fund UPI Id and QR code"
+          className="max-w-xl rounded-lg"
+        />
+      </section>
       {/* <FAQ /> */}
     </>
   );
