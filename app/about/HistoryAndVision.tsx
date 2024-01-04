@@ -8,17 +8,20 @@ const HistoryAndVision = () => {
         alt="Convocation 2023"
         width={711}
         height={400}
-        className='rounded-lg w-full h-96 object-cover'
+        className="h-96 w-full rounded-lg object-cover"
       />
       <h2 className="mb-2 mt-8 font-lora text-2xl font-bold">
         History and Vision
       </h2>
       <p>
-        The Office of Alumni Affairs was established in 20XX IIITDM works to
-        connect alumni, students and the institute to create a seamless
-        experience through various events such as Alumni Talks, Batch-wise
-        Reunions, Alumni Meets & Conferences. Our vision is to build a better
-        community among alumni and students.
+        Alumni Affairs at IIITDM Kancheepuram fosters a vibrant network of
+        graduates, connecting them with their alma mater and each other.
+        Dedicated to nurturing lifelong relationships, we organize events,
+        webinars, and collaborative initiatives that facilitate knowledge
+        exchange and professional growth. By fostering a sense of community and
+        pride among alumni, we strive to contribute to the ongoing success of
+        both individuals and the institute, creating a strong and enduring
+        legacy.
       </p>
     </section>
   );
