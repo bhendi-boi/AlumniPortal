@@ -22,13 +22,13 @@ const Card = ({
   image_width,
 }: CardProps) => {
   return (
-    <li className="flex flex-col gap-4 py-5 md:flex-row md:items-center md:gap-8 md:py-10">
+    <li className="flex flex-col gap-4 py-5 md:flex-row md:items-center md:gap-8">
       <Image
         src={image_link}
         alt={alt_text}
         width={image_width}
         height={image_height}
-        className="max-w-xs md:my-4"
+        className="aspect-square rounded-md object-cover md:my-4 md:max-w-[16rem]"
       />
       <div className="flex-1">
         <h2 className="font-lora text-2xl font-bold">{title}</h2>
