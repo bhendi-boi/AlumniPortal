@@ -105,7 +105,7 @@ const page = async ({ params }: { params: { id: string } }) => {
 
   return (
     <>
-      <article className="min-h-screen px-4 mx-auto mb-8 border rounded-lg max-w-7xl border-background sm:mb-12 md:mb-16 md:px-8">
+      <article className="mx-auto mb-8 min-h-screen max-w-7xl rounded-lg border border-background px-4 sm:mb-12 md:mb-16 md:px-8">
         <EventHeader
           title={data.title}
           link={data.link}
@@ -113,13 +113,13 @@ const page = async ({ params }: { params: { id: string } }) => {
           time={time}
         />
         <Image
-          className="object-cover mt-4 overflow-hidden rounded-lg aspect-video bg-gradient-to-br from-gray-100/80 via-gray-200/50 to-gray-400/10 sm:mt-6 md:mt-8"
+          className="mt-4 overflow-hidden rounded-lg bg-gradient-to-br from-gray-100/80 via-gray-200/50 to-gray-400/10 object-cover sm:mt-6 md:mt-8"
           src={data.image_link}
           alt={data.alt_text}
           width={data.image_width}
           height={data.image_height}
         />
-        <div className="px-8 pb-8 mt-8 prose-sm prose prose-img:skeleton max-w-none sm:prose-base md:prose-lg prose-p:text-black prose-img:overflow-hidden prose-img:rounded-lg">
+        <div className="prose-img:skeleton prose prose-sm mt-8 max-w-none pb-8 sm:prose-base md:prose-lg prose-p:text-black prose-img:overflow-hidden prose-img:rounded-lg">
           {content}
         </div>
         {data.video_link && <YTPlayer url={data.video_link} />}
