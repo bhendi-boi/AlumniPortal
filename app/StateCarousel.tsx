@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
 import clsx from 'clsx';
+import { ImageResponse } from 'next/server';
 
 type Images = {
   alt_text: string;
@@ -45,6 +46,7 @@ export default function StateCarousel({ images }: { images: Images }) {
         <NavigationButton
           title="Go to Previous Image"
           variant="left"
+          disabled={images.length === 1}
           onClick={() => handleClick('minus')}
         >
           <AiOutlineLeft className="h-4 w-4 sm:h-6 sm:w-6 md:h-8 md:w-8" />
@@ -52,6 +54,7 @@ export default function StateCarousel({ images }: { images: Images }) {
         <NavigationButton
           title="Go to Next Image"
           variant="right"
+          disabled={images.length === 1}
           onClick={() => handleClick('plus')}
         >
           <AiOutlineRight className="h-4 w-4 sm:h-6 sm:w-6 md:h-8 md:w-8" />
@@ -125,7 +128,7 @@ function NavigationButton({
     <button
       {...rest}
       className={clsx(
-        'absolute z-10 -translate-y-1/2 cursor-pointer rounded-full bg-gray-50 p-2 text-gray-900 opacity-80 hover:bg-zinc-200 hover:opacity-100 active:bg-zinc-100 active:opacity-100',
+        'absolute z-10 -translate-y-1/2 cursor-pointer rounded-full bg-gray-50 p-2 text-gray-900 opacity-80 hover:bg-zinc-200 hover:opacity-100 active:bg-zinc-100 active:opacity-100 disabled:cursor-not-allowed',
         variant === 'left' && 'left-1 top-1/2',
         variant === 'right' && 'right-1 top-1/2',
       )}
