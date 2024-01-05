@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Fund | Alumni Portal',
     description: 'This page contains information related to alumni fund.',
-    url: 'https://alumni-portal-alpha.vercel.app/services/fund',
+    url: 'https://alumniportal.vercel.app/services/fund',
     siteName: 'Alumni Portal',
     images: [
       {

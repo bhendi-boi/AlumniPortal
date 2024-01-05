@@ -8,7 +8,7 @@ export const metadata = {
     title: 'Home | Alumni Portal',
     description:
       'The Alumni Portal allows alumni to connect with each other, stay up-to-date on school news, and find resources and opportunities.',
-    url: 'https://alumni-portal-alpha.vercel.app/',
+    url: 'https://alumniportal.vercel.app/',
     siteName: 'Alumni Portal',
     images: [
       {

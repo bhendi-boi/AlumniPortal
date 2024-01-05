@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Gallery | Alumni Portal',
     description: 'A Gallery of images associated with Alumni Affairs, IIITDM',
-    url: 'https://alumni-portal-alpha.vercel.app/gallery',
+    url: 'https://alumniportal.vercel.app/gallery',
     siteName: 'Alumni Portal',
     images: [
       {

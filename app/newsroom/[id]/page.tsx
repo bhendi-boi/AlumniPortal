@@ -50,7 +50,7 @@ export async function generateMetadata({
     openGraph: {
       title: article.title,
       description: article.summary_for_seo,
-      url: `https://alumni-portal-alpha.vercel.app/services/newsroom/${id}`,
+      url: `https://alumniportal.vercel.app/services/newsroom/${id}`,
       siteName: 'Alumni Portal',
       images: [
         {

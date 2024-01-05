@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Send Query | Alumni Portal',
     description: 'Questions? Send your queries here.',
-    url: 'https://alumni-portal-alpha.vercel.app/services/sendQuery',
+    url: 'https://alumniportal.vercel.app/services/sendQuery',
     siteName: 'Alumni Portal',
     images: [
       {

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: 'Newsroom | Alumni Portal',
     description:
       'Stay up-to-date on the latest achievements of your school alumni! This newsroom features stories about alumni who have made significant contributions in their fields, from starting their own businesses to winning awards for their work. Read about their successes and be inspired to follow in their footsteps.',
-    url: 'https://alumni-portal-alpha.vercel.app/services/newsroom',
+    url: 'https://alumniportal.vercel.app/services/newsroom',
     siteName: 'Alumni Portal',
     images: [
       {

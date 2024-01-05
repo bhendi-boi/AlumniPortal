@@ -60,14 +60,14 @@ export async function generateMetadata({
     openGraph: {
       title: article.title,
       description: article.summary_for_seo,
-      url: `https://alumni-portal-alpha.vercel.app/events/${id}`,
+      url: `https://alumniportal.vercel.app/events/${id}`,
       siteName: 'Alumni Portal',
       images: [
         {
           url: article.image_link,
         },
         {
-          url: '/og-image.png',
+          url: article.image_link ?? '/og-image.png',
         },
       ],
       locale: 'en-IN',
