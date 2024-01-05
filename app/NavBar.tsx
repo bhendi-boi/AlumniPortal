@@ -118,13 +118,13 @@ const NavBar = () => {
               >
                 Gallery
               </NavLink>
-              <NavLink
+              {/* <NavLink
                 href={`/alumniDirectory?year=${LATESTPASSOUTYEAR}`}
                 variant={path === 'alumniDirectory' ? 'active' : 'primary'}
                 title="Alumni Directory"
               >
                 Directory
-              </NavLink>
+              </NavLink> */}
               <NavLink
                 href="/newsroom"
                 variant={path === 'newsroom' ? 'active' : 'primary'}
@@ -211,7 +211,7 @@ const NavBar = () => {
                     Gallery
                   </NavLink>
                 </Menu.Item>
-                <Menu.Item as="li">
+                {/* <Menu.Item as="li">
                   <NavLink
                     onClick={() => setIsOpen(false)}
                     href={`/alumniDirectory?year=${LATESTPASSOUTYEAR}`}
@@ -220,7 +220,7 @@ const NavBar = () => {
                   >
                     Directory
                   </NavLink>
-                </Menu.Item>
+                </Menu.Item> */}
                 <Menu.Item as="li">
                   <NavLink
                     onClick={() => setIsOpen(false)}
@@ -299,13 +299,13 @@ const NavBar = () => {
             >
               Gallery
             </NavLink>
-            <NavLink
+            {/* <NavLink
               href={`/alumniDirectory?year=${LATESTPASSOUTYEAR}`}
               variant={path === 'alumniDirectory' ? 'active' : 'primary'}
               title="Alumni Directory"
             >
               Directory
-            </NavLink>
+            </NavLink> */}
             <NavLink
               href="/newsroom"
               variant={path === 'newsroom' ? 'active' : 'primary'}
