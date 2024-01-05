@@ -43,9 +43,7 @@ export async function generateMetadata({
   }
   const article = data[0];
   return {
-    title: {
-      absolute: article.title,
-    },
+    title: article.title,
     description: article.summary_for_seo,
     openGraph: {
       title: article.title,

@@ -4,7 +4,7 @@ import Header from 'app/Header';
 import Form from './Form';
 
 export const metadata: Metadata = {
-  title: 'Send Query',
+  title: 'Contact Us',
   description: 'Questions? Send your queries here.',
   openGraph: {
     title: 'Send Query | Alumni Portal',

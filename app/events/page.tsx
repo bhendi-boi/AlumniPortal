@@ -4,7 +4,7 @@ import { getActivitiesData } from './fetchers';
 import Card from './Card';
 
 export const metadata: Metadata = {
-  title: 'Events',
+  title: { absolute: 'Events', template: '%s | Events' },
   description: 'Event associated with Alumni Affairs, IIITDM.',
   openGraph: {
     title: 'Events | Alumni Portal',

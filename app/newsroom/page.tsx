@@ -3,9 +3,7 @@ import Card from './Card';
 import { getNewsArticleData } from './fetchers';
 
 export const metadata: Metadata = {
-  title: {
-    absolute: 'Newsroom | IIITDM',
-  },
+  title: 'Newsroom',
   description:
     'Stay up-to-date on the latest achievements of your school alumni! This newsroom features stories about alumni who have made significant contributions in their fields, from starting their own businesses to winning awards for their work. Read about their successes and be inspired to follow in their footsteps.',
   openGraph: {
