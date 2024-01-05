@@ -28,7 +28,7 @@ const Card = ({
         alt={alt_text}
         width={image_width}
         height={image_height}
-        className="aspect-square rounded-md object-cover md:my-4 md:max-w-[16rem]"
+        className="skeleton aspect-square rounded-md object-cover md:my-4 md:max-w-[16rem]"
       />
       <div className="flex-1">
         <h2 className="font-lora text-2xl font-bold">{title}</h2>
