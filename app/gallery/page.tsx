@@ -21,10 +21,13 @@ export const metadata: Metadata = {
     type: 'website',
   },
 };
+
 async function getGalleryData() {
   const { data, error } = await supabase.from('gallery').select();
   return { data, error };
 }
+
+export const revalidate = 60;
 
 const page = async () => {
   const { data, error } = await getGalleryData();
