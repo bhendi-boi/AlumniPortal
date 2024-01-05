@@ -9,6 +9,7 @@ const Helper = () => {
       <h2 className="font-medium">UPI Id:</h2>
       <p>projectaccounts@sbi</p>
       <Button
+        title="Copy to Clipboard"
         onClick={(e: React.MouseEvent) => {
           copyToClipboard('projectaccounts@sbi');
         }}
