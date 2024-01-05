@@ -23,13 +23,13 @@ const EventHeader = ({ title, link, date, time }: Props) => {
             {time} (IST)
           </p>
         </div>
-        <NavLink
+        {/* <NavLink
           variant="eventsRegister"
           href={link}
           title={`Link to ${title}`}
         >
           Register Now
-        </NavLink>
+        </NavLink> */}
       </div>
     </header>
   );
