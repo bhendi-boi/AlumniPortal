@@ -2,9 +2,9 @@
 
 ### `/` route
 
-- Newsroom - data lives in newsroom table supabase - SSG
-- Activities - data lives in newsroom table supabase - SSG
-- Carousel - data lives in newsroom table supabase - SSG
+- Newsroom - data lives in newsroom table supabase - ISR
+- Activities - data lives in newsroom table supabase - ISR
+- Carousel - data lives in newsroom table supabase - ISR
 
 ### `/about` route
 
@@ -12,39 +12,23 @@
 
 ### `/events` route
 
-- to add
+- data lives in activities table supabase - ISR
 
 #### `/events/[id]` route
 
-- data lives in activities table supabase - SSG
+- data lives in activities table supabase - ISR
 
 ### `/gallery` route
 
-- data lives in gallery table supabase - SSG
+- data lives in gallery table supabase - ISR
 
-### `/services` route
+### `/newsroom`
 
-- SSG
+- data lives in newsroom table supabase ISR
 
-#### `/services/sendQuery`
+##### `/newsroom/[id]`
 
-- SSG
-
-#### `/services/fund`
-
-- SSG
-
-#### `/services/volunteer`
-
-- SSG
-
-#### `/services/newsroom`
-
-- SSG
-
-##### `/services/newsroom/[id]`
-
-- SSG
+- data lives in newsroom table supabase ISR
 
 ### `/alumniDirectory`
 
