@@ -75,6 +75,7 @@ export default function StateCarousel({ images }: { images: Images }) {
               className="skeleton overflow-hidden rounded-lg"
             >
               <Image
+                priority
                 className="object-contain"
                 src={images[currentIndex].link}
                 alt={images[currentIndex].alt_text}
