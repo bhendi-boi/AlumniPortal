@@ -16,7 +16,7 @@ export default function NotFound() {
         <p>Try changing the URL or go back to newsroom</p>
       </div>
       <Link
-        href="/services/newsroom"
+        href="/newsroom"
         className="rounded-md bg-contact-blue px-6 py-3 font-medium text-white hover:opacity-90 active:opacity-80"
       >
         Back to Newsroom
