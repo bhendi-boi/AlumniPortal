@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import { Inter, Lora } from 'next/font/google';
 import NavBar from './NavBar';
 import Footer from './Footer';
@@ -49,6 +50,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <NavBar />
         <main className="mx-auto min-h-screen max-w-7xl px-5 md:px-10">
           {children}
+          <Analytics />
         </main>
         <Footer />
       </body>
