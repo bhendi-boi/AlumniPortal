@@ -33,3 +33,10 @@
 ### `/alumniDirectory`
 
 - SSG
+
+## Todo
+
+- moving deployment to cs club vercel account
+- update search console
+- redesign the og image
+- link `alumniDirectory` to google sheets
