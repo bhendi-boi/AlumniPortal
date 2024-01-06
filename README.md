@@ -1,3 +1,22 @@
+# Alumni Portal
+
+The Alumni Portal allows alumni to connect with each other, stay up-to-date on school news, and find resources and opportunities.
+
+![Alumni Portal](public/og-image.png)
+
+Made with 💖 by [CS Club IIITDM](https://csclub.netlify.app/).
+
+## Built with
+
+- [NextJS](https://nextjs.org/)
+- [Supabase](https://supabase.com)
+- [Tailwind CSS](https://tailwindcss.com)
+- [Vercel](https://vercel.com)
+
+## Page Speed Insights report
+
+![Page Insights report](pageSpeedInsights.png)
+
 ## Data fetching
 
 ### `/` route
@@ -38,5 +57,4 @@
 
 - moving deployment to cs club vercel account
 - update search console
-- redesign the og image
 - link `alumniDirectory` to google sheets
