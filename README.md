@@ -55,6 +55,21 @@ Made with 💖 by [CS Club IIITDM](https://csclub.netlify.app/).
 
 ## Todo
 
+- update team member details (images)
 - moving deployment to cs club vercel account
 - update search console
 - link `alumniDirectory` to google sheets
+
+## How to update team members data
+
+- team member's data is present in [about.ts](content/about.ts) file.
+- as it changes only once per academic year, it doesn't make any sense to store it in supabase.
+- you will see a lot of variable exports.
+- follow the schema and update them accordingly.
+- image path can be a relative path to [this file](app/about/Team.tsx) or from supabase.
+
+### Naming image files
+
+- start with person's name followed by year, wing (alumni relations or event management or operations or public relations and marketing) which is followed by their position (refer to MemberData type in types.ts for more details). Also all these fields should be separated by `_` .
+- for example image for Vibhavgopal from 2023, alumni relations lead should be `Vibhavgopal_2023_alumni_relations_lead.jpg/png` .
+- I know it's too long for a file name but it is easier to maintain in the long run.
