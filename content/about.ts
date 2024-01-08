@@ -43,22 +43,22 @@ export const EVENT_MANAGEMENT_TEAM: MemberData[] = [
   },
   {
     imagePath: '/iiitdm.jpg',
-    name: 'Arpita Gautham',
+    name: 'Arpita Gautam',
     position: 'Co Lead',
   },
   {
     imagePath: '/iiitdm.jpg',
-    name: 'Phanish Vajahala',
+    name: 'Phanish Vajhala',
     position: 'Co-ordinator',
   },
   {
     imagePath: '/iiitdm.jpg',
-    name: 'Swetha',
+    name: 'Swetha Teddu',
     position: 'Co-ordinator',
   },
   {
     imagePath: '/iiitdm.jpg',
-    name: 'P Srinidi',
+    name: 'P Srinidhi',
     position: 'Co-ordinator',
   },
 ];
@@ -86,7 +86,7 @@ export const PUBLIC_RELATIONS_AND_MARKETING_TEAM: MemberData[] = [
   },
   {
     imagePath: '/iiitdm.jpg',
-    name: 'Swetha',
+    name: 'Shwetta K',
     position: 'Social Media Manager',
   },
   {
@@ -104,17 +104,17 @@ export const ALUMNI_RELATIONS_TEAM: MemberData[] = [
   },
   {
     imagePath: '/iiitdm.jpg',
-    name: 'Vibhavgopal',
+    name: 'Vibhav Gopal',
     position: 'Lead',
   },
   {
     imagePath: '/iiitdm.jpg',
-    name: 'Sucheta',
+    name: 'Sucheta V',
     position: 'Co Lead, Data',
   },
   {
     imagePath: '/iiitdm.jpg',
-    name: 'Pranav',
+    name: 'Pranav P R',
     position: 'Co Lead, Outreach',
   },
   {
@@ -149,7 +149,7 @@ export const ALUMNI_RELATIONS_TEAM: MemberData[] = [
   },
   {
     imagePath: '/iiitdm.jpg',
-    name: 'Ravikrishnan A.M',
+    name: 'Ravikrishnan A M',
     position: 'Co-ordinator, Outreach',
   },
 ];
@@ -162,7 +162,7 @@ export const OPERATIONS_TEAM: MemberData[] = [
   },
   {
     imagePath: '/iiitdm.jpg',
-    name: 'Sriniti',
+    name: 'Srinithi',
     position: 'Lead',
   },
   {
