@@ -63,15 +63,17 @@ const TeamCard = ({
                   return (
                     <li
                       key={index}
-                      className="flex flex-col items-center justify-center gap-4"
+                      className="flex flex-col items-center justify-center"
                     >
                       <Image
                         src={member.imagePath}
                         alt={`${member.name}'s photo`}
-                        width={80}
-                        height={80}
+                        width={64}
+                        height={64}
+                        className="mb-1 max-h-16 flex-1 shrink overflow-hidden rounded-full object-cover"
                       />
-                      <p className="text-center text-xs">{member.name}</p>
+                      <p className="text-xs">{member.name}</p>
+                      <p className="text-xs">{member.position}</p>
                     </li>
                   );
                 })}
