@@ -114,7 +114,8 @@ const page = async ({ params }: { params: { id: string } }) => {
             width={data.image_width}
             height={data.image_height}
           />
-          <div>{content}</div>
+          {/* pt-2 is there to align image and text */}
+          <div className="pt-2 text-justify">{content}</div>
           {data.video_link && <YTPlayer url={data.video_link} />}
         </article>
       </section>

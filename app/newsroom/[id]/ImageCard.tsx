@@ -9,7 +9,7 @@ type Props = {
 
 const ImageCard = ({ src, altText, height, width }: Props) => {
   return (
-    <figure className="mb-8">
+    <figure className="w-full max-w-md sm:float-left sm:mr-8">
       <Image
         className="w-full overflow-hidden rounded-lg bg-gradient-to-br from-gray-100/80 via-gray-200/50 to-gray-400/10"
         src={src}
