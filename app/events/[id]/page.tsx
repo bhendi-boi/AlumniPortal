@@ -111,13 +111,13 @@ const page = async ({ params }: { params: { id: string } }) => {
           time={time}
         />
         <Image
-          className="mt-4 overflow-hidden rounded-lg bg-gradient-to-br from-gray-100/80 via-gray-200/50 to-gray-400/10 object-cover sm:mt-6 md:mt-8"
+          className="mt-4 overflow-hidden rounded-lg bg-gradient-to-br from-gray-100/80 via-gray-200/50 to-gray-400/10 object-cover sm:float-left sm:mb-4 sm:mr-8 sm:mt-6 md:mt-8 md:max-w-md"
           src={data.image_link}
           alt={data.alt_text}
           width={data.image_width}
           height={data.image_height}
         />
-        <div className="prose-img:skeleton prose prose-sm mt-8 max-w-none pb-8 sm:prose-base md:prose-lg prose-p:text-black prose-img:overflow-hidden prose-img:rounded-lg">
+        <div className="prose-img:skeleton prose prose-sm mt-8 max-w-none pb-8 text-justify sm:prose-base md:prose-lg prose-p:text-black prose-img:overflow-hidden prose-img:rounded-lg">
           {content}
         </div>
         {data.video_link && <YTPlayer url={data.video_link} />}
