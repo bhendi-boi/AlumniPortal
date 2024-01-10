@@ -14,7 +14,7 @@ const EventHeader = ({ title, link, date, time }: Props) => {
       <h2 className="border-b border-background/70 pb-4 pt-6 font-lora text-xl font-bold sm:text-3xl">
         {title}
       </h2>
-      <div className="mt-2 flex flex-col justify-between gap-4 border-b border-background/70 py-4 sm:flex-row sm:items-center">
+      {/* <div className="flex flex-col justify-between gap-4 py-4 mt-2 border-b border-background/70 sm:flex-row sm:items-center">
         <div className="flex items-center gap-2">
           <AiOutlineCalendar size={40} />
           <p className="text-sm">
@@ -23,14 +23,14 @@ const EventHeader = ({ title, link, date, time }: Props) => {
             {time} (IST)
           </p>
         </div>
-        {/* <NavLink
+        <NavLink
           variant="eventsRegister"
           href={link}
           title={`Link to ${title}`}
         >
           Register Now
-        </NavLink> */}
-      </div>
+        </NavLink>
+      </div> */}
     </header>
   );
 };
