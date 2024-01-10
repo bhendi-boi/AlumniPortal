@@ -8,7 +8,7 @@ export const messageFromTheChairman =
 
 export const CORE_TEAM: MemberData[] = [
   {
-    imagePath: '/iiitdm.jpg',
+    imagePath: '/KSJYOTHI.jpeg',
     name: 'Dr. Selvajyothi K',
     position: 'Professor In Charge',
     email: 'ksjyothi@iiitdm.ac.in',
@@ -58,7 +58,7 @@ export const EVENT_MANAGEMENT_TEAM: MemberData[] = [
   },
   {
     imagePath:
-      'https://ocufbllgoonzjowlkkhp.supabase.co/storage/v1/object/public/main/team%20member%20photos/2023/event%20management/Swetha_2023_events_coordinator',
+      'https://ocufbllgoonzjowlkkhp.supabase.co/storage/v1/object/public/main/team%20member%20photos/2023/event%20management/Swetha_2023_events_coordinator?t=2024-01-10T17%3A23%3A41.960Z',
     name: 'Swetha Teddu',
     position: 'Co-ordinator',
   },
@@ -72,35 +72,35 @@ export const EVENT_MANAGEMENT_TEAM: MemberData[] = [
 
 export const PUBLIC_RELATIONS_AND_MARKETING_TEAM: MemberData[] = [
   {
-    imagePath: '/iiitdm.jpg',
+    imagePath: 'https://ocufbllgoonzjowlkkhp.supabase.co/storage/v1/object/public/main/team%20member%20photos/2023/public%20relations/Sakthirajan_2023_graphics_designer?t=2024-01-10T16%3A24%3A05.211Z',
     name: 'Madhav',
     position: 'Mentor',
   },
+  // {
+  //   imagePath:
+  //     '/iiitdm.jpg',
+  //   name: 'Rahul',
+  //   position: 'Writer',
+  // },
   {
-    imagePath:
-      'https://ocufbllgoonzjowlkkhp.supabase.co/storage/v1/object/public/main/team%20member%20photos/2023/alumni%20relations/Rahul_2023_alumni_relations_coordinator',
-    name: 'Rahul',
-    position: 'Writer',
-  },
-  {
-    imagePath: '/iiitdm.jpg',
+    imagePath: 'https://ocufbllgoonzjowlkkhp.supabase.co/storage/v1/object/public/main/team%20member%20photos/2023/public%20relations/Sakthirajan_2023_graphics_designer?t=2024-01-10T16%3A24%3A05.211Z',
     name: 'Divya N',
     position: 'Lead',
   },
   {
     imagePath:
-      'https://ocufbllgoonzjowlkkhp.supabase.co/storage/v1/object/public/main/team%20member%20photos/2023/alumni%20relations/Maha_2023_alumni_relations_coordinator',
+      'https://ocufbllgoonzjowlkkhp.supabase.co/storage/v1/object/public/main/team%20member%20photos/2023/public%20relations/Sakthirajan_2023_graphics_designer?t=2024-01-10T16%3A24%3A05.211Z',
     name: 'GSL Maha',
     position: 'Content Creator',
   },
   {
     imagePath:
-      'https://ocufbllgoonzjowlkkhp.supabase.co/storage/v1/object/public/main/team%20member%20photos/2023/core%20team/Shwetta_2023_socials_manager',
+      'https://ocufbllgoonzjowlkkhp.supabase.co/storage/v1/object/public/main/team%20member%20photos/2023/public%20relations/Shwetta_2023_socials_manager?t=2024-01-10T16%3A19%3A10.523Z',
     name: 'Shwetta K',
     position: 'Social Media Manager',
   },
   {
-    imagePath: '/iiitdm.jpg',
+    imagePath: 'https://ocufbllgoonzjowlkkhp.supabase.co/storage/v1/object/public/main/team%20member%20photos/2023/public%20relations/Sakthirajan_2023_graphics_designer?t=2024-01-10T16%3A24%3A05.211Z',
     name: 'Sakthi Ranjan',
     position: 'Graphic Designer',
   },
@@ -177,7 +177,7 @@ export const ALUMNI_RELATIONS_TEAM: MemberData[] = [
 
 export const OPERATIONS_TEAM: MemberData[] = [
   {
-    imagePath: '/iiitdm.jpg',
+    imagePath: 'https://ocufbllgoonzjowlkkhp.supabase.co/storage/v1/object/public/main/team%20member%20photos/2023/core%20team/Rajgopal_2023_operations_admin?t=2024-01-10T16%3A23%3A14.236Z',
     name: 'Raj Gopal',
     position: 'Admin',
   },
