@@ -46,7 +46,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         id="body"
         className={`bg-white ${inter.variable} ${lora.variable} font-inter`}
       >
-        <NextTopLoader color="#123262" showSpinner={false} />
+        <NextTopLoader color="#2c4a87" showSpinner={false} />
         <NavBar />
         <main className="mx-auto min-h-screen max-w-7xl px-5 md:px-10">
           {children}
