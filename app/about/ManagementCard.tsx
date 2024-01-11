@@ -30,7 +30,7 @@ const ManagementCard = ({
         alt={`${name}'s photo`}
         height={120}
         width={120}
-        className="rounded-full"
+        className="skeleton rounded-full"
       />
       <div className="flex flex-col gap-2 md:text-center">
         <div>

@@ -1,11 +1,5 @@
 import ManagementCard from './ManagementCard';
-import {
-  ALUMNI_RELATIONS_TEAM,
-  CORE_TEAM,
-  EVENT_MANAGEMENT_TEAM,
-  OPERATIONS_TEAM,
-  PUBLIC_RELATIONS_AND_MARKETING_TEAM,
-} from 'content/about';
+import { MANAGEMENT, CORE_TEAM, MENTORS } from 'content/about';
 import { CiMail } from 'react-icons/ci';
 import TeamCard from './TeamCard';
 
@@ -13,23 +7,13 @@ const Team = () => {
   const teamNames = [
     {
       icon: <CiMail className="h-12 w-12" />,
-      name: 'Event Management',
-      members: EVENT_MANAGEMENT_TEAM,
+      name: 'Core Team',
+      members: CORE_TEAM,
     },
     {
       icon: <CiMail className="h-12 w-12" />,
-      name: 'Public Relations, Marketing',
-      members: PUBLIC_RELATIONS_AND_MARKETING_TEAM,
-    },
-    {
-      icon: <CiMail className="h-12 w-12" />,
-      name: 'Alumni Relations',
-      members: ALUMNI_RELATIONS_TEAM,
-    },
-    {
-      icon: <CiMail className="h-12 w-12" />,
-      name: 'Operations',
-      members: OPERATIONS_TEAM,
+      name: 'Mentors',
+      members: MENTORS,
     },
   ];
   return (
@@ -40,7 +24,7 @@ const Team = () => {
         </h2>
       </header>
       <div className="mx-auto mb-8 flex max-w-7xl flex-col items-center justify-center gap-4 px-5 md:flex-row md:gap-5 md:p-0">
-        {CORE_TEAM.map((member) => (
+        {MANAGEMENT.map((member) => (
           <ManagementCard key={member.name} {...member} />
         ))}
       </div>

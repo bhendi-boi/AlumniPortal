@@ -70,7 +70,7 @@ const TeamCard = ({
                         alt={`${member.name}'s photo`}
                         width={64}
                         height={64}
-                        className="skeleton mb-1 max-h-16 flex-1 shrink overflow-hidden rounded-full object-cover"
+                        className="skeleton max-w-16 mb-1 max-h-16 flex-1 shrink overflow-hidden rounded-full object-cover"
                       />
                       <p className="text-xs">{member.name}</p>
                       <p className="hidden text-xs font-medium md:inline">
