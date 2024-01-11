@@ -43,7 +43,7 @@ export const CORE_TEAM: MemberData[] = [
   },
   {
     imagePath:
-      'https://ocufbllgoonzjowlkkhp.supabase.co/storage/v1/object/public/main/team%20member%20photos/2023/core%20team/Sanjana_2023_joint_sec',
+      'https://ocufbllgoonzjowlkkhp.supabase.co/storage/v1/object/public/main/team%20member%20photos/2023/core%20team/Sanjana_2023_joint_sec?t=2024-01-11T07%3A25%3A10.915Z',
     name: 'KSL Sanjana',
     position: 'Joint Secretary',
     email: 'me21b2015@iiitdm.ac.in',
@@ -95,33 +95,33 @@ export const CORE_TEAM: MemberData[] = [
 
 export const MENTORS: MemberData[] = [
   {
-    imagePath: '/iiitdm.jpg',
-    name: 'Meghna',
-    position: 'Mentor',
+    imagePath: 'https://ocufbllgoonzjowlkkhp.supabase.co/storage/v1/object/public/main/team%20member%20photos/2023/core%20team/Meghna_2023_mentor?t=2024-01-11T07%3A33%3A53.769Z',
+    name: 'Meghana',
+    position: 'Mentor, Events',
   },
   {
     imagePath:
       'https://ocufbllgoonzjowlkkhp.supabase.co/storage/v1/object/public/main/team%20member%20photos/2023/core%20team/Madhav_2023_mentor?t=2024-01-10T20%3A06%3A01.446Z',
     name: 'Madhav',
-    position: 'Mentor',
+    position: 'Mentor, PR & Marketing',
   },
   {
     imagePath:
       'https://ocufbllgoonzjowlkkhp.supabase.co/storage/v1/object/public/main/team%20member%20photos/2023/core%20team/Arjun_2023_mentor?t=2024-01-11T05%3A47%3A59.547Z',
     name: 'Arjun',
-    position: 'Mentor',
+    position: 'Overall Mentor',
   },
   {
     imagePath:
-      'https://ocufbllgoonzjowlkkhp.supabase.co/storage/v1/object/public/main/team%20member%20photos/2023/core%20team/Dhyuti_2023_mentor?t=2024-01-11T05%3A51%3A10.422Z',
+      'https://ocufbllgoonzjowlkkhp.supabase.co/storage/v1/object/public/main/team%20member%20photos/2023/core%20team/Dhyuti_2023_mentor.jpeg?t=2024-01-11T07%3A43%3A10.943Z',
     name: 'Dhyuti',
-    position: 'Mentor',
+    position: 'Overall Mentor',
   },
   {
     imagePath:
-      'https://ocufbllgoonzjowlkkhp.supabase.co/storage/v1/object/public/main/team%20member%20photos/2023/core%20team/Chaitanya_2023_mentor?t=2024-01-10T12%3A43%3A10.100Z',
+      'https://ocufbllgoonzjowlkkhp.supabase.co/storage/v1/object/public/main/team%20member%20photos/2023/core%20team/Chaitanya_2023_mentor.jpeg?t=2024-01-11T07%3A44%3A30.043Z',
     name: 'Chaitanya',
-    position: 'Mentor',
+    position: 'Mentor, Alumni Relations',
   },
 ];
 
