@@ -24,7 +24,7 @@ export const MANAGEMENT: MemberData[] = [
   },
   {
     imagePath:
-      'https://ocufbllgoonzjowlkkhp.supabase.co/storage/v1/object/public/main/team%20member%20photos/2023/core%20team/Sanjana_2023_joint_sec',
+      'https://ocufbllgoonzjowlkkhp.supabase.co/storage/v1/object/public/main/team%20member%20photos/2023/core%20team/Sanjana_2023_joint_sec?t=2024-01-11T07%3A25%3A10.915Z',
     name: 'KSL Sanjana',
     position: 'Joint Secretary',
     email: 'me21b2015@iiitdm.ac.in',
