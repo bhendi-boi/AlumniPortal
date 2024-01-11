@@ -20,8 +20,8 @@ const ManagementCard = ({
     <article
       {...restProps}
       className={clsx(
-        'flex w-full items-center gap-5 md:gap-3 rounded-lg px-5 py-5 md:w-48 md:flex-col md:px-0',
-        
+        'flex w-full items-center gap-5 rounded-lg px-5 py-5 md:w-48 md:flex-col md:gap-3 md:px-0',
+
         'bg-white ring-2 ring-black/5',
       )}
     >
@@ -40,7 +40,9 @@ const ManagementCard = ({
           </p>
         </div>
 
-        <div className={clsx('flex md:justify-center mt-2', linkedIn && 'gap-6')}>
+        <div
+          className={clsx('mt-2 flex md:justify-center', linkedIn && 'gap-6')}
+        >
           <Link
             href={`mailto:${email}`}
             target="_blank"

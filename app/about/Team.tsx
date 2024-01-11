@@ -35,7 +35,7 @@ const Team = () => {
   return (
     <section className="mx-auto my-8 max-w-7xl md:my-16">
       <header className="mx-auto mb-10 max-w-7xl text-center">
-        <h2 className="relative text-contact-blue inline text-center font-lora text-2xl font-medium before:absolute before:right-full before:top-1/2 before:h-px before:w-0 before:-translate-x-8 before:bg-black before:content-[''] after:absolute after:left-full after:top-1/2 after:h-px after:w-0 after:translate-x-8 after:bg-black after:content-[''] md:before:w-0 md:after:w-0">
+        <h2 className="relative inline text-center font-lora text-2xl font-medium text-contact-blue before:absolute before:right-full before:top-1/2 before:h-px before:w-0 before:-translate-x-8 before:bg-black before:content-[''] after:absolute after:left-full after:top-1/2 after:h-px after:w-0 after:translate-x-8 after:bg-black after:content-[''] md:before:w-0 md:after:w-0">
           Team
         </h2>
       </header>

@@ -72,7 +72,8 @@ export const EVENT_MANAGEMENT_TEAM: MemberData[] = [
 
 export const PUBLIC_RELATIONS_AND_MARKETING_TEAM: MemberData[] = [
   {
-    imagePath: 'https://ocufbllgoonzjowlkkhp.supabase.co/storage/v1/object/public/main/team%20member%20photos/2023/core%20team/Madhav_2023_mentor?t=2024-01-10T20%3A06%3A01.446Z',
+    imagePath:
+      'https://ocufbllgoonzjowlkkhp.supabase.co/storage/v1/object/public/main/team%20member%20photos/2023/core%20team/Madhav_2023_mentor?t=2024-01-10T20%3A06%3A01.446Z',
     name: 'Madhav',
     position: 'Mentor',
   },
@@ -83,7 +84,8 @@ export const PUBLIC_RELATIONS_AND_MARKETING_TEAM: MemberData[] = [
   //   position: 'Writer',
   // },
   {
-    imagePath: 'https://ocufbllgoonzjowlkkhp.supabase.co/storage/v1/object/public/main/team%20member%20photos/2023/core%20team/Divya_2023_pr_lead?t=2024-01-10T20%3A06%3A12.092Z',
+    imagePath:
+      'https://ocufbllgoonzjowlkkhp.supabase.co/storage/v1/object/public/main/team%20member%20photos/2023/core%20team/Divya_2023_pr_lead?t=2024-01-10T20%3A06%3A12.092Z',
     name: 'Divya N',
     position: 'Lead',
   },
@@ -100,7 +102,8 @@ export const PUBLIC_RELATIONS_AND_MARKETING_TEAM: MemberData[] = [
     position: 'Social Media Manager',
   },
   {
-    imagePath: 'https://ocufbllgoonzjowlkkhp.supabase.co/storage/v1/object/public/main/team%20member%20photos/2023/public%20relations/Sakthirajan_2023_graphics_designer?t=2024-01-10T16%3A24%3A05.211Z',
+    imagePath:
+      'https://ocufbllgoonzjowlkkhp.supabase.co/storage/v1/object/public/main/team%20member%20photos/2023/public%20relations/Sakthirajan_2023_graphics_designer?t=2024-01-10T16%3A24%3A05.211Z',
     name: 'Sakthi Ranjan',
     position: 'Graphic Designer',
   },
@@ -177,7 +180,8 @@ export const ALUMNI_RELATIONS_TEAM: MemberData[] = [
 
 export const OPERATIONS_TEAM: MemberData[] = [
   {
-    imagePath: 'https://ocufbllgoonzjowlkkhp.supabase.co/storage/v1/object/public/main/team%20member%20photos/2023/core%20team/Rajgopal_2023_operations_admin?t=2024-01-10T16%3A23%3A14.236Z',
+    imagePath:
+      'https://ocufbllgoonzjowlkkhp.supabase.co/storage/v1/object/public/main/team%20member%20photos/2023/core%20team/Rajgopal_2023_operations_admin?t=2024-01-10T16%3A23%3A14.236Z',
     name: 'Raj Gopal',
     position: 'Admin',
   },
