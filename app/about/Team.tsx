@@ -2,16 +2,18 @@ import ManagementCard from './ManagementCard';
 import { MANAGEMENT, CORE_TEAM, MENTORS } from 'content/about';
 import { CiMail } from 'react-icons/ci';
 import TeamCard from './TeamCard';
+import { AiOutlineAntDesign } from "react-icons/ai";
+import { IoMdPeople } from "react-icons/io";
 
 const Team = () => {
   const teamNames = [
     {
-      icon: <CiMail className="h-12 w-12" />,
+      icon: <IoMdPeople className="h-12 w-12" />,
       name: 'Core Team',
       members: CORE_TEAM,
     },
     {
-      icon: <CiMail className="h-12 w-12" />,
+      icon: <AiOutlineAntDesign className="h-12 w-12" />,
       name: 'Mentors',
       members: MENTORS,
     },

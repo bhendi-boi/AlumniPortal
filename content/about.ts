@@ -1,10 +1,13 @@
 import { MemberData } from 'types';
 
 export const messageFromTheDirector =
-  'The Office of Alumni Affairs was established in 20XX IIITDM works to connect alumni, students and the institute to create a seamless experience through various events such as Alumni Talks, Batch-wise reunions, Alumni Meets & Conferences. Our vision is to build a better community among alumni and students.';
+  "Any academic institution benefits from alumni since they help to promote the institution's name and offer support on a financial and academic level. Their accomplishments are a reflection of the institution's standing, and they treasure their time there for the sustenance it gave them.\
+  For an institution to continually improve its educational programs and social services, alumni involvement is crucial. Their experiences and expertise shape the curriculum, offer insights into industry trends, and provide mentorship opportunities.\
+  Visits and talks by alumni and interactions with them motivate current students to achieve well. Alumni serve as role models for students, inspiring them to achieve their full potential by showing them the possibilities.\
+  It makes me happy to see that our college has such vibrant alumni. I send them my best wishes for their future endeavors and applaud them for their dedication to strengthening the bond between alums and their alma university. Together, alumni and the organization can prosper going forward, fostering their mutual growth and success.";
 
 export const messageFromTheChairman =
-  'The Office of Alumni Affairs was established in 20XX IIITDM works to connect alumni, students and the institute to create a seamless experience through various events such as Alumni Talks, Batch-wise reunions, Alumni Meets & Conferences. Our vision is to build a better community among alumni and students.';
+  'The Office of Alumni Affairs was established in 2017 IIITDM works to connect alumni, students and the institute to create a seamless experience through various events such as Alumni Talks, Batch-wise reunions, Alumni Meets & Conferences. Our vision is to build a better community among alumni and students.';
 
 export const MANAGEMENT: MemberData[] = [
   {
