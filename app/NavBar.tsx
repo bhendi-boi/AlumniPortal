@@ -229,6 +229,7 @@ const NavBar = () => {
                   <NavLink
                     onClick={() => setIsOpen(false)}
                     href="/newsroom"
+                    variant={path === 'newsroom' ? 'active' : 'primary'}
                     title="Newsroom"
                   >
                     Newsroom
@@ -238,6 +239,7 @@ const NavBar = () => {
                   <NavLink
                     onClick={() => setIsOpen(false)}
                     href="/contact"
+                    variant={path === 'contact' ? 'active' : 'primary'}
                     title="Contact Us"
                   >
                     Contact
@@ -246,6 +248,7 @@ const NavBar = () => {
                 <Menu.Item as="li">
                   <NavLink
                     onClick={() => setIsOpen(false)}
+                    variant={path === 'alumniFund' ? 'active' : 'primary'}
                     href="/alumniFund"
                     title="Alumni Fund"
                   >
