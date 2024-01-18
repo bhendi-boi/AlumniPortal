@@ -71,9 +71,13 @@ const NavBar = () => {
               className="aspect-[1400/419]"
             />
           </Link>
-          <h2 className="ml-auto hidden font-lora text-xl font-bold tracking-wider md:block">
-            Bridging Campus to Community
-          </h2>
+          <Image
+            src={'/iiitdm.jpg'}
+            alt="IIITDM Logo"
+            width={180}
+            height={180}
+            className="ml-auto hidden md:block"
+          />
         </div>
 
         {!showShadow && (
