@@ -72,7 +72,7 @@ const NavBar = () => {
             />
           </Link>
           <Image
-            src={'/iiitdm.jpg'}
+            src={'/Insignia.png'}
             alt="IIITDM Logo"
             width={180}
             height={180}
