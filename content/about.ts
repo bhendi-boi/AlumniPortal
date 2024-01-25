@@ -1,10 +1,19 @@
 import { MemberData } from 'types';
 
-export const messageFromTheDirector =
-  "Any academic institution benefits from alumni since they help to promote the institution's name and offer support on a financial and academic level. Their accomplishments are a reflection of the institution's standing, and they treasure their time there for the sustenance it gave them.\
-  For an institution to continually improve its educational programs and social services, alumni involvement is crucial. Their experiences and expertise shape the curriculum, offer insights into industry trends, and provide mentorship opportunities.\
-  Visits and talks by alumni and interactions with them motivate current students to achieve well. Alumni serve as role models for students, inspiring them to achieve their full potential by showing them the possibilities.\
-  It makes me happy to see that our college has such vibrant alumni. I send them my best wishes for their future endeavors and applaud them for their dedication to strengthening the bond between alums and their alma university. Together, alumni and the organization can prosper going forward, fostering their mutual growth and success.";
+// export const messageFromTheDirector =
+//   "Any academic institution benefits from alumni since they help to promote the institution's name and offer support on a financial and academic level. Their accomplishments are a reflection of the institution's standing, and they treasure their time there for the sustenance it gave them.\
+//   For an institution to continually improve its educational programs and social services, alumni involvement is crucial. Their experiences and expertise shape the curriculum, offer insights into industry trends, and provide mentorship opportunities.\
+//   Visits and talks by alumni and interactions with them motivate current students to achieve well. Alumni serve as role models for students, inspiring them to achieve their full potential by showing them the possibilities.\
+//   It makes me happy to see that our college has such vibrant alumni. I send them my best wishes for their future endeavors and applaud them for their dedication to strengthening the bond between alums and their alma university. Together, alumni and the organization can prosper going forward, fostering their mutual growth and success.";
+
+  export const messageFromTheDirector =
+  "I welcome you to this online platform of Alumni. \
+  The alumni network of IIITDM Kancheepuram forms an essential and significant element to propel the Institute towards overall excellence and in producing leaders. Their accomplishments are a reflection of the Institute’s standing, and they treasure their time for the sustenance it gave them.\
+  Involvement of Alumni is crucial for an Institute to continually improve its educational programs and social services. Their experiences and expertise shape the curriculum, offer insights into industry trends, and provide mentorship opportunities. \
+  We are always eager to hear about your achievements, milestones, and endeavors. Your success is a source of motivation for our current students, faculty, and the entire IIITDM Kancheepuram community. \
+  Visits and talks by alumni and interactions with them motivate current students to achieve well. I encourage you to stay connected with your alma mater and contribute to the growth and development of IIITDM Kancheepuram. Your experiences and insights are invaluable in shaping the future of the institute and inspiring the next generation of students. \
+  It makes me happy to see that our college has such vibrant alumni. I send them my best wishes for their future endeavors and applaud them for their dedication to strengthening the bond between alums and their alma university. Together, alumni and the organization can prosper going forward, fostering their mutual growth and success. \
+  I look forward to your continued involvement and support. Together, let us build a strong and vibrant network of alumni, fostering a sense of pride and belonging to IIITDM Kancheepuram.";
 
 export const messageFromTheChairman =
   'The Office of Alumni Affairs was established in 2017 IIITDM works to connect alumni, students and the institute to create a seamless experience through various events such as Alumni Talks, Batch-wise reunions, Alumni Meets & Conferences. Our vision is to build a better community among alumni and students.';
