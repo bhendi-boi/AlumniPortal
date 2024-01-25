@@ -7,12 +7,12 @@ import { MemberData } from 'types';
 //   It makes me happy to see that our college has such vibrant alumni. I send them my best wishes for their future endeavors and applaud them for their dedication to strengthening the bond between alums and their alma university. Together, alumni and the organization can prosper going forward, fostering their mutual growth and success.";
 
   export const messageFromTheDirector =
-  "I welcome you to this online platform of Alumni. \
-  The alumni network of IIITDM Kancheepuram forms an essential and significant element to propel the Institute towards overall excellence and in producing leaders. Their accomplishments are a reflection of the Institute’s standing, and they treasure their time for the sustenance it gave them.\
-  Involvement of Alumni is crucial for an Institute to continually improve its educational programs and social services. Their experiences and expertise shape the curriculum, offer insights into industry trends, and provide mentorship opportunities. \
-  We are always eager to hear about your achievements, milestones, and endeavors. Your success is a source of motivation for our current students, faculty, and the entire IIITDM Kancheepuram community. \
-  Visits and talks by alumni and interactions with them motivate current students to achieve well. I encourage you to stay connected with your alma mater and contribute to the growth and development of IIITDM Kancheepuram. Your experiences and insights are invaluable in shaping the future of the institute and inspiring the next generation of students. \
-  It makes me happy to see that our college has such vibrant alumni. I send them my best wishes for their future endeavors and applaud them for their dedication to strengthening the bond between alums and their alma university. Together, alumni and the organization can prosper going forward, fostering their mutual growth and success. \
+  "I welcome you to this online platform of Alumni. \n \
+  The alumni network of IIITDM Kancheepuram forms an essential and significant element to propel the Institute towards overall excellence and in producing leaders. Their accomplishments are a reflection of the Institute’s standing, and they treasure their time for the sustenance it gave them.\n\
+  Involvement of Alumni is crucial for an Institute to continually improve its educational programs and social services. Their experiences and expertise shape the curriculum, offer insights into industry trends, and provide mentorship opportunities.\n\
+  We are always eager to hear about your achievements, milestones, and endeavors. Your success is a source of motivation for our current students, faculty, and the entire IIITDM Kancheepuram community.\n\
+  Visits and talks by alumni and interactions with them motivate current students to achieve well. I encourage you to stay connected with your alma mater and contribute to the growth and development of IIITDM Kancheepuram. Your experiences and insights are invaluable in shaping the future of the institute and inspiring the next generation of students.\n\
+  It makes me happy to see that our college has such vibrant alumni. I send them my best wishes for their future endeavors and applaud them for their dedication to strengthening the bond between alums and their alma university. Together, alumni and the organization can prosper going forward, fostering their mutual growth and success.\n\
   I look forward to your continued involvement and support. Together, let us build a strong and vibrant network of alumni, fostering a sense of pride and belonging to IIITDM Kancheepuram.";
 
 export const messageFromTheChairman =
