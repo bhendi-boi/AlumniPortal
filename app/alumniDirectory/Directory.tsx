@@ -1,5 +1,5 @@
 'use client';
-import React, { useCallback, Suspense } from 'react';
+import React, { useCallback } from 'react';
 import { notFound, useSearchParams } from 'next/navigation';
 
 import Row from './Row';
@@ -63,35 +63,32 @@ const Directory = () => {
   );
 
   return (
-    // ! don't remove the suspense. It will break the build
-    <Suspense>
-      <section
-        aria-labelledby="dir"
-        className="mx-auto mb-8 max-w-7xl rounded-lg border border-background pb-4 md:mb-16"
-      >
-        <h2 id="dir" className="sr-only">
-          {year}'s directory
-        </h2>
-        <Controls
-          year={year}
-          degree={degree}
-          createQueryString={createQueryString}
-        />
-        <table className="my-4 flex min-h-screen flex-col">
-          <thead className="border-b px-5 pb-2 text-left md:px-10">
-            <tr className="grid grid-cols-2">
-              <th>Name</th>
-              <th className="hidden sm:table-cell">Degree</th>
-            </tr>
-          </thead>
-          <tbody className="">
-            {data.map((alumni, index) => (
-              <Row key={index} {...alumni} />
-            ))}
-          </tbody>
-        </table>
-      </section>
-    </Suspense>
+    <section
+      aria-labelledby="dir"
+      className="mx-auto mb-8 max-w-7xl rounded-lg border border-background pb-4 md:mb-16"
+    >
+      <h2 id="dir" className="sr-only">
+        {year}'s directory
+      </h2>
+      <Controls
+        year={year}
+        degree={degree}
+        createQueryString={createQueryString}
+      />
+      <table className="my-4 flex min-h-screen flex-col">
+        <thead className="border-b px-5 pb-2 text-left md:px-10">
+          <tr className="grid grid-cols-2">
+            <th>Name</th>
+            <th className="hidden sm:table-cell">Degree</th>
+          </tr>
+        </thead>
+        <tbody className="">
+          {data.map((alumni, index) => (
+            <Row key={index} {...alumni} />
+          ))}
+        </tbody>
+      </table>
+    </section>
   );
 };
 

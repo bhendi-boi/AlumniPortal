@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 import Header from 'app/Header';
 import Directory from './Directory';
 
@@ -24,10 +25,11 @@ export const metadata: Metadata = {
 
 const page = () => {
   return (
-    <>
+    // ! don't remove the suspense. It will break the build
+    <Suspense>
       <Header title="Alumni Directory" />
       <Directory />
-    </>
+    </Suspense>
   );
 };
 
